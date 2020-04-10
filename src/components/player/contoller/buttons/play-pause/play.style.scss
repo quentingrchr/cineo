@@ -1,0 +1,32 @@
+.play__start {
+  width: 15px;
+  height: 15px;
+  clip-path: polygon(100% 50%, 0 0, 0 100%);
+  background-color: $color-neutral-light;
+}
+
+.play__pause {
+  position: relative;
+  width: 15px;
+  height: 15px;
+
+  &::before {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 5px;
+    height: 15px;
+    background-color: $color-neutral-light;
+    left: 0px;
+  }
+
+  &::after {
+    position: absolute;
+    content: '';
+    display: block;
+    width: 5px;
+    height: 15px;
+    background-color: $color-neutral-light;
+    right: 0px;
+  }
+}

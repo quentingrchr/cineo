@@ -4,9 +4,7 @@ import { PlayerContextConsumer } from '../player.context';
 export default () => (
   <PlayerContextConsumer>
     {({ src, videoRef }) => (
-      <video ref={videoRef}>
-        <source src={src}></source>
-      </video>
+      <video ref={videoRef} src={src} className='player__video'></video>
     )}
   </PlayerContextConsumer>
 );

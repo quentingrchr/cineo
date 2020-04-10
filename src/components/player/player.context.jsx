@@ -1,5 +1,5 @@
 import React, { createContext, Component, createRef } from 'react';
-import video from './video.mp4';
+import video from '../../assets/video/video.mp4';
 
 const PlayerContext = createContext({});
 

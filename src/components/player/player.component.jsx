@@ -1,11 +1,13 @@
 import React from 'react';
 import { PlayerContextProvider } from './player.context';
 import Video from './video/video.component';
-import Play from './contoller/play.component';
+import Controler from './contoller/controler.compnent';
 
 export default () => (
   <PlayerContextProvider>
-    <Video />
-    <Play />
+    <section className='player'>
+      <Video />
+      <Controler />
+    </section>
   </PlayerContextProvider>
 );

@@ -1,0 +1,74 @@
+.progress-bar {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 95%;
+  height: 3px;
+}
+
+.progress-bar__bar {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(65, 65, 65);
+
+  &:hover {
+    cursor: pointer;
+    transform: scaleY(200%);
+  }
+
+  &[value] {
+    /* Reset the default appearance */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    /* Get rid of default border in Firefox. */
+    border: none;
+
+    &::-webkit-progress-bar {
+      background-color: $color-neutral-light;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $color-neutral-light;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+    }
+  }
+}
+
+.progress-bar__infos {
+  width: 150px;
+  border: 2px solid rgb(82, 82, 82);
+  border-radius: 3px;
+  visibility: hidden;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  top: -120px;
+  transform: translateX(-50%);
+
+  .progress-bar:hover & {
+    visibility: visible;
+  }
+}
+
+.infos__time {
+  padding: 5px 0px;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(82, 82, 82);
+  color: $color-neutral-light;
+}
+
+.infos__video {
+  width: 100%;
+}
+
+.progress-bar__time--indication {
+  text-align: center;
+  color: $color-neutral-light;
+  width: 50px;
+}
