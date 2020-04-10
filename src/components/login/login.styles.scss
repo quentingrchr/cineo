@@ -24,7 +24,7 @@
     font-size: 20px;
     width: 428px;
     height: 377px;
-    background-color: #F2F2F2;
+    background-color: $color-background-register;
     border-radius: 10px;
     &__nav {
         width: 428px;
@@ -32,7 +32,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        background-color: #E3E3E3;
+        background-color: $color-neutral-light;
         border-radius: 10px 10px 0px 0px;
         &--signin {
             width: 214px;
@@ -53,6 +53,9 @@
             align-items: center;
             color: #AFAFAF;
             cursor: pointer;
+            &:hover {
+                color: $color-neutral-dark;
+            }
         }
     }
     &__content {
@@ -96,5 +99,8 @@
         font-weight: 300;
         text-decoration: underline;
         cursor: pointer;
+        &:hover {
+            text-decoration: none;
+        }
     }
 }
