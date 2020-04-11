@@ -1,18 +1,21 @@
-import React from 'react';
-import Header from './components/header/header.component';
-import Button from './components/button/button.component';
-import Login from './components/login/login.component';
-import Signup from './components/signup/signup.component';
-import './styles.scss';
+import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import SignInUpPage from "./pages/sign-in-up/sign-in-up.page";
+import MoviesPage from "./pages/movies/movies.page";
+import SeriesPage from "./pages/series/series.page";
+
+import "./styles.scss";
 
 function App() {
   return (
-    <div className='App'>
-      <Header />
-      <h1>Work In Progress</h1>
-      <Button />
-      <Signup />
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/sign-up-in" component={SignInUpPage} />
+        <Route exact path="/movies" component={MoviesPage} />
+        <Route exact path="/series" component={SeriesPage} />
+      </Switch>
+    </Router>
   );
 }
 
