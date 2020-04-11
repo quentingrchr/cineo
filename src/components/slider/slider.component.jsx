@@ -2,6 +2,9 @@ import React, { Component, createRef } from "react";
 
 import Item from "../item/item.component";
 
+import { ReactComponent as PrevArrow } from "../../assets/svg/prev-arrow.svg";
+import { ReactComponent as NextArrow } from "../../assets/svg/next-arrow.svg";
+
 import { SliderContextConsumer, SliderContextProvider } from "./slider.context";
 
 export default class Slider extends Component {
@@ -11,6 +14,7 @@ export default class Slider extends Component {
       position: 0,
       offset: 0,
       nbViewports: Math.floor(this.props.data.length / 5),
+      nbItems: this.props.data.length,
     };
     this.sliderRef = createRef();
   }
@@ -31,7 +35,12 @@ export default class Slider extends Component {
     let itemWidth = element.current.offsetWidth;
     this.setState({
       ...this.state,
-      offset: this.state.offset + (itemWidth + 2) * 5,
+      offset:
+        this.state.offset +
+        (itemWidth + 2) *
+          (this.state.nbItems - this.state.position * 5 >= 5
+            ? 5
+            : this.state.nbItems - this.state.position * 5),
     });
   };
 
@@ -64,20 +73,24 @@ export default class Slider extends Component {
                   })}
                 </div>
               </div>
-              <button
-                onClick={() => {
-                  this.handleNext(itemRef);
-                }}
-              >
-                Next
-              </button>
-              <button
-                onClick={() => {
-                  this.handlePrev(itemRef);
-                }}
-              >
-                Previous
-              </button>
+
+              {this.state.position !== this.state.nbViewports && (
+                <NextArrow
+                  className="arrow next-arrow"
+                  onClick={() => {
+                    this.handleNext(itemRef);
+                  }}
+                />
+              )}
+
+              {this.state.position !== 0 && (
+                <PrevArrow
+                  className="arrow prev-arrow"
+                  onClick={() => {
+                    this.handlePrev(itemRef);
+                  }}
+                />
+              )}
             </div>
           )}
         </SliderContextConsumer>
