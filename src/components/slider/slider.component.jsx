@@ -70,6 +70,8 @@ export default class Slider extends Component {
                         coverUrl={el.coverUrl}
                         hoverCoverUrl={el.hoverCoverUrl}
                         genre={el.genre}
+                        type={el.type}
+                        seasons={el.seasons}
                         duration={el.duration}
                       />
                     );
@@ -78,21 +80,25 @@ export default class Slider extends Component {
               </div>
 
               {this.state.position !== this.state.nbViewports && (
-                <NextArrow
-                  className="arrow next-arrow"
+                <div
                   onClick={() => {
                     this.handleNext(itemRef);
                   }}
-                />
+                  className="arrow-wrapper arrow-wrapper-next"
+                >
+                  <NextArrow className="arrow next-arrow" />
+                </div>
               )}
 
               {this.state.position !== 0 && (
-                <PrevArrow
-                  className="arrow prev-arrow"
+                <div
                   onClick={() => {
                     this.handlePrev(itemRef);
                   }}
-                />
+                  className="arrow-wrapper arrow-wrapper-prev"
+                >
+                  <PrevArrow className="arrow prev-arrow" />
+                </div>
               )}
             </div>
           )}
