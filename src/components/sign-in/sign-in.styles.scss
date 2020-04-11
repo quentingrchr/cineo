@@ -99,8 +99,13 @@
         font-weight: 300;
         text-decoration: underline;
         cursor: pointer;
-        &:hover {
-            text-decoration: none;
-        }
     }
+}
+.registerbox__withoutlogin:hover {
+    text-decoration: none;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
 }

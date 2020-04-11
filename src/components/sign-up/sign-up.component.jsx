@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link, useLocation } from "react-router-dom";
 export default function Signup() {
   return (
     <div className='signup__container signup'>
@@ -9,9 +9,11 @@ export default function Signup() {
       </div>
       <div className='signup__content'>
         <div className='signup__nav'>
+          <Link to='/sign-in'>
           <div className='signup__nav--signin'>
             <p>Se connecter</p>
           </div>
+          </Link>
           <div className='signup__nav--signup'>
             <p>Créer un compte</p>
           </div>
@@ -21,9 +23,9 @@ export default function Signup() {
             <div className='form__left__civility form__component'>
               <p>Civilité</p>
               <label for='mr'>Mr</label>
-              <input type='radio' id='mr' checked></input>
+              <input type='radio' id='mr' name='civility' checked></input>
               <label for='mme'>Mme</label>
-              <input type='radio' id='mme'></input>
+              <input type='radio' id='mme' name='civility'></input>
             </div>
             <div className='form__left__lastname form__component'>
               <p>Nom</p>
