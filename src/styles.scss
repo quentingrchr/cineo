@@ -1,8 +1,10 @@
 @import "./variables.scss";
 // IMPORT ALL COMPONENTS SCSS HERE
+
 @import "./components/button/button.styles.scss";
 @import "./components/header/header.styles.scss";
 @import "./components/sign-in/sign-in.styles.scss";
 @import "./components/sign-up/sign-up.styles.scss";
 @import "./components/slider/slider.styles.scss";
 @import "./components/item/item.styles.scss";
+@import './components/player/player.style.scss';

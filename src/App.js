@@ -11,6 +11,7 @@ import DevQuentin from "./pages/dev-quentin/dev-quentin";
 
 import "./styles.scss";
 
+
 function App() {
   return (
     <Router>
@@ -25,6 +26,7 @@ function App() {
       </Switch>
     </Router>
   );
+
 }
 
 export default App;
