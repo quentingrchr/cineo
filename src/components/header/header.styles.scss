@@ -28,6 +28,23 @@ svg {
 
   & li {
     cursor: pointer;
+    a {
+      color: $color-neutral-light;
+      text-decoration: none;
+      font-size: inherit;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: $color-primary;
+      }
+
+      &.active::after {
+        width: 100%;
+      }
+    }
   }
 
   & li:first-child {

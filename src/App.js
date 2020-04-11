@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import SignInUpPage from "./pages/sign-in-up/sign-in-up.page";
 import MoviesPage from "./pages/movies/movies.page";
 import SeriesPage from "./pages/series/series.page";
-import MyListPage from "./pages/series/series.page";
-import HomePage from "./pages/series/series.page";
+import MyListPage from "./pages/my-list/my-list.page";
+import HomePage from "./pages/home/home.page";
 
 import "./styles.scss";
 
