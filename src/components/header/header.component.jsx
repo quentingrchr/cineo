@@ -1,24 +1,45 @@
 import React from "react";
-import { BrowserRouter as Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 export default function Header() {
+  let location = useLocation();
   return (
     <header className="header">
       <ul className="header__nav nav">
         <li>
           Ciné<span>o</span>
         </li>
-        <Link to="/home">
-          <li>Accueil</li>
-        </Link>
-        <Link to="/series">
-          <li>Séries</li>
-        </Link>
-        <Link to="/movies">
-          <li>Films</li>
-        </Link>
-        <Link to="/my-list">
-          <li>Mes enregistrement</li>
-        </Link>
+        <li>
+          <Link
+            className={location.pathname === "/home" ? "active" : ""}
+            to="/home"
+          >
+            Home
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={location.pathname === "/series" ? "active" : ""}
+            to="/series"
+          >
+            Series
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={location.pathname === "/movies" ? "active" : ""}
+            to="/movies"
+          >
+            Films
+          </Link>
+        </li>
+        <li>
+          <Link
+            className={location.pathname === "/my-list" ? "active" : ""}
+            to="/my-list"
+          >
+            Mes enregistrement
+          </Link>
+        </li>
       </ul>
       <div className="header__tools tools">
         <div className="tool__search search">
