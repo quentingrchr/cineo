@@ -1,0 +1,28 @@
+.slider-wrapper {
+  padding: 40px 0;
+  overflow: hidden;
+  position: relative;
+  background-color: red;
+}
+
+.slider {
+  background-color: green;
+  display: flex;
+  position: relative;
+
+  .item:hover .show-details-button {
+    opacity: 1;
+  }
+
+  .item:hover {
+    transform: scale(1.5) !important;
+  }
+
+  &:hover .item {
+    transform: translateX(-25%);
+  }
+
+  .item:hover ~ .item {
+    transform: translateX(25%);
+  }
+}
