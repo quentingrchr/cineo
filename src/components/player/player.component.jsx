@@ -3,11 +3,11 @@ import { PlayerContextProvider } from './player.context';
 import Video from './video/video.component';
 import Controler from './contoller/controler.compnent';
 
-export default () => (
+export default (props) => (
   <PlayerContextProvider>
     <section className='player'>
-      <Video />
-      <Controler />
+      <Video source={props.source} />
+      <Controler source={props.source} />
     </section>
   </PlayerContextProvider>
 );

@@ -1,5 +1,4 @@
 import React, { createContext, Component, createRef } from 'react';
-import video from '../../assets/video/video.mp4';
 
 const PlayerContext = createContext({});
 
@@ -7,8 +6,9 @@ export class PlayerContextProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      src: video,
+      //src: video,
       isPlaying: false,
+      currentTime: 0,
     };
     this.videoRef = createRef();
   }
@@ -23,12 +23,17 @@ export class PlayerContextProvider extends Component {
     this.setState({ isPlaying: false });
   };
 
+  videoCurrentTime = () => {
+    this.setState({ currentTime: this.videoRef.current.currentTime });
+  };
+
   render() {
     const value = {
       ...this.state,
       videoRef: this.videoRef,
       play: this.play,
       pause: this.pause,
+      videoCurrentTime: this.videoCurrentTime,
     };
 
     return (
