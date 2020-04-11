@@ -1,0 +1,23 @@
+.register {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  background-color: $color-neutral-dark;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 50px;
+  font-weight: 600;
+  &__title {
+    display: flex;
+    position: absolute;
+    top: 50px;
+    color: $color-neutral-light;
+    & > span {
+      color: $color-primary;
+    }
+  }
+}
+
+@import './sign-in/sign-in.styles.scss';
+@import './sign-up/sign-up.styles.scss';

@@ -1,21 +1,4 @@
 .signup {
-  width: 100vw;
-  height: 100vh;
-  background-color: $color-neutral-dark;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 50px;
-  font-weight: 600;
-  &__title {
-      display: flex;
-      position: absolute;
-      margin-top: -320px;
-      color: $color-neutral-light;
-      & > span {
-          color: $color-primary;
-      }
-  }
   &__nav {
     width: 936px;
     height: 51px;
@@ -31,10 +14,10 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #AFAFAF;
+      color: #afafaf;
       cursor: pointer;
       &:hover {
-          color: $color-neutral-dark;
+        color: $color-neutral-dark;
       }
     }
     &--signup {
@@ -45,7 +28,7 @@
       align-items: center;
       background-color: $color-primary;
       border-radius: 10px 10px 0px 0px;
-      box-shadow: -3px 0px 5px rgba(0,0,0,0.2);
+      box-shadow: -3px 0px 5px rgba(0, 0, 0, 0.2);
       color: $color-neutral-light;
     }
   }
@@ -62,7 +45,7 @@
     font-weight: 300;
     color: $color-neutral-dark;
     border-radius: 10px;
-    }
+  }
   &__form {
     height: 300px;
     width: 936px;
