@@ -1,0 +1,32 @@
+@import './video/video.style.scss';
+@import './contoller/controler.style.scss';
+@import './contoller/buttons/play-pause/play.style.scss';
+@import './contoller/progress-bar/progressBar.style.scss';
+@import './contoller/buttons/buttons.style.scss';
+@import './contoller/buttons/volume/volume.style.scss';
+@import './contoller/buttons/scroll/scroll.style.scss';
+@import './contoller/buttons/full-sreen/fullScreen.style.scss';
+@import './contoller/exit/exit.style.scss';
+
+.player {
+  color: $color-neutral-light;
+  position: relative;
+  width: 100vw;
+  max-height: 100vh;
+}
+
+.playerButton {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+  outline-style: none;
+  padding: 5px;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(120%);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
+}
