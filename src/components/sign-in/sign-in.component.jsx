@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function Login() {
+export default function SignIn() {
     return (
        <div className='login__container login'>
             <div className='login__title'>
