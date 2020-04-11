@@ -94,19 +94,19 @@ export default class ProgressBar extends React.Component {
       <PlayerContextConsumer>
         {({ videoRef }) => (
           <div
-            class='controler__progress-bar progress-bar'
+            className='controler__progress-bar progress-bar'
             ref={this.progressBarContainerRef}
           >
-            <div class='progress-bar__infos infos' ref={this.infosRef}>
+            <div className='progress-bar__infos infos' ref={this.infosRef}>
               <video
-                class='infos__video'
+                className='infos__video'
                 src={this.props.source}
                 ref={this.infosVideoRef}
               ></video>
-              <div class='infos__time' ref={this.infosTimeRef}></div>
+              <div className='infos__time' ref={this.infosTimeRef}></div>
             </div>
             <progress
-              class='progress-bar__bar'
+              className='progress-bar__bar'
               value='0'
               max='100'
               ref={this.progressBarRef}
@@ -114,7 +114,7 @@ export default class ProgressBar extends React.Component {
               onMouseMove={(e) => this.handelMove(e, e.nativeEvent.offsetX)}
             ></progress>
             <div
-              class='progress-bar__time--indication'
+              className='progress-bar__time--indication'
               ref={this.timeIndicationRef}
             >
               00:00

@@ -47,9 +47,9 @@ export default class Volume extends React.Component {
     return (
       <PlayerContextConsumer>
         {({ videoRef }) => (
-          <div class='controler__volume volume'>
+          <div className='controler__volume volume'>
             <button
-              class={`volume__mute ${isMuted ? 'is-muted' : ''}`}
+              className={`volume__mute ${isMuted ? 'is-muted' : ''}`}
               title='mute'
               onClick={() => this.muteVolume(videoRef)}
             >
@@ -60,7 +60,7 @@ export default class Volume extends React.Component {
                 />
               </svg>
             </button>
-            <div class='volume__controller'>
+            <div className='volume__controller'>
               <input
                 type='range'
                 min='0'

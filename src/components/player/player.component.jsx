@@ -1,13 +1,23 @@
 import React from 'react';
-import { PlayerContextProvider } from './player.context';
+import { PlayerContextProvider, PlayerContextConsumer } from './player.context';
 import Video from './video/video.component';
 import Controler from './contoller/controler.compnent';
+import Exit from './contoller/exit/exit.component';
 
 export default (props) => (
   <PlayerContextProvider>
-    <section className='player'>
-      <Video source={props.source} />
-      <Controler source={props.source} />
-    </section>
+    <PlayerContextConsumer>
+      {({ playerRef, mouseMove }) => (
+        <section
+          className='player'
+          ref={playerRef}
+          onMouseMove={() => mouseMove()}
+        >
+          <Video source={props.source} />
+          <Controler source={props.source} />
+          <Exit />
+        </section>
+      )}
+    </PlayerContextConsumer>
   </PlayerContextProvider>
 );

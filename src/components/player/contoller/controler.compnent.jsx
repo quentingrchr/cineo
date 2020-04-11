@@ -2,24 +2,27 @@ import React from 'react';
 import ProgressBar from './progress-bar/progressBar.component';
 import Buttons from './buttons/buttons.component';
 import { PlayerContextConsumer } from '../player.context';
-import { createRef } from 'react';
+
+//let disapearTimeOut;
 
 export default class Controler extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
-    this.controlerRef = createRef();
+    this.state = {
+      isVisible: true,
+    };
   }
 
   render() {
+    //const { isVisible } = this.state;
     return (
       <PlayerContextConsumer>
-        {({ videoRef, currentTime }) => (
-          <div className='player__controler controler' ref={this.controlerRef}>
+        {({ videoRef, currentTime, controlerRef }) => (
+          <div className='player__controler controler' ref={controlerRef}>
             <ProgressBar
               source={this.props.source}
               video={videoRef}
-              controler={this.controlerRef}
+              controler={controlerRef}
               currentTime={currentTime}
             />
             <Buttons />
