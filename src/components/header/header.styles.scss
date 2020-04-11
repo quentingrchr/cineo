@@ -9,6 +9,7 @@
   justify-content: space-between;
   align-items: center;
   font-size: 0.9rem;
+  font-weight: 500;
   box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -27,6 +28,23 @@ svg {
 
   & li {
     cursor: pointer;
+    a {
+      color: $color-neutral-light;
+      text-decoration: none;
+      font-size: inherit;
+
+      &::after {
+        display: block;
+        content: "";
+        width: 0%;
+        height: 2px;
+        background-color: $color-primary;
+      }
+
+      &.active::after {
+        width: 100%;
+      }
+    }
   }
 
   & li:first-child {
