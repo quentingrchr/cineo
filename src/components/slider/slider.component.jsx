@@ -54,6 +54,7 @@ export default class Slider extends Component {
                       <Item
                         title={el.title}
                         key={el.imdbID}
+                        imdbID={el.imdbID}
                         coverUrl={el.coverUrl}
                         hoverCoverUrl={el.hoverCoverUrl}
                         genre={el.genre}
