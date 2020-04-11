@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link, useLocation } from "react-router-dom";
 export default function SignIn() {
     return (
        <div className='login__container login'>
@@ -12,9 +12,11 @@ export default function SignIn() {
                     <div className='registerbox__nav--signin'>
                         <p>Se connecter</p>
                     </div>
+                    <Link to='/sign-up'>
                     <div className='registerbox__nav--signup'>
                         <p>Créer un compte</p>
                     </div>
+                    </Link>
                 </div>
                 <div className='registerbox__content'>
                     <input className='registerbox__input1 registerbox__input' type='text' placeholder='E-mail'></input>
@@ -22,8 +24,10 @@ export default function SignIn() {
                     <div className='registerbox__cta'>
                         <p>Connexion</p>
                     </div>
-                    <p className='registerbox__withoutlogin'>Accéder au site sans compte</p>
-                </div>
+                        <Link to="/home"> 
+                        <p className='registerbox__withoutlogin'>Accéder au site sans compte</p>
+                        </Link>
+                    </div>
             </div>
         </div>
     );
