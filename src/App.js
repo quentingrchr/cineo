@@ -8,9 +8,9 @@ import SeriesPage from "./pages/series/series.page";
 import MyListPage from "./pages/my-list/my-list.page";
 import HomePage from "./pages/home/home.page";
 import DevQuentin from "./pages/dev-quentin/dev-quentin";
+import PlayerPage from "./pages/player/player.page";
 
 import "./styles.scss";
-
 
 function App() {
   return (
@@ -23,10 +23,10 @@ function App() {
         <Route exact path="/movies" component={MoviesPage} />
         <Route exact path="/series" component={SeriesPage} />
         <Route exact path="/my-list" component={MyListPage} />
+        <Route exact path={"/player"} component={PlayerPage} />
       </Switch>
     </Router>
   );
-
 }
 
 export default App;

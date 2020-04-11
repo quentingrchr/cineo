@@ -25,6 +25,9 @@
   & .item:hover ~ .item {
     transform: translateX(25%);
   }
+  a {
+    display: block;
+  }
 }
 
 .item {
