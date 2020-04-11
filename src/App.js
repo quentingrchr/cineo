@@ -1,9 +1,11 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import SignInUpPage from "./pages/sign-in-up/sign-in-up.page";
 import MoviesPage from "./pages/movies/movies.page";
 import SeriesPage from "./pages/series/series.page";
+import MyListPage from "./pages/series/series.page";
+import HomePage from "./pages/series/series.page";
 
 import "./styles.scss";
 
@@ -11,9 +13,11 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/home" component={HomePage} />
         <Route exact path="/sign-up-in" component={SignInUpPage} />
         <Route exact path="/movies" component={MoviesPage} />
         <Route exact path="/series" component={SeriesPage} />
+        <Route exact path="/my-list" component={MyListPage} />
       </Switch>
     </Router>
   );
