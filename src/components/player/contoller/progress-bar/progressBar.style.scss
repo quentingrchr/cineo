@@ -3,7 +3,7 @@
   display: flex;
   align-items: center;
   width: 95%;
-  height: 3px;
+  height: 5px;
 }
 
 .progress-bar__bar {
@@ -71,4 +71,5 @@
   text-align: center;
   color: $color-neutral-light;
   width: 50px;
+  margin-left: 5px;
 }
