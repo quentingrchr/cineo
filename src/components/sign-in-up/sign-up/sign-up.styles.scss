@@ -85,8 +85,10 @@
     margin-left: 30px;
     color: $color-neutral-light;
     background-color: $color-neutral;
+    border: none;
     &:hover {
       background-color: $color-primary;
+      border: none;
     }
   }
 }
