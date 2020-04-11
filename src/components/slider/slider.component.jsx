@@ -25,7 +25,10 @@ export default class Slider extends Component {
     this.setState({ ...this.state, position: this.state.position-- });
     this.setState({
       ...this.state,
-      offset: this.state.offset - (itemWidth + 2) * 5,
+      offset:
+        this.state.position * 5 >= 5
+          ? this.state.offset - (itemWidth + 2) * 5
+          : 0,
     });
   };
 
