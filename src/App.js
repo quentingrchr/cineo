@@ -10,6 +10,7 @@ import HomePage from "./pages/home/home.page";
 
 import "./styles.scss";
 
+
 function App() {
   return (
     <Router>
@@ -23,6 +24,7 @@ function App() {
       </Switch>
     </Router>
   );
+
 }
 
 export default App;

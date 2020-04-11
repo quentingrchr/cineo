@@ -1,0 +1,22 @@
+.controler__full-screen button {
+  width: 50px;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+
+  & svg {
+    fill: $color-neutral-light;
+    width: 100%;
+  }
+
+  & .exit-fullscreen {
+    display: none;
+  }
+
+  &.is-fullScreen .exit-fullscreen {
+    display: block;
+  }
+  &.is-fullScreen .go-fullscreen {
+    display: none;
+  }
+}
