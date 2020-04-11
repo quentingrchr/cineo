@@ -1,19 +1,17 @@
 import React from 'react';
-import { Link, useLocation } from "react-router-dom";
-export default function Signup() {
-  return (
-    <div className='signup__container signup'>
-      <div className='signup__title'>
-        <h1>Bienvenue sur Ciné</h1>
-        <span>o</span>
-      </div>
+
+export default class SignUp extends React.Component {
+  handelCkick = () => this.props.click();
+  render() {
+    return (
       <div className='signup__content'>
         <div className='signup__nav'>
-          <Link to='/sign-in'>
-          <div className='signup__nav--signin'>
+          <div
+            className='signup__nav--signin'
+            onClick={() => this.handelCkick()}
+          >
             <p>Se connecter</p>
           </div>
-          </Link>
           <div className='signup__nav--signup'>
             <p>Créer un compte</p>
           </div>
@@ -64,6 +62,6 @@ export default function Signup() {
           <input type='reset'></input>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
