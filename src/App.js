@@ -7,6 +7,7 @@ import MoviesPage from "./pages/movies/movies.page";
 import SeriesPage from "./pages/series/series.page";
 import MyListPage from "./pages/my-list/my-list.page";
 import HomePage from "./pages/home/home.page";
+import DevQuentin from "./pages/dev-quentin/dev-quentin";
 
 import "./styles.scss";
 
@@ -15,6 +16,7 @@ function App() {
   return (
     <Router>
       <Switch>
+        <Route exact path="/dev-quentin" component={DevQuentin} />
         <Route exact path="/home" component={HomePage} />
         <Route exact path="/sign-in" component={SignInPage} />
         <Route exact path="/sign-up" component={SignUpPage} />
