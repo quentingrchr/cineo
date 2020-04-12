@@ -9,6 +9,7 @@ export default function devQuentin() {
           return movie.type === "serie";
         })}
       />
+      <Slider large={true} data={data.slice(0, 13)} />
     </div>
   );
 }

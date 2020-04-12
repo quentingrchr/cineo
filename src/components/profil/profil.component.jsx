@@ -23,7 +23,7 @@ export default function Profil() {
                 <img
                   className="profil__img"
                   src="https://occ-0-4164-768.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABUTMshYC3Z2g_SQr_f7tJHLaQZOkuKg63U8DlRTxu3cb78sui7ZRKVSXppNQzfQIvCmomBCHvEaIXVsyypFNVoHLcC_s.webp?r=534&quot"
-                  alt="photo de profile"
+                  alt="deux personnes à la plage"
                 />
               </div>
               <div className="profil__information--right">

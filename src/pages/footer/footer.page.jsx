@@ -1,11 +1,12 @@
 import React from "react";
 import Header from "../../components/header/header.component";
+import Footer from "../../components/footer/footer.component";
 
-export default function seriesPage() {
+export default function FooterPage() {
   return (
     <div>
       <Header />
-      <h1>Welcome to our "Series Page"</h1>
+      <Footer />
     </div>
   );
 }
