@@ -4,6 +4,9 @@
   color: $color-neutral-light;
   font-size: 1.5rem;
   font-weight: 600;
+  em {
+    color: $color-primary;
+  }
   &::before {
     content: "";
     display: inline-block;
