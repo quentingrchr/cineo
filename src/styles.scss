@@ -1,5 +1,6 @@
-@import './variables.scss';
+@import "./variables.scss";
 // IMPORT ALL COMPONENTS SCSS HERE
+
 
 @import './components/button/button.styles.scss';
 @import './components/header/header.styles.scss';
@@ -9,6 +10,5 @@
 @import './components/player/player.style.scss';
 @import './components/profil/profil.style.scss';
 @import './components/footer/footer.styles.scss';
-
-
+@import "./components/top5/top5.styles.scss";
 

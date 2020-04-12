@@ -5,7 +5,6 @@ export default function seriesPage() {
   return (
     <div>
       <Header />
-
       <h1>Welcome to our "Series Page"</h1>
     </div>
   );

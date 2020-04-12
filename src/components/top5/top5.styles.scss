@@ -1,0 +1,41 @@
+.topFive {
+  display: flex;
+  justify-content: space-evenly;
+  height: 100vh;
+
+  &__number {
+    display: flex;
+    justify-content: center;
+    transform: translate(50%, 50%);
+    width: 100%;
+    z-index: 2;
+    top: 0;
+    stroke-dashoffset: 650;
+    stroke-dasharray: 650;
+  }
+
+  &__number.appear {
+    animation: line-anim 5s ease-out forwards;
+  }
+
+  @keyframes line-anim {
+    from {
+      fill: transparent;
+    }
+    to {
+      stroke-dashoffset: 0;
+      fill: #16a3cf;
+    }
+  }
+
+  @keyframes finish {
+    from {
+      fill: #16a3cf;
+      stroke-dashoffset: 0;
+    }
+    to {
+      fill: transparent;
+      stroke-dashoffset: 650;
+    }
+  }
+}
