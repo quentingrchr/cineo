@@ -22,7 +22,7 @@ export default function seriesPage() {
         </div>
         <div className='series__section large__slider'>
           <Title content='Les séries originales Cinéo'/>
-          <Slider
+          <Slider large = {true}
           data={data.filter((movie) => {
             return movie.type === "serie";
           })}
