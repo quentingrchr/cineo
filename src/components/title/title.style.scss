@@ -4,9 +4,8 @@
   color: $color-neutral-light;
   font-size: 1.5rem;
   font-weight: 600;
-
   &::before {
-    content: '';
+    content: "";
     display: inline-block;
     width: 10px;
     height: 10px;
