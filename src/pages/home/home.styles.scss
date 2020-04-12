@@ -64,15 +64,19 @@
     animation: sliding-background 1.5s 0.5s ease forwards;
   }
 
-  .first-slider {
+  .first-category {
     h1 {
-      margin-left: 2%;
     }
 
+    margin: 0 5%;
     z-index: 2;
     position: absolute;
     bottom: 0;
     opacity: 0;
     animation: appears-opacity 1.5s 1s ease forwards;
   }
+}
+
+.home-section {
+  margin: 0% 5%;
 }

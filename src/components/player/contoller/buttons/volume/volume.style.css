@@ -1,0 +1,97 @@
+.volume {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.volume:hover .volume__controller {
+  opacity: 1;
+}
+
+.volume__mute {
+  position: relative;
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0);
+  border: none;
+}
+
+.volume__mute:hover {
+  -webkit-transform: scale(120%);
+          transform: scale(120%);
+}
+
+.volume__mute:active {
+  -webkit-transform: scale(0.9);
+          transform: scale(0.9);
+}
+
+.volume__mute svg {
+  width: 20px;
+  fill: white;
+}
+
+.volume__mute.is-muted::after {
+  position: absolute;
+  content: '';
+  display: block;
+  width: 2px;
+  height: 20px;
+  background-color: white;
+  -webkit-transform: translateY(-100%) translateX(400%) rotate(45deg);
+          transform: translateY(-100%) translateX(400%) rotate(45deg);
+}
+
+.volume__controller {
+  opacity: 0;
+  position: relative;
+  width: 60px;
+  -webkit-transition: opacity 0.2s linear;
+  transition: opacity 0.2s linear;
+}
+
+.volume__controller input {
+  width: 100%;
+  cursor: pointer;
+}
+
+.volume__controller input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  background: transparent;
+}
+
+.volume__controller input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.volume__controller input[type='range']:focus {
+  outline: none;
+}
+
+.volume__controller input[type='range']::-ms-track {
+  width: 100%;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  color: transparent;
+}
+
+.volume__controller input::-moz-range-thumb {
+  background-color: white;
+  height: 15px;
+  width: 5px;
+  border-radius: 0px;
+}
+
+.volume__controller input::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  background-color: white;
+  border-radius: 5px;
+}
+/*# sourceMappingURL=volume.style.css.map */

@@ -1,0 +1,73 @@
+.topFive {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  height: 100vh;
+}
+
+.topFive__number {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transform: translate(50%, 50%);
+          transform: translate(50%, 50%);
+  width: 100%;
+  z-index: 2;
+  top: 0;
+  stroke-dashoffset: 650;
+  stroke-dasharray: 650;
+}
+
+.topFive__number.appear {
+  -webkit-animation: line-anim 5s ease-out forwards;
+          animation: line-anim 5s ease-out forwards;
+}
+
+@-webkit-keyframes line-anim {
+  from {
+    fill: transparent;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill: #16a3cf;
+  }
+}
+
+@keyframes line-anim {
+  from {
+    fill: transparent;
+  }
+  to {
+    stroke-dashoffset: 0;
+    fill: #16a3cf;
+  }
+}
+
+@-webkit-keyframes finish {
+  from {
+    fill: #16a3cf;
+    stroke-dashoffset: 0;
+  }
+  to {
+    fill: transparent;
+    stroke-dashoffset: 650;
+  }
+}
+
+@keyframes finish {
+  from {
+    fill: #16a3cf;
+    stroke-dashoffset: 0;
+  }
+  to {
+    fill: transparent;
+    stroke-dashoffset: 650;
+  }
+}
+/*# sourceMappingURL=top5.styles.css.map */

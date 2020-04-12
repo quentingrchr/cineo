@@ -1,0 +1,28 @@
+.controler {
+  position: absolute;
+  width: 100%;
+  bottom: 0%;
+  padding-top: 15px;
+  padding-bottom: 5px;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: opacity 0.5s linear;
+  transition: opacity 0.5s linear;
+}
+
+.controler.is-invisible {
+  opacity: 0;
+}
+/*# sourceMappingURL=controler.style.css.map */
