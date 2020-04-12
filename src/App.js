@@ -9,6 +9,7 @@ import HomePage from "./pages/home/home.page";
 import ProfilPage from "./pages/profil/profil.pages";
 import DevQuentin from "./pages/dev-quentin/dev-quentin";
 import PlayerPage from "./pages/player/player.page";
+import Footer from './pages/footer/footer.page';
 
 
 import "./styles.scss";
@@ -27,7 +28,7 @@ function App() {
         <Route exact path='/my-list' component={MyListPage} />
         <Route exact path="/profil" component={ProfilPage} />
         <Route exact path="/player" component={PlayerPage} />
-
+        <Route exact path="/footer" component={Footer} />
 
       </Switch>
     </Router>
