@@ -6,23 +6,24 @@ import Header from '../../components/header/header.component';
 import Button from '../../components/button/button.component';
 import Title from '../../components/title/title.component';
 import Slider from '../../components/slider/slider.component';
-import Video from '../../assets/video/the-eagles-hotel-california-solo-cover-by-chloe.mp4';
+import Video from '../../assets/video/sharknado-6-shark-vs-t-rex-trailer-new-2018-the-last-sharknado-movie-hd.mp4';
 
 import data from '../../data.json';
 import {
   PlayerContextProvider,
   PlayerContextConsumer,
 } from '../../components/player/player.context';
+import { createRef } from 'react';
 
 export default class playerPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-
       id: parseInt(this.props.location.search.substr(4)),
       isMovie: true,
       isSeasonsListVisible: false,
     };
+    this.seasonButtonRef = createRef();
   }
 
   componentWillMount = () => {
@@ -35,7 +36,7 @@ export default class playerPage extends Component {
 
   componentDidUpdate(prevProps, prevState, snapshot) {
     if (this.props.location !== prevProps.location) {
-      this.setState({ id: this.props.location.search.substr(4) });
+      this.setState({ id: parseInt(this.props.location.search.substr(4)) });
     }
   }
 
@@ -45,17 +46,25 @@ export default class playerPage extends Component {
       : this.setState({ isSeasonsListVisible: true });
   };
 
+  seasonsItemClick = (e) => {
+    this.seasonButtonRef.current.innerHTML = e.target.innerHTML;
+    this.setState({ isSeasonsListVisible: false });
+  };
+
+  globalClick = () => {
+    if (this.state.isSeasonsListVisible) {
+      this.setState({ isSeasonsListVisible: false });
+    }
+  };
 
   render() {
     const { id, isMovie, isSeasonsListVisible } = this.state;
-    console.log(isMovie);
-    console.log(data.filter((el) => el.imdbID === this.state.id)[0].type);
 
     return (
       <PlayerContextProvider>
         <PlayerContextConsumer>
           {({ videoContainerRef, play }) => (
-            <div className='player-page'>
+            <div className='player-page' onClick={() => this.globalClick()}>
               <Header />
               <div className='player-page__content' ref={videoContainerRef}>
                 <Link to='/home'>
@@ -71,14 +80,14 @@ export default class playerPage extends Component {
                     <Player source={Video} />
                   </div>
                   <div className='player-page__description description'>
-                    <h1 className='description__title'>
-                      {data.filter((el) => el.imdbID === id)[0].title}
-                    </h1>
-                    <p className='description__infos'>
-                      {`${data.filter((el) => el.imdbID === id)[0].year} -
-              ${data.filter((el) => el.imdbID === id)[0].genre} -
-              ${data.filter((el) => el.imdbID === id)[0].duration}`}
-                    </p>
+                    <div class='description__title'>
+                      <h1>{data.filter((el) => el.imdbID === id)[0].title}</h1>
+                      <p>
+                        {`${data.filter((el) => el.imdbID === id)[0].year} -
+                          ${data.filter((el) => el.imdbID === id)[0].genre} -
+                          ${data.filter((el) => el.imdbID === id)[0].duration}`}
+                      </p>
+                    </div>
                     <div className='descriptions__buttons button'>
                       <Button
                         content={
@@ -89,7 +98,12 @@ export default class playerPage extends Component {
                       {!isMovie && (
                         <Button
                           content={
-                            <div className='button__season-content'>
+                            <div
+                              className={`button__season-content ${
+                                isSeasonsListVisible ? 'is-clicked' : ''
+                              }`}
+                              ref={this.seasonButtonRef}
+                            >
                               Saison 1
                             </div>
                           }
@@ -98,14 +112,57 @@ export default class playerPage extends Component {
                       )}
                       {!isMovie && isSeasonsListVisible && (
                         <ul className='seasons-list'>
-                          <li>Saison 1</li>
-                          <li>Saison 2</li>
-                          <li>Saison 3</li>
-                          <li>Saison 4</li>
-                          <li>Saison 5</li>
-                          <li>Saison 6</li>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
+                            Saison 1
+                          </li>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
+                            Saison 2
+                          </li>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
+                            Saison 3
+                          </li>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
+                            Saison 4
+                          </li>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
+                            Saison 5
+                          </li>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
+                            Saison 6
+                          </li>
                         </ul>
                       )}
+                      <button className='button__download'>
+                        <svg
+                          width='352'
+                          height='448'
+                          viewBox='0 0 352 448'
+                          fill='none'
+                          xmlns='http://www.w3.org/2000/svg'
+                        >
+                          <path
+                            d='M256 144H296C306.609 144 316.783 148.214 324.284 155.716C331.786 163.217 336 173.391 336 184V392C336 402.609 331.786 412.783 324.284 420.284C316.783 427.786 306.609 432 296 432H56C45.3913 432 35.2172 427.786 27.7157 420.284C20.2143 412.783 16 402.609 16 392V184C16 173.391 20.2143 163.217 27.7157 155.716C35.2172 148.214 45.3913 144 56 144H96'
+                            stroke='black'
+                            stroke-width='32'
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                          />
+                          <path
+                            d='M96 240L176 320L256 240'
+                            stroke='black'
+                            stroke-width='32'
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                          />
+                          <path
+                            d='M176 16V304'
+                            stroke='black'
+                            stroke-width='32'
+                            stroke-linecap='round'
+                            stroke-linejoin='round'
+                          />
+                        </svg>
+                      </button>
                     </div>
                     <p className='description__synopsis'>
                       <span>Synopsis</span>
