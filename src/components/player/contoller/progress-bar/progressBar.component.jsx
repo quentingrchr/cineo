@@ -1,13 +1,13 @@
 import React from 'react';
-import { PlayerContextConsumer } from '../../player.context';
 import { createRef } from 'react';
 
 export default class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      videoContainerElt: this.props.videoContainer,
+      videoSrc: this.props.source,
       video: this.props.video,
-      videoCurrentTime: 0,
       controlerRef: this.props.controler,
     };
     this.progressBarContainerRef = createRef();
@@ -43,14 +43,15 @@ export default class ProgressBar extends React.Component {
     let video = this.state.video;
     if (video.current !== null) {
       this.progressBarRef.current.value =
-        (this.props.currentTime * 100) / video.current.duration;
+        (video.current.currentTime * 100) / video.current.duration;
       this.timeIndicationRef.current.innerHTML = this.setTime(
-        Math.floor(this.props.currentTime)
+        Math.floor(video.current.currentTime)
       );
     }
   };
 
   handelClick = (e) => {
+    let videoContainer = this.state.videoContainerElt.current;
     let videoElt = this.state.video.current;
     let progressBarWidth = this.progressBarRef.current.offsetWidth;
     let progressBarContainerOffsetLeft = this.progressBarContainerRef.current
@@ -58,7 +59,8 @@ export default class ProgressBar extends React.Component {
     let mousePosition =
       e.clientX -
       (progressBarContainerOffsetLeft +
-        this.props.controler.current.offsetLeft);
+        this.state.controlerRef.current.offsetLeft +
+        videoContainer.offsetLeft);
     this.progressBarRef.current.value =
       (mousePosition * 100) / progressBarWidth;
     videoElt.currentTime =
@@ -66,6 +68,7 @@ export default class ProgressBar extends React.Component {
   };
 
   handelMove = (e) => {
+    let videoContainer = this.state.videoContainerElt.current;
     let videoElt = this.state.video.current;
     let progressBarWidth = this.progressBarRef.current.offsetWidth;
     let progressBarContainerOffsetLeft = this.progressBarContainerRef.current
@@ -73,7 +76,8 @@ export default class ProgressBar extends React.Component {
     let mousePosition =
       e.clientX -
       (progressBarContainerOffsetLeft +
-        this.props.controler.current.offsetLeft);
+        this.state.controlerRef.current.offsetLeft +
+        videoContainer.offsetLeft);
     let effectiveTimeProgression = Math.floor(
       (videoElt.duration * mousePosition) / progressBarWidth
     );
@@ -86,42 +90,38 @@ export default class ProgressBar extends React.Component {
   };
 
   render() {
+    const { videoSrc } = this.state;
+
     this.progressBarEvolution();
 
-    const { video } = this.state;
-
     return (
-      <PlayerContextConsumer>
-        {({ videoRef }) => (
-          <div
-            className='controler__progress-bar progress-bar'
-            ref={this.progressBarContainerRef}
-          >
-            <div className='progress-bar__infos infos' ref={this.infosRef}>
-              <video
-                className='infos__video'
-                src={this.props.source}
-                ref={this.infosVideoRef}
-              ></video>
-              <div className='infos__time' ref={this.infosTimeRef}></div>
-            </div>
-            <progress
-              className='progress-bar__bar'
-              value='0'
-              max='100'
-              ref={this.progressBarRef}
-              onClick={(e) => this.handelClick(e, e.nativeEvent.offsetX)}
-              onMouseMove={(e) => this.handelMove(e, e.nativeEvent.offsetX)}
-            ></progress>
-            <div
-              className='progress-bar__time--indication'
-              ref={this.timeIndicationRef}
-            >
-              00:00
-            </div>
-          </div>
-        )}
-      </PlayerContextConsumer>
+      <div
+        className='controler__progress-bar progress-bar'
+        ref={this.progressBarContainerRef}
+      >
+        <div className='progress-bar__infos infos' ref={this.infosRef}>
+          <video
+            className='infos__video'
+            src={videoSrc}
+            ref={this.infosVideoRef}
+          ></video>
+          <div className='infos__time' ref={this.infosTimeRef}></div>
+        </div>
+        <progress
+          className='progress-bar__bar'
+          value='0'
+          max='100'
+          ref={this.progressBarRef}
+          onClick={(e) => this.handelClick(e, e.nativeEvent.offsetX)}
+          onMouseMove={(e) => this.handelMove(e, e.nativeEvent.offsetX)}
+        ></progress>
+        <div
+          className='progress-bar__time--indication'
+          ref={this.timeIndicationRef}
+        >
+          00:00
+        </div>
+      </div>
     );
   }
 }
