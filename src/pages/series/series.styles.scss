@@ -1,9 +1,17 @@
 .series {
+  &__page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
   &__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 90%;
+  margin-top: 100px;
   }
   &__title {
     font-size: 100px;
@@ -12,4 +20,7 @@
     color: $color-neutral-light;
     text-align: center;
   }
+}
+.large__slider {
+  margin: 100px 0px;
 }

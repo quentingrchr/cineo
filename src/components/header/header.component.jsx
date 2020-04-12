@@ -17,7 +17,7 @@ export default function Header() {
             className={location.pathname === "/home" ? "active" : ""}
             to="/home"
           >
-            Home
+            Accueil
           </Link>
         </li>
         <li>
@@ -25,7 +25,7 @@ export default function Header() {
             className={location.pathname === "/series" ? "active" : ""}
             to="/series"
           >
-            Series
+            Séries
           </Link>
         </li>
         <li>

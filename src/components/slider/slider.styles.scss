@@ -9,6 +9,7 @@
     top: 0;
     width: 5%;
     height: 100%;
+    cursor: pointer;
     &:hover .arrow {
       transform: scale(1.9);
     }
@@ -31,7 +32,6 @@
 
 .slider-wrapper {
   display: flex;
-  padding: 0 55px;
   z-index: 3;
   width: 100%;
 }
