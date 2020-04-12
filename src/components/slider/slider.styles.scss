@@ -37,6 +37,7 @@
 }
 .slider {
   display: flex;
+  align-items: center;
   position: relative;
   margin: 50px 0px;
   transition: transform 300ms ease 100ms;
