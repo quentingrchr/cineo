@@ -2,6 +2,8 @@ import React from "react";
 
 import data from "../../data.json";
 
+import { lastReleases, seriesOnly, trendingNow } from "../../data.utils";
+
 import Header from "../../components/header/header.component";
 import Slider from "../../components/slider/slider.component";
 import Title from "../../components/title/title.component";
@@ -23,29 +25,17 @@ export default function homePage() {
 
         <div className="first-category">
           <Title content="Les nouvelles séries" />
-          <Slider
-            data={data.filter((movie) => {
-              return movie.type === "serie";
-            })}
-          />
+          <Slider data={seriesOnly(data, 15).reverse()} />
         </div>
       </div>
       <section className="home-section">
         <div className="category">
           <Title content="Les nouveaux films" />
-          <Slider
-            data={data.reverse().filter((movie) => {
-              return movie.type === "movie";
-            })}
-          />
+          <Slider data={lastReleases(data, "movie")} />
         </div>
         <div className="category">
           <Title content="Tendance actuelles" />
-          <Slider
-            data={data.reverse().filter((movie) => {
-              return movie.type === "movie";
-            })}
-          />
+          <Slider data={trendingNow(data)} />
         </div>
       </section>
     </div>
