@@ -1,4 +1,4 @@
-import React, { createContext, Component, createRef } from "react";
+import React, { createContext, Component, createRef } from 'react';
 
 const SliderContext = createContext({});
 
@@ -11,8 +11,6 @@ export class SliderContextProvider extends Component {
     const value = {
       itemRef: this.itemRef,
     };
-
-    console.log(value.itemRef);
     return (
       <SliderContext.Provider value={value}>
         {this.props.children}

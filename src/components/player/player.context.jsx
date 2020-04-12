@@ -12,6 +12,7 @@ export class PlayerContextProvider extends Component {
       isPlaying: false,
       currentTime: 0,
       isContolerVisible: false,
+      isVideoFullScreen: false,
     };
     this.videoContainerRef = createRef();
     this.videoRef = createRef();
@@ -42,6 +43,10 @@ export class PlayerContextProvider extends Component {
     this.setState({ currentTime: this.videoRef.current.currentTime });
   };
 
+  isFullScreen = (bool) => {
+    this.setState({ isVideoFullScreen: bool });
+  };
+
   render() {
     const value = {
       ...this.state,
@@ -52,6 +57,7 @@ export class PlayerContextProvider extends Component {
       exitRef: this.exitRef,
       play: this.play,
       pause: this.pause,
+      isPlayerFullScreen: this.isFullScreen,
       mouseMove: this.mouseMove,
       videoCurrentTime: this.videoCurrentTime,
     };
