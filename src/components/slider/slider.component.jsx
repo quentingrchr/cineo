@@ -52,7 +52,11 @@ export default class Slider extends Component {
       <SliderContextProvider>
         <SliderContextConsumer>
           {({ itemRef }) => (
-            <div className="slider-container">
+            <div
+              className={`slider-container ${
+                this.props.large ? "slider-large-container" : ""
+              }`}
+            >
               <div className="slider-wrapper">
                 <div
                   ref={this.sliderRef}
@@ -64,6 +68,7 @@ export default class Slider extends Component {
                   {this.props.data.map((el) => {
                     return (
                       <Item
+                        large={this.props.large}
                         title={el.title}
                         key={el.imdbID}
                         imdbID={el.imdbID}
@@ -73,6 +78,7 @@ export default class Slider extends Component {
                         type={el.type}
                         seasons={el.seasons}
                         duration={el.duration}
+                        posterUrl={el.posterUrl}
                       />
                     );
                   })}
