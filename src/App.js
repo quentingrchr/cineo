@@ -13,6 +13,8 @@ import Footer from "./pages/footer/footer.page";
 
 import "./styles.scss";
 
+
+
 function App() {
   return (
     <Router>
