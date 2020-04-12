@@ -1,7 +1,7 @@
 .topFive {
   display: flex;
-  justify-content: space-evenly;
-  height: 100vh;
+  justify-content: space-between;
+  width: 100%;
 
   &__number {
     display: flex;
@@ -38,4 +38,8 @@
       stroke-dashoffset: 650;
     }
   }
+}
+
+.topFive__img {
+  width: 200px;
 }
