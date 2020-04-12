@@ -1,6 +1,9 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 
-import data from "../../data.json";
+import Player from '../../components/player/player.component';
+import Video from '../../assets/video/the-eagles-hotel-california-solo-cover-by-chloe.mp4';
+
+import data from '../../data.json';
 
 export default class playerPage extends Component {
   constructor(props) {
@@ -12,8 +15,9 @@ export default class playerPage extends Component {
   render() {
     return (
       <div>
-        <h1>{data.filter((el) => el.imdbID === this.state.id)[0].title}</h1>
-        <p>{data.filter((el) => el.imdbID === this.state.id)[0].pitch}</p>
+        {/* <h1>{data.filter((el) => el.imdbID === this.state.id)[0].title}</h1>
+        <p>{data.filter((el) => el.imdbID === this.state.id)[0].pitch}</p> */}
+        <Player source={Video} />
       </div>
     );
   }

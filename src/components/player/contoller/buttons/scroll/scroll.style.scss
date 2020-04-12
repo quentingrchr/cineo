@@ -9,6 +9,15 @@
 
     & svg {
       height: 20px;
+      fill: $color-neutral-light;
+    }
+
+    &:hover {
+      transform: scale(120%);
+    }
+
+    &:active {
+      transform: scale(0.9);
     }
   }
 }

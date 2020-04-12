@@ -9,21 +9,25 @@ export default class Controler extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isVisible: true,
+      videoSrc: this.props.source,
     };
   }
 
   render() {
-    //const { isVisible } = this.state;
+    const { videoSrc } = this.state;
     return (
       <PlayerContextConsumer>
-        {({ videoRef, currentTime, controlerRef }) => (
-          <div className='player__controler controler' ref={controlerRef}>
+        {({ videoRef, currentTime, controlerRef, isContolerVisible }) => (
+          <div
+            className={`player__controler controler ${
+              isContolerVisible ? '' : 'is-invisible'
+            }`}
+            ref={controlerRef}
+          >
             <ProgressBar
-              source={this.props.source}
+              source={videoSrc}
               video={videoRef}
               controler={controlerRef}
-              currentTime={currentTime}
             />
             <Buttons />
           </div>

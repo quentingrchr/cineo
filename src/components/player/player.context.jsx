@@ -8,9 +8,10 @@ export class PlayerContextProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      //src: video,
+      src: '',
       isPlaying: false,
       currentTime: 0,
+      isContolerVisible: false,
     };
     this.videoRef = createRef();
     this.playerRef = createRef();
@@ -30,11 +31,9 @@ export class PlayerContextProvider extends Component {
 
   mouseMove = () => {
     clearTimeout(disapear);
-    this.exitRef.current.classList.remove('is-invisible');
-    this.controlerRef.current.classList.remove('is-invisible');
+    this.setState({ isContolerVisible: true });
     disapear = setTimeout(() => {
-      this.exitRef.current.classList.add('is-invisible');
-      this.controlerRef.current.classList.add('is-invisible');
+      this.setState({ isContolerVisible: false });
     }, 6000);
   };
 
@@ -51,7 +50,6 @@ export class PlayerContextProvider extends Component {
       exitRef: this.exitRef,
       play: this.play,
       pause: this.pause,
-
       mouseMove: this.mouseMove,
       videoCurrentTime: this.videoCurrentTime,
     };
