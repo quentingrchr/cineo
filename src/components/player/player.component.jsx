@@ -16,21 +16,19 @@ export default class Player extends React.Component {
     const { videoSrc } = this.state;
 
     return (
-      <PlayerContextProvider>
-        <PlayerContextConsumer>
-          {({ playerRef, mouseMove }) => (
-            <section
-              className='player'
-              ref={playerRef}
-              onMouseMove={() => mouseMove()}
-            >
-              <Video source={videoSrc} />
-              <Controler source={videoSrc} />
-              <Exit />
-            </section>
-          )}
-        </PlayerContextConsumer>
-      </PlayerContextProvider>
+      <PlayerContextConsumer>
+        {({ playerRef, mouseMove }) => (
+          <section
+            className='player'
+            ref={playerRef}
+            onMouseMove={() => mouseMove()}
+          >
+            <Video source={videoSrc} />
+            <Controler source={videoSrc} />
+            <Exit />
+          </section>
+        )}
+      </PlayerContextConsumer>
     );
   }
 }

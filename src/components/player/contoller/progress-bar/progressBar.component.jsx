@@ -5,6 +5,7 @@ export default class ProgressBar extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      videoContainerElt: this.props.videoContainer,
       videoSrc: this.props.source,
       video: this.props.video,
       controlerRef: this.props.controler,
@@ -50,6 +51,7 @@ export default class ProgressBar extends React.Component {
   };
 
   handelClick = (e) => {
+    let videoContainer = this.state.videoContainerElt.current;
     let videoElt = this.state.video.current;
     let progressBarWidth = this.progressBarRef.current.offsetWidth;
     let progressBarContainerOffsetLeft = this.progressBarContainerRef.current
@@ -57,7 +59,8 @@ export default class ProgressBar extends React.Component {
     let mousePosition =
       e.clientX -
       (progressBarContainerOffsetLeft +
-        this.state.controlerRef.current.offsetLeft);
+        this.state.controlerRef.current.offsetLeft +
+        videoContainer.offsetLeft);
     this.progressBarRef.current.value =
       (mousePosition * 100) / progressBarWidth;
     videoElt.currentTime =
@@ -65,6 +68,7 @@ export default class ProgressBar extends React.Component {
   };
 
   handelMove = (e) => {
+    let videoContainer = this.state.videoContainerElt.current;
     let videoElt = this.state.video.current;
     let progressBarWidth = this.progressBarRef.current.offsetWidth;
     let progressBarContainerOffsetLeft = this.progressBarContainerRef.current
@@ -72,7 +76,8 @@ export default class ProgressBar extends React.Component {
     let mousePosition =
       e.clientX -
       (progressBarContainerOffsetLeft +
-        this.state.controlerRef.current.offsetLeft);
+        this.state.controlerRef.current.offsetLeft +
+        videoContainer.offsetLeft);
     let effectiveTimeProgression = Math.floor(
       (videoElt.duration * mousePosition) / progressBarWidth
     );

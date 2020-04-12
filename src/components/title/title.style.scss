@@ -1,0 +1,16 @@
+.title-component {
+  display: flex;
+  align-items: center;
+  color: $color-neutral-light;
+  font-size: 1.5rem;
+
+  &::before {
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: $color-primary;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}

@@ -2,8 +2,8 @@ import React from 'react';
 
 export default function Button(props) {
   return (
-    <div>
-      <button>{props.content}</button>
-    </div>
+    <button className='button-component' onClick={() => props.clickFunction()}>
+      {props.content}
+    </button>
   );
 }

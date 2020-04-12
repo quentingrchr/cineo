@@ -13,6 +13,7 @@ export class PlayerContextProvider extends Component {
       currentTime: 0,
       isContolerVisible: false,
     };
+    this.videoContainerRef = createRef();
     this.videoRef = createRef();
     this.playerRef = createRef();
     this.controlerRef = createRef();
@@ -44,6 +45,7 @@ export class PlayerContextProvider extends Component {
   render() {
     const value = {
       ...this.state,
+      videoContainerRef: this.videoContainerRef,
       videoRef: this.videoRef,
       playerRef: this.playerRef,
       controlerRef: this.controlerRef,

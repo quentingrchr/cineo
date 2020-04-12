@@ -17,7 +17,13 @@ export default class Controler extends React.Component {
     const { videoSrc } = this.state;
     return (
       <PlayerContextConsumer>
-        {({ videoRef, currentTime, controlerRef, isContolerVisible }) => (
+        {({
+          videoRef,
+          currentTime,
+          controlerRef,
+          isContolerVisible,
+          videoContainerRef,
+        }) => (
           <div
             className={`player__controler controler ${
               isContolerVisible ? '' : 'is-invisible'
@@ -28,6 +34,7 @@ export default class Controler extends React.Component {
               source={videoSrc}
               video={videoRef}
               controler={controlerRef}
+              videoContainer={videoContainerRef}
             />
             <Buttons />
           </div>
