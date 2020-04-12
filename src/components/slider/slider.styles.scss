@@ -1,23 +1,31 @@
 .slider-container {
   position: relative;
-  .arrow {
-    position: absolute;
-    top: 50%;
-    transition: transform 0.2s 0.1s ease;
-    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, 0.7));
-    transform: scale(1.5);
 
-    &:hover {
+  .arrow-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    width: 5%;
+    height: 100%;
+    &:hover .arrow {
       transform: scale(1.9);
     }
   }
 
-  .next-arrow {
-    right: 2%;
+  .arrow-wrapper-next {
+    right: 0%;
   }
 
-  .prev-arrow {
-    left: 2%;
+  .arrow-wrapper-prev {
+    left: 0%;
+  }
+
+  .arrow {
+    transform: scale(1.5);
+    transition: transform 0.2s 0.1s ease;
+    filter: drop-shadow(3px 5px 2px rgba(0, 0, 0, 0.918));
   }
 }
 
@@ -98,6 +106,11 @@
     h1 {
       font-weight: 700;
       font-size: 16px;
+    }
+
+    .genre {
+      font-size: 10px;
+      flex-basis: 70%;
     }
   }
 

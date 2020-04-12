@@ -1,0 +1,44 @@
+.footer {
+  &__container {
+    width: 100vw;
+    height: 284px;
+    padding: 0px 70px 0px 50px;
+    background-color: $color-neutral-dark;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: $color-neutral-light;
+    font-size: 18px;
+    font-weight: 500;
+  }
+  &__component {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__title {
+    display: flex;
+    flex-direction: row;
+    font-size: 50px;
+    font-weight: 600;
+    & > span {
+      color: $color-primary;
+    }
+  }
+}
+
+.social {
+  
+  &__medias > p {
+    margin-bottom: 30px
+  }
+  &__logos {
+    width: 120px;
+    display: flex;
+    justify-content: space-between;
+    & > svg {
+      fill: $color-neutral-light;
+    }
+  }
+}
