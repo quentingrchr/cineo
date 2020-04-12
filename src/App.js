@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
+import ScrollToTop from "./components/scroll-to-the-top/scroll-to-the-top.component";
 import SignInUpPage from "./pages/sign-in-up/sign-in-up.page";
 import MoviesPage from "./pages/movies/movies.page";
 import SeriesPage from "./pages/series/series.page";
@@ -15,7 +16,9 @@ import "./styles.scss";
 
 function App() {
   return (
-    <Router>
+    <Router onUpdate={() => window.scrollTo(0, 0)}>
+      <ScrollToTop />
+
       <Switch>
         <Route exact path="/dev-quentin" component={DevQuentin} />
         <Route exact path="/home" component={HomePage} />
