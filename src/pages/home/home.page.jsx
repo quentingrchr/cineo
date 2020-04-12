@@ -2,7 +2,12 @@ import React from "react";
 
 import data from "../../data.json";
 
-import { lastReleases, seriesOnly, trendingNow } from "../../data.utils";
+import {
+  lastReleases,
+  seriesOnly,
+  trendingNow,
+  originalsOnly,
+} from "../../data.utils";
 
 import Header from "../../components/header/header.component";
 import Slider from "../../components/slider/slider.component";
@@ -36,6 +41,20 @@ export default function homePage() {
         <div className="category">
           <Title content="Tendance actuelles" />
           <Slider data={trendingNow(data)} />
+        </div>
+        <div className="category">
+          <Title
+            content={
+              <p>
+                Les originaux Ciné<em>o</em>
+              </p>
+            }
+          />
+          <Slider large={true} data={originalsOnly(data)} />
+        </div>
+        <div className="category">
+          <Title content="Ils arrivent bientôt..." />
+          <Slider large={true} data={originalsOnly(data)} />
         </div>
       </section>
     </div>
