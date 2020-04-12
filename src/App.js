@@ -26,9 +26,9 @@ function App() {
         <Route exact path='/movies' component={MoviesPage} />
         <Route exact path='/series' component={SeriesPage} />
         <Route exact path='/my-list' component={MyListPage} />
-        <Route exact path="/profil" component={ProfilPage} />
-        <Route exact path="/player" component={PlayerPage} />
-        <Route exact path="/footer" component={Footer} />
+        <Route exact path='/profil' component={ProfilPage} />
+        <Route exact path='/player' component={PlayerPage} />
+        <Route exact path='/footer' component={Footer} />
 
       </Switch>
     </Router>
