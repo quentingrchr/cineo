@@ -137,22 +137,24 @@
 }
 
 .slider-large-container {
-  .item__cover {
-    height: 100%;
-  }
-  & .item:hover .show-details-button {
-    opacity: 1;
-  }
+  .slider {
+    .item__cover {
+      height: 100%;
+    }
+    & .item:hover .show-details-button {
+      opacity: 1;
+    }
 
-  & .item:hover {
-    transform: scale(1.25) !important;
-  }
+    & .item:hover {
+      transform: scale(1.25) !important;
+    }
 
-  &:hover .item {
-    transform: translateX(-12.5%);
-  }
+    &:hover .item {
+      transform: translateX(-12.5%);
+    }
 
-  & .item:hover ~ .item {
-    transform: translateX(12.5%);
+    & .item:hover ~ .item {
+      transform: translateX(12.5%);
+    }
   }
 }
