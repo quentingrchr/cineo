@@ -1,18 +1,20 @@
 @import "./variables.scss";
 // IMPORT ALL COMPONENTS SCSS HERE
-
-@import "./components/button/button.styles.scss";
-@import "./components/header/header.styles.scss";
-@import "./components/sign-in-up/SignInUp.style.scss";
-@import "./components/slider/slider.styles.scss";
-@import "./components/item/item.styles.scss";
-@import "./components/player/player.style.scss";
-@import "./components/profil/profil.style.scss";
-
-@import "./components/title/title.style.scss";
-
-@import "./components/footer/footer.styles.scss";
-@import "./components/top5/top5.styles.scss";
-
-@import "./pages/player/player-page.styles.scss";
+@import './components/button/button.styles.scss';
+@import './components/header/header.styles.scss';
+@import './components/sign-in-up/SignInUp.style.scss';
+@import './components/slider/slider.styles.scss';
+@import './components/item/item.styles.scss';
+@import './components/player/player.style.scss';
+@import './components/profil/profil.style.scss';
+@import './components/footer/footer.styles.scss';
+@import './components/title/title.style.scss';
+@import './components/top5/top5.styles.scss';
+@import './pages/series/series.styles.scss';
+@import './pages/movies/movies.styles.scss';
+@import './pages/player/player-page.styles.scss';
 @import "./pages/home/home.styles.scss";
+
+body {
+  overflow-x: hidden;
+}

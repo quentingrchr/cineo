@@ -1,8 +1,7 @@
 import React from 'react';
-import { PlayerContextProvider, PlayerContextConsumer } from './player.context';
+import { PlayerContextConsumer } from './player.context';
 import Video from './video/video.component';
 import Controler from './contoller/controler.compnent';
-import Exit from './contoller/exit/exit.component';
 
 export default class Player extends React.Component {
   constructor(props) {
@@ -25,7 +24,6 @@ export default class Player extends React.Component {
           >
             <Video source={videoSrc} />
             <Controler source={videoSrc} />
-            <Exit />
           </section>
         )}
       </PlayerContextConsumer>
