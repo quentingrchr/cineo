@@ -3,12 +3,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0 5%;
 }
 
 .player-page__content {
   color: $color-neutral-light;
   margin-top: 100px;
-  width: 90%;
+  width: 100%;
 }
 
 .player-page__back-to-home {
@@ -46,7 +47,6 @@
 }
 
 .description {
-  width: 150%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -54,6 +54,7 @@
   margin-top: 50px;
 
   @include large {
+    width: 150%;
     margin: 0;
     height: auto;
   }
@@ -210,12 +211,18 @@
 }
 
 .player-page__series-episodes {
-  width: 90%;
+  width: 100%;
   margin-top: 30px;
   flex-wrap: wrap;
   display: flex;
 
-  & button {
+  & div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 3px;
+    color: $color-neutral-light;
+    padding: 15px 0px;
     cursor: pointer;
     background-color: $color-neutral;
     width: 150px;
@@ -229,9 +236,9 @@
 }
 
 .player-page__slider {
-  margin-top: 50px;
+  margin: 50px 0px;
   height: 200px;
-  width: 90%;
+  width: 100%;
   display: flex;
   flex-direction: column;
 }
