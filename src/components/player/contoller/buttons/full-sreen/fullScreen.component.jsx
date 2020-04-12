@@ -24,10 +24,13 @@ export default class FullScreen extends React.Component {
     const { isFullScreen } = this.state;
     return (
       <PlayerContextConsumer>
-        {({ playerRef }) => (
+        {({ playerRef, isPlayerFullScreen }) => (
           <div className='controler__full-screen'>
             <button
-              onClick={() => this.handelClick(playerRef)}
+              onClick={() => {
+                this.handelClick(playerRef);
+                isPlayerFullScreen(!isFullScreen);
+              }}
               className={`${isFullScreen ? 'is-fullScreen' : ''}`}
             >
               <svg viewBox='0 0 24 24' className='exit-fullscreen'>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { createRef } from 'react';
+import { PlayerContextConsumer } from '../../player.context';
 
 export default class ProgressBar extends React.Component {
   constructor(props) {
@@ -50,8 +51,10 @@ export default class ProgressBar extends React.Component {
     }
   };
 
-  handelClick = (e) => {
-    let videoContainer = this.state.videoContainerElt.current;
+  handelClick = (e, setup, isFullScreen) => {
+    let videoContainerLeft = isFullScreen
+      ? 0
+      : this.state.videoContainerElt.current.offsetLeft;
     let videoElt = this.state.video.current;
     let progressBarWidth = this.progressBarRef.current.offsetWidth;
     let progressBarContainerOffsetLeft = this.progressBarContainerRef.current
@@ -60,15 +63,18 @@ export default class ProgressBar extends React.Component {
       e.clientX -
       (progressBarContainerOffsetLeft +
         this.state.controlerRef.current.offsetLeft +
-        videoContainer.offsetLeft);
+        videoContainerLeft);
     this.progressBarRef.current.value =
       (mousePosition * 100) / progressBarWidth;
     videoElt.currentTime =
       (videoElt.duration * this.progressBarRef.current.value) / 100;
+    console.log(isFullScreen);
   };
 
-  handelMove = (e) => {
-    let videoContainer = this.state.videoContainerElt.current;
+  handelMove = (e, setup, isFullScreen) => {
+    let videoContainerLeft = isFullScreen
+      ? 0
+      : this.state.videoContainerElt.current.offsetLeft;
     let videoElt = this.state.video.current;
     let progressBarWidth = this.progressBarRef.current.offsetWidth;
     let progressBarContainerOffsetLeft = this.progressBarContainerRef.current
@@ -77,7 +83,7 @@ export default class ProgressBar extends React.Component {
       e.clientX -
       (progressBarContainerOffsetLeft +
         this.state.controlerRef.current.offsetLeft +
-        videoContainer.offsetLeft);
+        videoContainerLeft);
     let effectiveTimeProgression = Math.floor(
       (videoElt.duration * mousePosition) / progressBarWidth
     );
@@ -95,33 +101,41 @@ export default class ProgressBar extends React.Component {
     this.progressBarEvolution();
 
     return (
-      <div
-        className='controler__progress-bar progress-bar'
-        ref={this.progressBarContainerRef}
-      >
-        <div className='progress-bar__infos infos' ref={this.infosRef}>
-          <video
-            className='infos__video'
-            src={videoSrc}
-            ref={this.infosVideoRef}
-          ></video>
-          <div className='infos__time' ref={this.infosTimeRef}></div>
-        </div>
-        <progress
-          className='progress-bar__bar'
-          value='0'
-          max='100'
-          ref={this.progressBarRef}
-          onClick={(e) => this.handelClick(e, e.nativeEvent.offsetX)}
-          onMouseMove={(e) => this.handelMove(e, e.nativeEvent.offsetX)}
-        ></progress>
-        <div
-          className='progress-bar__time--indication'
-          ref={this.timeIndicationRef}
-        >
-          00:00
-        </div>
-      </div>
+      <PlayerContextConsumer>
+        {({ isVideoFullScreen }) => (
+          <div
+            className='controler__progress-bar progress-bar'
+            ref={this.progressBarContainerRef}
+          >
+            <div className='progress-bar__infos infos' ref={this.infosRef}>
+              <video
+                className='infos__video'
+                src={videoSrc}
+                ref={this.infosVideoRef}
+              ></video>
+              <div className='infos__time' ref={this.infosTimeRef}></div>
+            </div>
+            <progress
+              className='progress-bar__bar'
+              value='0'
+              max='100'
+              ref={this.progressBarRef}
+              onClick={(e) =>
+                this.handelClick(e, e.nativeEvent.offsetX, isVideoFullScreen)
+              }
+              onMouseMove={(e) =>
+                this.handelMove(e, e.nativeEvent.offsetX, isVideoFullScreen)
+              }
+            ></progress>
+            <div
+              className='progress-bar__time--indication'
+              ref={this.timeIndicationRef}
+            >
+              00:00
+            </div>
+          </div>
+        )}
+      </PlayerContextConsumer>
     );
   }
 }
