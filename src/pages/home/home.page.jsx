@@ -21,15 +21,33 @@ export default function homePage() {
           alt="background"
         />
 
-        <div className="first-slider">
+        <div className="first-category">
           <Title content="Les nouvelles séries" />
           <Slider
             data={data.filter((movie) => {
-              return movie.type === "movie";
+              return movie.type === "serie";
             })}
           />
         </div>
       </div>
+      <section className="home-section">
+        <div className="category">
+          <Title content="Les nouveaux films" />
+          <Slider
+            data={data.reverse().filter((movie) => {
+              return movie.type === "movie";
+            })}
+          />
+        </div>
+        <div className="category">
+          <Title content="Tendance actuelles" />
+          <Slider
+            data={data.reverse().filter((movie) => {
+              return movie.type === "movie";
+            })}
+          />
+        </div>
+      </section>
     </div>
   );
 }
