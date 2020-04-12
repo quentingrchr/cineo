@@ -6,6 +6,7 @@ import Header from '../../components/header/header.component';
 import Button from '../../components/button/button.component';
 import Title from '../../components/title/title.component';
 import Slider from '../../components/slider/slider.component';
+import Footer from '../../components/footer/footer.component';
 import Video from '../../assets/video/sharknado-6-shark-vs-t-rex-trailer-new-2018-the-last-sharknado-movie-hd.mp4';
 
 import data from '../../data.json';
@@ -66,7 +67,7 @@ export default class playerPage extends Component {
           {({ videoContainerRef, play }) => (
             <div className='player-page' onClick={() => this.globalClick()}>
               <Header />
-              <div className='player-page__content' ref={videoContainerRef}>
+              <div className='player-page__content'>
                 <Link to='/home'>
                   <div className='player-page__back-to-home'>
                     <svg viewBox='0 0 21 16'>
@@ -76,7 +77,7 @@ export default class playerPage extends Component {
                   </div>
                 </Link>
                 <div className='player-page__video-description'>
-                  <div className='player-page__video'>
+                  <div className='player-page__video' ref={videoContainerRef}>
                     <Player source={Video} />
                   </div>
                   <div className='player-page__description description'>
@@ -132,7 +133,7 @@ export default class playerPage extends Component {
                           </li>
                         </ul>
                       )}
-                      <button className='button__download'>
+                      <div className='button__download'>
                         <svg
                           width='352'
                           height='448'
@@ -162,7 +163,7 @@ export default class playerPage extends Component {
                             stroke-linejoin='round'
                           />
                         </svg>
-                      </button>
+                      </div>
                     </div>
                     <p className='description__synopsis'>
                       <span>Synopsis</span>
@@ -177,13 +178,13 @@ export default class playerPage extends Component {
               </div>
               {!isMovie && (
                 <div className='player-page__series-episodes'>
-                  <Button content='Episode 1' />
-                  <Button content='Episode 2' />
-                  <Button content='Episode 3' />
-                  <Button content='Episode 4' />
-                  <Button content='Episode 5' />
-                  <Button content='Episode 6' />
-                  <Button content='Episode 7' />
+                  <div>Episode 1</div>
+                  <div>Episode 2</div>
+                  <div>Episode 3</div>
+                  <div>Episode 4</div>
+                  <div>Episode 5</div>
+                  <div>Episode 6</div>
+                  <div>Episode 7</div>
                 </div>
               )}
               <div className='player-page__slider'>
@@ -192,10 +193,14 @@ export default class playerPage extends Component {
                 />
                 <Slider
                   data={data.filter((movie) => {
-                    return movie.type === 'serie';
+                    return (
+                      movie.type ===
+                      data.filter((el) => el.imdbID === this.state.id)[0].type
+                    );
                   })}
                 />
               </div>
+              <Footer />
             </div>
           )}
         </PlayerContextConsumer>

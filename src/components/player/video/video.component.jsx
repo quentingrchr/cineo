@@ -20,6 +20,7 @@ export default class Video extends React.Component {
             src={videoSrc}
             className='player__video'
             onTimeUpdate={() => videoCurrentTime()}
+            poster='../../../assets/pictures/cinema-1.jpg'
           ></video>
         )}
       </PlayerContextConsumer>
