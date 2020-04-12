@@ -1,0 +1,15 @@
+.series {
+  &__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  }
+  &__title {
+    font-size: 100px;
+    font-weight: 600;
+    opacity: 0.8;
+    color: $color-neutral-light;
+    text-align: center;
+  }
+}

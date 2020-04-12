@@ -9,6 +9,9 @@
 @import './components/player/player.style.scss';
 @import './components/profil/profil.style.scss';
 @import './components/footer/footer.styles.scss';
+@import './pages/series/series.styles.scss';
+@import './pages/movies/movies.styles.scss';
 
-
-
+body {
+  overflow-x: hidden;
+}
