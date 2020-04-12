@@ -4,16 +4,20 @@ import { PlayerContextConsumer } from '../player.context';
 export default class Video extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      videoSrc: this.props.source,
+    };
   }
 
   render() {
+    const { videoSrc } = this.state;
+
     return (
       <PlayerContextConsumer>
         {({ videoRef, videoCurrentTime }) => (
           <video
             ref={videoRef}
-            src={this.props.source}
+            src={videoSrc}
             className='player__video'
             onTimeUpdate={() => videoCurrentTime()}
           ></video>

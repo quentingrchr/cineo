@@ -4,20 +4,31 @@ import Video from './video/video.component';
 import Controler from './contoller/controler.compnent';
 import Exit from './contoller/exit/exit.component';
 
-export default (props) => (
-  <PlayerContextProvider>
-    <PlayerContextConsumer>
-      {({ playerRef, mouseMove }) => (
-        <section
-          className='player'
-          ref={playerRef}
-          onMouseMove={() => mouseMove()}
-        >
-          <Video source={props.source} />
-          <Controler source={props.source} />
-          <Exit />
-        </section>
-      )}
-    </PlayerContextConsumer>
-  </PlayerContextProvider>
-);
+export default class Player extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      videoSrc: this.props.source,
+    };
+  }
+
+  render() {
+    const { videoSrc } = this.state;
+
+    return (
+      <PlayerContextConsumer>
+        {({ playerRef, mouseMove }) => (
+          <section
+            className='player'
+            ref={playerRef}
+            onMouseMove={() => mouseMove()}
+          >
+            <Video source={videoSrc} />
+            <Controler source={videoSrc} />
+            <Exit />
+          </section>
+        )}
+      </PlayerContextConsumer>
+    );
+  }
+}

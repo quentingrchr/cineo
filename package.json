@@ -12,6 +12,7 @@
     "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
     "react-swipe": "^6.0.4",
+    "react-waypoint": "^9.0.2",
     "swipe-js-iso": "^2.1.5"
   },
   "scripts": {

@@ -1,8 +1,16 @@
 .controler__full-screen button {
-  width: 50px;
+  width: 40px;
   cursor: pointer;
   background-color: rgba(0, 0, 0, 0);
   border: none;
+
+  &:hover {
+    transform: scale(120%);
+  }
+
+  &:active {
+    transform: scale(0.9);
+  }
 
   & svg {
     fill: $color-neutral-light;

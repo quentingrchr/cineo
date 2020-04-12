@@ -1,3 +1,9 @@
+@mixin large {
+  @media (min-width: 1100px) {
+    @content;
+  }
+}
+
 $color-neutral-light: #e3e3e3;
 $color-neutral-dark: #0e0e0e;
 $color-primary: #16a3cf;
