@@ -1,7 +1,5 @@
 @import "./variables.scss";
 // IMPORT ALL COMPONENTS SCSS HERE
-
-
 @import './components/button/button.styles.scss';
 @import './components/header/header.styles.scss';
 @import './components/sign-in-up/SignInUp.style.scss';
@@ -15,6 +13,7 @@
 @import './pages/series/series.styles.scss';
 @import './pages/movies/movies.styles.scss';
 @import './pages/player/player-page.styles.scss';
+@import "./pages/home/home.styles.scss";
 
 body {
   overflow-x: hidden;
