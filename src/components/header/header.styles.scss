@@ -29,6 +29,9 @@
 
   & li {
     cursor: pointer;
+    &:hover {
+      text-decoration: underline;
+    }
     a {
       color: $color-neutral-light;
       text-decoration: none;
@@ -149,6 +152,10 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+
+  & > p:hover {
+    text-decoration: underline;
+  }
 
   & svg {
     margin-right: 10px;
