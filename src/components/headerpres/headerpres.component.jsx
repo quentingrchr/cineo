@@ -1,16 +1,19 @@
 import React from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+
 
 export default function HeaderPres() {
   return (
     <div className='headerpres__container'>
       <div className='headerpres'>
         <div className='cta__subscribe cta'>
-          <p>Souscrire à une offre</p>
+          <a href='#offers'>Souscrire à une offre</a>
         </div>
-        <div className='cta__connection cta'>
-          <p>Connexion</p>
-        </div>
+        <a className='cta__connection cta'>
+          <div> <Link to="/sign-in-up">
+            Connexion
+          </Link> </div>
+        </a>
       </div>
       <div className='headerpres__background'></div>
     </div>
