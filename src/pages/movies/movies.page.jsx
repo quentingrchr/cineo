@@ -9,6 +9,7 @@ import {
   quarantined,
   animationMoviesOnly,
   actionMoviesOnly,
+  moviesOnly,
 } from "../../data.utils";
 import data from "../../data.json";
 import Top5 from "../../components/top5/top5Section.component";
@@ -29,11 +30,7 @@ export default function moviesPage() {
         </div>
         <div className="movies__section">
           <Title content="Nouveaux films" />
-          <Slider
-            data={data.filter((movie) => {
-              return movie.type === "movie";
-            })}
-          />
+          <Slider data={moviesOnly(data)} />
         </div>
         <div className="movies__section">
           <Title content="Films d animation" />

@@ -13,7 +13,7 @@ export const lastReleases = (array, type = "movie", nb = 6) => {
 };
 
 export const moviesOnly = (array, nb = 8) => {
-  let res = array.filter((el) => el.type === "movie");
+  let res = array.filter((el) => el.type === "movie" && el.original === "");
   return res.slice(0, nb);
 };
 
