@@ -1,9 +1,13 @@
 @keyframes sliding-slider {
-  from {
+  0% {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
   }
-  to {
+  99% {
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  100% {
+    clip-path: none;
   }
 }
 
@@ -169,10 +173,10 @@
 }
 
 .slider-large-container {
-  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  // clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 
   &.visible {
-    animation: sliding-slider 1.5s ease forwards;
+    // animation: sliding-slider 1.5s ease forwards;
   }
   .slider {
     .item__cover {
