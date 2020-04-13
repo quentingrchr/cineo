@@ -18,8 +18,8 @@ export default function PresPage() {
               <h1>Ciné</h1>
               <span>o</span>
             </div>
-            <h3 className=''><span className='title__c'>Ciné</span><span className='title__o'>o</span> c’est avant tout du divertissement en continu</h3>
-            <h3 className=''>Plusieurs offres à partir de <span className='text__price'>7,99</span>€/mois</h3>
+            <h3 className='bold'><span className='title__c'>Ciné</span><span className='title__o'>o</span> c’est avant tout du divertissement en continu</h3>
+            <h3 className='bold'>Plusieurs offres à partir de <span className='text__price'>7,99</span>€/mois</h3>
             <div className='cta__container'>
               <a href='#offers' className='cta__see'>Voir nos offres</a>
             </div>
