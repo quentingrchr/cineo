@@ -14,7 +14,7 @@ export default function moviesPage() {
       <div className='movies__container'>
         <h1 className='movies__title'>Films</h1>
         <div className='movies__section'>
-          <Title content='Les plus gros succès Cinéo' />
+          <Title content='Spécial "confinement"' />
           <Slider
             data={data.filter((movie) => {
               return movie.type === 'movie';
@@ -22,7 +22,7 @@ export default function moviesPage() {
           />
         </div>
         <div className='movies__section large__slider'>
-          <Title content='Les séries originales Cinéo' />
+          <Title content='Les films originaux Cinéo' />
           <Slider
             large={true}
             data={data.filter((movie) => {
@@ -31,7 +31,7 @@ export default function moviesPage() {
           />
         </div>
         <div className='movies__section'>
-          <Title content='Nouvelles séries' />
+          <Title content='Nouveaux films' />
           <Slider
             data={data.filter((movie) => {
               return movie.type === 'movie';
@@ -39,7 +39,7 @@ export default function moviesPage() {
           />
         </div>
         <div className='movies__section'>
-          <Title content='Animés' />
+          <Title content='Films animation' />
           <Slider
             data={data.filter((movie) => {
               return movie.type === 'movie';
@@ -47,7 +47,7 @@ export default function moviesPage() {
           />
         </div>
         <div className='movies__section'>
-          <Title content='Documentaire' />
+          <Title content='Films action' />
           <Slider
             data={data.filter((movie) => {
               return movie.type === 'movie';

@@ -170,6 +170,10 @@
   align-items: center;
   padding: 0;
 
+  &:hover {
+    cursor: pointer;
+  }
+
   & svg {
     width: 40px;
     height: 30px;
@@ -189,7 +193,7 @@
 }
 
 .description__synopsis {
-  line-height: 1.3rem;
+  line-height: 1.5rem;
 
   & span {
     text-decoration: underline;

@@ -13,13 +13,13 @@ export default function PresPage() {
       <HeaderPres />
       <div className='presentation__page__content'>
         <section className='presentation__section'>
-          <div className='text__container'>
+          <div className='text__container__large'>
             <div className='presentation__title'>
               <h1>Ciné</h1>
               <span>o</span>
             </div>
-            <h3 className='text__bold'><span className='title__c'>Ciné</span><span className='title__o'>o</span> c’est avant tout du divertissement en continu</h3>
-            <h3 className='text__bold'>Plusieurs offres à partir de <span className='text__price'>7,99</span>€/mois</h3>
+            <h3 className=''><span className='title__c'>Ciné</span><span className='title__o'>o</span> c’est avant tout du divertissement en continu</h3>
+            <h3 className=''>Plusieurs offres à partir de <span className='text__price'>7,99</span>€/mois</h3>
             <div className='cta__container'>
               <a href='#offers' className='cta__see'>Voir nos offres</a>
             </div>
