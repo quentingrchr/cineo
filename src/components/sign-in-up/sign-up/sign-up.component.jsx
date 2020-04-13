@@ -110,7 +110,7 @@ export default class SignUp extends React.Component {
           </div>
         </div>
         <form className='signup__form' onSubmit={this.handelSubmit}>
-          <div>
+          <div className='form__content'>
             <div className='form__part form__left'>
               <div className='form__left__lastname form__component'>
                 <p>Nom</p>
@@ -130,8 +130,6 @@ export default class SignUp extends React.Component {
                   onChange={this.handelChangeFirstname}
                 ></input>
               </div>
-            </div>
-            <div className='form__part form__right'>
               <div className='form__right__email form__component'>
                 <p>Email</p>
                 <input
@@ -141,6 +139,8 @@ export default class SignUp extends React.Component {
                   onChange={this.handelChangeMail}
                 ></input>
               </div>
+            </div>
+            <div className='form__part form__right'>
               <div className='form__right__emailconf form__component'>
                 <p>Confirmer votre e-mail</p>
                 <input

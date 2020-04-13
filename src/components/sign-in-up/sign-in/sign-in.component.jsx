@@ -80,7 +80,7 @@ export default class SignIn extends React.Component {
           <input
             className='submit'
             type='submit'
-            value='connexion'
+            value='Connexion'
             disabled={mailValue.length === 0 || passwordValue.length === 0}
           ></input>
           <Link to='/home'>
