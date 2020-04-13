@@ -79,6 +79,7 @@ export default class Slider extends Component {
                         seasons={el.seasons}
                         duration={el.duration}
                         posterUrl={el.posterUrl}
+                        tagline={el.tagline}
                       />
                     );
                   })}
