@@ -1,22 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
       mailValue: '',
       passwordValue: '',
       isConnected: false,
-
     };
   }
 
-  handelChangeMail = e => {
+  handelChangeMail = (e) => {
     this.setState({ mailValue: e.target.value });
   };
-  handelChangePassword = e => {
+  handelChangePassword = (e) => {
     this.setState({ passwordValue: e.target.value });
   };
 
@@ -51,13 +49,13 @@ export default class SignIn extends React.Component {
     console.log(isConnected);
 
     return (
-      <div className="registerbox__container registerbox">
-        <div className="registerbox__nav">
-          <div className="registerbox__nav--signin">
+      <div className='registerbox__container registerbox'>
+        <div className='registerbox__nav'>
+          <div className='registerbox__nav--signin'>
             <p>Se connecter</p>
           </div>
           <div
-            className="registerbox__nav--signup"
+            className='registerbox__nav--signup'
             onClick={() => this.handelClick()}
           >
             <p>Créer un compte</p>
@@ -65,15 +63,15 @@ export default class SignIn extends React.Component {
         </div>
         <form className='registerbox__content' onSubmit={this.handelSubmit}>
           <input
-            className="registerbox__input1 registerbox__input"
-            type="text"
-            placeholder="E-mail"
+            className='registerbox__input1 registerbox__input'
+            type='text'
+            placeholder='E-mail'
             onChange={this.handelChangeMail}
           ></input>
           <input
-            className="registerbox__input2 registerbox__input"
-            type="password"
-            placeholder="Mot de passe"
+            className='registerbox__input2 registerbox__input'
+            type='password'
+            placeholder='Mot de passe'
             onChange={this.handelChangePassword}
           ></input>
 
