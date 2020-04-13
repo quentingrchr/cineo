@@ -38,12 +38,34 @@
   overflow: hidden;
 
   .hero-logo {
+    display: flex;
+    flex-direction: column;
     position: absolute;
     opacity: 0;
     left: 10%;
-    top: 25%;
+    transform: translateY(-70px);
     animation: falling-logo 0.5s 1.5s forwards ease-out;
     z-index: 3;
+
+    .btn {
+      margin-top: 20px;
+      border-radius: 4px;
+      font-size: 20px;
+      font-weight: 700;
+      background-color: transparent;
+      border: 2px solid $color-neutral-light;
+      color: $color-neutral-light;
+      width: 200px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &:hover {
+        background-color: $color-neutral-light;
+        color: $color-neutral-dark;
+      }
+    }
   }
 
   .video {

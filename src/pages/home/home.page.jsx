@@ -12,6 +12,7 @@ import {
 } from "../../data.utils";
 
 import ComingSoon from "../../components/coming-soon/coming-soon.component";
+import Button from "../../components/button/button.component";
 import Header from "../../components/header/header.component";
 import Slider from "../../components/slider/slider.component";
 import Title from "../../components/title/title.component";
@@ -39,7 +40,11 @@ export default class GomePage extends Component {
         <Header />
         <div className="hero-home">
           <div className="hero-gradient"></div>
-          <img src={CasaTitle} className="hero-logo" alt="title" />
+          <div className="hero-logo">
+            <img src={CasaTitle} alt="title" />
+            <div className="btn">Regarder</div>
+          </div>
+
           <video
             loop
             className={`video ${this.state.videoIsVisible ? "visible" : ""}`}
