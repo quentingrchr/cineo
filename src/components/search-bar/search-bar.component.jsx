@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import data from "../../data.json";
 import { searchByName } from "../../data.utils";
 
-import SearchBarItem from "./searc-bar-item.component";
+import SearchBarItem from "./search-bar-item.component";
 import SearchBarItemThumbnail from "./search-bar-item-thumbnail.component";
 
 export default class SearchBar extends Component {

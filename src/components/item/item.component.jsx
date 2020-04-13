@@ -16,6 +16,7 @@ const Item = ({
   seasons,
   large,
   posterUrl,
+  tagline,
 }) => (
   <SliderContextConsumer>
     {({ itemRef }) => (
@@ -45,8 +46,11 @@ const Item = ({
           {!large && (
             <div className="item__content">
               <h1>{title}</h1>
+              <p className="tagline">{tagline}</p>
               <p className="genre">{genre}</p>
-              <p>{seasons ? `${seasons} saisons` : duration}</p>
+              <p className="seasons">
+                {seasons ? `${seasons} saisons` : duration}
+              </p>
             </div>
           )}
         </Link>
