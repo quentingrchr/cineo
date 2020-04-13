@@ -37,8 +37,9 @@ export const trendingNow = (array, nb = 8) => {
   return res.slice(0, nb);
 };
 
-export const searchByName = (array, string, nb = 8) => {
+export const searchByTitle = (array, string, nb = 8) => {
   if (string.length < 3) return [];
+
   var checkTitle = (name, string) => {
     var pattern = string
       .split("")
@@ -51,8 +52,15 @@ export const searchByName = (array, string, nb = 8) => {
   };
 
   var filteredArr = array.filter((x) => {
-    var xSub = x.title.substring(0, 3).toLowerCase();
-    return x.title.toLowerCase().includes(string) || checkTitle(xSub, string);
+    if (x.type !== "soon") {
+      var xSub = x.title.substring(0, 3).toLowerCase();
+      return x.title.toLowerCase().includes(string) || checkTitle(xSub, string);
+    }
   });
   return filteredArr;
+};
+
+export const comingSoon = (array, string, nb = 8) => {
+  let res = array.filter((el) => el.type === "soon");
+  return res.slice(0, nb);
 };

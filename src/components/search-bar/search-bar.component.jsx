@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import data from "../../data.json";
-import { searchByName } from "../../data.utils";
+import { searchByTitle } from "../../data.utils";
 
 import SearchBarItem from "./search-bar-item.component";
 import SearchBarItemThumbnail from "./search-bar-item-thumbnail.component";
@@ -28,7 +28,7 @@ export default class SearchBar extends Component {
       this.setState(
         {
           ...this.state,
-          filteredSearch: searchByName(data, this.state.search.toLowerCase()),
+          filteredSearch: searchByTitle(data, this.state.search.toLowerCase()),
         },
         () => {
           console.log(this.state);

@@ -8,11 +8,14 @@ import {
   seriesOnly,
   trendingNow,
   originalsOnly,
+  comingSoon,
 } from "../../data.utils";
 
+import ComingSoon from "../../components/coming-soon/coming-soon.component";
 import Header from "../../components/header/header.component";
 import Slider from "../../components/slider/slider.component";
 import Title from "../../components/title/title.component";
+import Footer from "../../components/footer/footer.component";
 import CasaBackground from "../../assets/img/casa-bg.png";
 import CasaTitle from "../../assets/img/casa.png";
 
@@ -77,9 +80,10 @@ export default class GomePage extends Component {
           </div>
           <div className="category">
             <Title content="Ils arrivent bientôt..." />
-            <Slider large={true} data={originalsOnly(data)} />
+            <ComingSoon data={comingSoon(data)} />
           </div>
         </section>
+        <Footer />
       </div>
     );
   }
