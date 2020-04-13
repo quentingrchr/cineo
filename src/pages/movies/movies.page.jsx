@@ -13,11 +13,13 @@ import {
 } from "../../data.utils";
 import data from "../../data.json";
 import Top5 from "../../components/top5/top5Section.component";
+import Category from "../../components/category/category.component";
 
 export default function moviesPage() {
   return (
     <div className="movies__page">
       <Header />
+      <Category li1={"Animé"} li2={"Documentaire"} li3={"Français"} li4={"Internationnal"} li5={"Jeunesse"} li6={"Thriller"}/>
       <div className="movies__container">
         <h1 className="movies__title">Films</h1>
         <div className="movies__section">

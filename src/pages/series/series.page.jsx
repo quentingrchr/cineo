@@ -11,11 +11,13 @@ import {
 } from "../../data.utils";
 import data from "../../data.json";
 import Top5 from "../../components/top5/top5Section.component";
+import Category from "../../components/category/category.component";
 
 export default function seriesPage() {
   return (
     <div className="series__page">
       <Header />
+      <Category li1={"Action"} li2={"Comédie"} li3={"Drame"} li4={"Horreur"} li5={"Internationnal"} li6={"Romance"}/>
       <div className="series__container">
         <h1 className="series__title">Séries</h1>
         <div className="series__section">
