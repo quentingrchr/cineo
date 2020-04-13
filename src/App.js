@@ -11,6 +11,7 @@ import ProfilPage from "./pages/profil/profil.pages";
 import DevQuentin from "./pages/dev-quentin/dev-quentin";
 import PlayerPage from "./pages/player/player.page";
 import Footer from "./pages/footer/footer.page";
+import PresPage from "./pages/prespage/prespage.page";
 
 import "./styles.scss";
 
@@ -24,6 +25,7 @@ function App() {
       <Switch>
         <Route exact path="/dev-quentin" component={DevQuentin} />
         <Route exact path="/home" component={HomePage} />
+        <Route exact path="/pres" component={PresPage} />
         <Route exact path="/sign-in-up" component={SignInUpPage} />
         <Route exact path="/movies" component={MoviesPage} />
         <Route exact path="/series" component={SeriesPage} />
