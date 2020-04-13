@@ -7,6 +7,7 @@ export default class SignIn extends React.Component {
     this.state = {
       mailValue: '',
       passwordValue: '',
+      isConnected: false,
     };
   }
 
@@ -21,10 +22,31 @@ export default class SignIn extends React.Component {
     this.props.click();
   };
 
+  handelSubmit = (e) => {
+    e.preventDefault();
+
+    let infosUsers = {};
+    infosUsers.mail = this.state.mailValue;
+    infosUsers.password = this.state.passwordValue;
+
+    fetch('http://18.191.118.60:80/signIn.php', {
+      method: 'POST',
+      body: JSON.stringify(infosUsers),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        data.success
+          ? this.setState({ isConnected: true })
+          : this.setState({ isConnected: false });
+      });
+  };
+
   render() {
-    const { mailValue, passwordValue } = this.state;
-    console.log(passwordValue);
-    console.log(mailValue);
+    const { mailValue, passwordValue, isConnected } = this.state;
+    console.log(isConnected);
 
     return (
       <div className='registerbox__container registerbox'>
@@ -39,7 +61,7 @@ export default class SignIn extends React.Component {
             <p>Créer un compte</p>
           </div>
         </div>
-        <div className='registerbox__content'>
+        <form className='registerbox__content' onSubmit={this.handelSubmit}>
           <input
             className='registerbox__input1 registerbox__input'
             type='text'
@@ -52,15 +74,18 @@ export default class SignIn extends React.Component {
             placeholder='Mot de passe'
             onChange={this.handelChangePassword}
           ></input>
-          <div className='registerbox__cta'>
-            <p>Connexion</p>
-          </div>
+          <input
+            className='submit'
+            type='submit'
+            value='connexion'
+            disabled={mailValue.length === 0 || passwordValue.length === 0}
+          ></input>
           <Link to='/home'>
             <p className='registerbox__withoutlogin'>
               Accéder au site sans compte
             </p>
           </Link>
-        </div>
+        </form>
       </div>
     );
   }
