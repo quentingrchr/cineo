@@ -68,8 +68,68 @@
   display: flex;
   align-items: center;
 
+  .search-content-wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
   & svg {
     margin-right: 10px;
+  }
+
+  .list {
+    background-color: $color-neutral-dark;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    height: 200px;
+    border-radius: 1px;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      margin: 5px 5px;
+
+      li {
+        a {
+          width: 100%;
+          height: 100%;
+        }
+        margin-bottom: 20px;
+        cursor: pointer;
+        &:hover {
+          color: $color-primary;
+        }
+        p {
+          font-size: 12px;
+          font-weight: 300;
+        }
+      }
+
+      .thumbnail {
+        height: 20px;
+        width: 100%;
+
+        h3 {
+          border-radius: 2px;
+          background-color: rgba($color: $color-neutral-light, $alpha: 0.1);
+          width: 100%;
+          display: block;
+          height: 16px;
+          margin-bottom: 2px;
+        }
+        p {
+          background-color: rgba($color: $color-neutral-light, $alpha: 0.1);
+          border-radius: 2px;
+          display: block;
+          width: 80%;
+          height: 12px;
+        }
+      }
+    }
   }
 
   & input {
