@@ -25,7 +25,7 @@ export default class ComingSoon extends Component {
                 <h2>
                   J -<em>{countdown}</em>
                 </h2>
-                <img src={movie.posterUrl} />
+                <img src={movie.posterUrl} alt="poster movie" />
               </div>
             );
           })}

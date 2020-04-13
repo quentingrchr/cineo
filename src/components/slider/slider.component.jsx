@@ -24,7 +24,7 @@ export default class Slider extends Component {
   handlePrev = (element) => {
     if (this.state.position <= 0) return;
     let itemWidth = element.current.offsetWidth;
-    this.setState({ ...this.state, position: this.state.position-- });
+    this.setState({ ...this.state, position: this.state.position - 1 });
     this.setState({
       ...this.state,
       offset:
@@ -36,7 +36,10 @@ export default class Slider extends Component {
 
   handleNext = (element) => {
     if (this.state.position >= this.state.nbViewports) return;
-    this.setState({ ...this.state, position: this.state.position++ }, () => {});
+    this.setState(
+      { ...this.state, position: this.state.position + 1 },
+      () => {}
+    );
     let itemWidth = element.current.offsetWidth;
     this.setState({
       ...this.state,
