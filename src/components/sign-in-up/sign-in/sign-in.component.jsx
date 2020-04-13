@@ -5,18 +5,16 @@ export default class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
-      mailValue: '',
-      passwordValue: '',
+      mailValue: "",
+      passwordValue: "",
       isConnected: false,
-
     };
   }
 
-  handelChangeMail = e => {
+  handelChangeMail = (e) => {
     this.setState({ mailValue: e.target.value });
   };
-  handelChangePassword = e => {
+  handelChangePassword = (e) => {
     this.setState({ passwordValue: e.target.value });
   };
 
@@ -31,8 +29,8 @@ export default class SignIn extends React.Component {
     infosUsers.mail = this.state.mailValue;
     infosUsers.password = this.state.passwordValue;
 
-    fetch('http://18.191.118.60:80/signIn.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/signIn.php", {
+      method: "POST",
       body: JSON.stringify(infosUsers),
     })
       .then((response) => {
@@ -63,7 +61,7 @@ export default class SignIn extends React.Component {
             <p>Créer un compte</p>
           </div>
         </div>
-        <form className='registerbox__content' onSubmit={this.handelSubmit}>
+        <form className="registerbox__content" onSubmit={this.handelSubmit}>
           <input
             className="registerbox__input1 registerbox__input"
             type="text"
@@ -78,13 +76,13 @@ export default class SignIn extends React.Component {
           ></input>
 
           <input
-            className='submit'
-            type='submit'
-            value='connexion'
+            className="submit"
+            type="submit"
+            value="connexion"
             disabled={mailValue.length === 0 || passwordValue.length === 0}
           ></input>
-          <Link to='/home'>
-            <p className='registerbox__withoutlogin'>
+          <Link to="/">
+            <p className="registerbox__withoutlogin">
               Accéder au site sans compte
             </p>
           </Link>
