@@ -24,7 +24,7 @@ export default function PresPage() {
               <a href='#offers' className='cta__see'>Voir nos offres</a>
             </div>
             <h3 className='text__long'> <span className='title__c'>Ciné</span><span className='title__o'>o</span> réunit des grands succès aux inoubliables classiques de tous les types : 
-              séries, émissions et films exclusifs à Cinéo Originals. 
+              séries, émissions et films exclusifs à <span className='title__c'>Ciné</span><span className='title__o'>o</span> Originals. 
               <br/>Il y en a pour tous les goûts pour que toute la famille puisse en profiter</h3>
           </div>
           <div>
