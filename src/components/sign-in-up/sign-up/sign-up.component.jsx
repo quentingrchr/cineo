@@ -5,11 +5,14 @@ export default class SignUp extends React.Component {
     super(props);
     this.state = {
       mailValue: '',
+      confirmMailValue: '',
       passwordValue: '',
+      confirmPasswordValue: '',
       lastnameValue: '',
       firstnameValue: '',
-      dateValue: '',
-      civilityValue: '',
+      isMailvalid: true,
+      isPasswordvalid: true,
+      isMailAlreadyExist: false,
     };
   }
   handelClick = () => this.props.click();
@@ -18,8 +21,16 @@ export default class SignUp extends React.Component {
     this.setState({ mailValue: e.target.value });
   };
 
+  handelChangeConfirmMail = (e) => {
+    this.setState({ confirmMailValue: e.target.value });
+  };
+
   handelChangePassword = (e) => {
     this.setState({ passwordValue: e.target.value });
+  };
+
+  handelChangeConfirmPassword = (e) => {
+    this.setState({ confirmPasswordValue: e.target.value });
   };
 
   handelChangeLastname = (e) => {
@@ -30,15 +41,61 @@ export default class SignUp extends React.Component {
     this.setState({ firstnameValue: e.target.value });
   };
 
-  handelChangeDate = (e) => {
-    this.setState({ dateValue: e.target.value });
+  checkMail = () => {
+    this.state.mailValue === this.state.confirmMailValue
+      ? this.setState({ isMailvalid: true })
+      : this.setState({ isMailvalid: false });
+    console.log(this.state.isMailvalid);
   };
 
-  hendelChangeCivility = (e) => {
-    this.setState({ civilityValue: e.target.value });
+  checkPassword = () => {
+    this.state.passwordValue === this.state.confirmPasswordValue
+      ? this.setState({ isPasswordvalid: true })
+      : this.setState({ isPasswordvalid: false });
+    console.log(this.state.isPasswordvalid);
+  };
+
+  handelSubmit = (e) => {
+    e.preventDefault();
+
+    let datas = {};
+
+    datas.name = this.state.lastnameValue;
+    datas.firstName = this.state.firstnameValue;
+    datas.mail = this.state.mailValue;
+    datas.password = this.state.passwordValue;
+
+    fetch('http://18.191.118.60:80/signUp.php', {
+      method: 'POST',
+      body: JSON.stringify(datas),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+
+        if (data.message) {
+          this.setState({ isMailAlreadyExist: true });
+        }
+      });
   };
 
   render() {
+    const {
+      mailValue,
+      confirmMailValue,
+      passwordValue,
+      confirmPasswordValue,
+      lastnameValue,
+      firstnameValue,
+      isMailvalid,
+      isPasswordvalid,
+      isMailAlreadyExist,
+    } = this.state;
+
+    console.log(isMailAlreadyExist);
+
     return (
       <div className='signup__content'>
         <div className='signup__nav'>
@@ -52,80 +109,83 @@ export default class SignUp extends React.Component {
             <p>Créer un compte</p>
           </div>
         </div>
-        <form className='signup__form'>
-          <div className='form__part form__left'>
-            <div className='form__left__civility form__component'>
-              <p>Civilité</p>
-              <label for='mr'>Mr</label>
-              <input
-                type='radio'
-                id='mr'
-                value='mr'
-                name='civility'
-                checked
-              ></input>
-              <label for='mme'>Mme</label>
-              <input type='radio' id='mme' value='mme' name='civility'></input>
+        <form className='signup__form' onSubmit={this.handelSubmit}>
+          <div>
+            <div className='form__part form__left'>
+              <div className='form__left__lastname form__component'>
+                <p>Nom</p>
+                <input
+                  type='text'
+                  placeholder=''
+                  value={lastnameValue}
+                  onChange={this.handelChangeLastname}
+                ></input>
+              </div>
+              <div className='form__left__firstname form__component'>
+                <p>Prénom</p>
+                <input
+                  type='text'
+                  placeholder=''
+                  value={firstnameValue}
+                  onChange={this.handelChangeFirstname}
+                ></input>
+              </div>
             </div>
-            <div className='form__left__lastname form__component'>
-              <p>Nom</p>
-              <input
-                type='text'
-                placeholder=''
-                onChange={this.handelChangeLastname}
-              ></input>
-            </div>
-            <div className='form__left__firstname form__component'>
-              <p>Prénom</p>
-              <input
-                type='text'
-                placeholder=''
-                onChange={this.handelChangeFirstname}
-              ></input>
-            </div>
-            <div className='form__left__birthdate form__component'>
-              <p>Date de naissance</p>
-              <input type='date' onChange={this.handelChangeDate}></input>
-            </div>
-          </div>
-          <div className='form__part form__right'>
-            <div className='form__right__email form__component'>
-              <p>Email</p>
-              <input
-                type='text'
-                placeholder='exemple@abc.com'
-                onChange={this.handelChangeMail}
-              ></input>
-            </div>
-            <div className='form__right__emailconf form__component'>
-              <p>Confirmer votre e-mail</p>
-              <input
-                type='text'
-                placeholder='exemple@abc.com'
-                onChange={this.handelChangePassword}
-              ></input>
-            </div>
-            <div className='form__right__password form__component'>
-              <p>Mot de passe</p>
-              <input
-                type='password'
-                placeholder=''
-                onChange={this.handelChangePassword}
-              ></input>
-            </div>
-            <div className='form__right__passwordconf form__component'>
-              <p>Confirmer votre mot de passe</p>
-              <input
-                type='password'
-                onChange={this.handelChangePassword}
-              ></input>
+            <div className='form__part form__right'>
+              <div className='form__right__email form__component'>
+                <p>Email</p>
+                <input
+                  type='text'
+                  placeholder='exemple@abc.com'
+                  value={mailValue}
+                  onChange={this.handelChangeMail}
+                ></input>
+              </div>
+              <div className='form__right__emailconf form__component'>
+                <p>Confirmer votre e-mail</p>
+                <input
+                  type='text'
+                  placeholder='exemple@abc.com'
+                  value={confirmMailValue}
+                  onChange={this.handelChangeConfirmMail}
+                  onBlur={this.checkMail}
+                ></input>
+                {!isMailvalid && <div class='warning'>Mail invalide</div>}
+              </div>
+              <div className='form__right__password form__component'>
+                <p>Mot de passe</p>
+                <input
+                  type='password'
+                  value={passwordValue}
+                  onChange={this.handelChangePassword}
+                ></input>
+              </div>
+              <div className='form__right__passwordconf form__component'>
+                <p>Confirmer votre mot de passe</p>
+                <input
+                  type='password'
+                  value={confirmPasswordValue}
+                  onChange={this.handelChangeConfirmPassword}
+                  onBlur={this.checkPassword}
+                ></input>
+                {!isPasswordvalid && (
+                  <div className='warning'>Mot de passe invalide</div>
+                )}
+              </div>
             </div>
           </div>
+          <input
+            className='submit'
+            type='submit'
+            disabled={
+              (!isMailvalid && !isPasswordvalid) ||
+              mailValue.length === 0 ||
+              passwordValue.length === 0 ||
+              lastnameValue.length === 0 ||
+              firstnameValue.length === 0
+            }
+          ></input>
         </form>
-        <div className='ctas'>
-          <input type='submit'></input>
-          <input type='reset'></input>
-        </div>
       </div>
     );
   }
