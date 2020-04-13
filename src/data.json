@@ -1,43 +1,5 @@
 [
   {
-    "title": "Shaft",
-    "year": 2019,
-    "duration": "1h 51min",
-    "type": "movie",
-    "genre": "Action, Comedie, Crime",
-    "director": "Tim Story",
-    "writer": "Ernest Tidyman",
-    "stars": "Samuel L. Jackson, Jessie T. Usher, Richard Roundtree ",
-    "imdbID": 4463894,
-    "pitch": "JJ Shaft, un expert en cybersécurité diplômé du MIT, sollicite l’aide de sa famille pour découvrir la vérité derrière la mort prématurée de son meilleur ami.",
-    "hoverCoverUrl": "https://occ-0-4164-768.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABR1HPb_Fxs2xmlDU-787tshahzg40hd6nAU6MY7E5Bhmm5SxGtW3Ns1sy9XNg6oa1K8-6br1rkzWrKqUet68vzkQrJMJ.webp?r=d1b&quot",
-    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXp-MrkHjExWh6s5ez76BoiWCOyDoQakpr7QmYBxBIPwRVN9TgzPVnljQpE3mD4X_WADdMeWkYWZxIbXMgexWHj2hOHhVyeF3Cby-y4qlrd7lYp4SZmA_7ZPJBj_.jpg?r=d01",
-    "posterUrl": "https://m.media-amazon.com/images/M/MV5BNmExNGZmYzItZTMzMi00YWJjLWJkYmQtMDg5MjgzYjYyZDk1XkEyXkFqcGdeQXVyNjg3MDMxNzU@._V1_SY1000_CR0,0,674,1000_AL_.jpg",
-    "seasons": "",
-    "tagline": "",
-    "original": "",
-    "trending": ""
-  },
-  {
-    "title": "Murder Mystery",
-    "year": 2019,
-    "duration": "1h 37min",
-    "type": "movie",
-    "genre": "Action, Comedie, Crime ",
-    "director": "Kyle Newacheck",
-    "writer": " James Vanderbilt ",
-    "stars": "Adam Sandler, Jennifer Aniston, Luke Evans ",
-    "imdbID": 1618434,
-    "pitch": "Un flic de New York et sa femme partent en vacances en Europe pour revigorer l’étincelle de leur mariage, mais finissent par se faire piéger et courir pour la mort d’un vieux milliardaire.",
-    "hoverCoverUrl": "https://occ-0-4164-768.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABUTMshYC3Z2g_SQr_f7tJHLaQZOkuKg63U8DlRTxu3cb78sui7ZRKVSXppNQzfQIvCmomBCHvEaIXVsyypFNVoHLcC_s.webp?r=534&quot",
-    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTS2E1tgbcdl8oDvSbusgmLP4hb0d8l71Z3-CpWz_dQE07YcrAeG1b3Y8gh2Gf5zwJgYjqvcrYS-26ZJph2EPfWIvqNUIrJMsUFVviLcqP1eZV9ojyn54PBhezkG.webp?r=f16",
-    "posterUrl": "https://m.media-amazon.com/images/M/MV5BNTA2YTI5YjUtZWI4Zi00NWQ5LWFiYmEtOTBmNTUyNDAwNjllXkEyXkFqcGdeQXVyNjIzNzM4NzA@._V1_SY1000_CR0,0,675,1000_AL_.jpg",
-    "seasons": "",
-    "tagline": "Problèmes de première classe. Détectives de deuxième classe.",
-    "original": "",
-    "trending": ""
-  },
-  {
     "title": "The Great Hack ",
     "year": 2019,
     "duration": " 1h 54min ",
@@ -54,7 +16,8 @@
     "seasons": "",
     "tagline": "Ils ont pris vos données. Puis ils ont pris le contrôle.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Ronda Rousey Story",
@@ -73,7 +36,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Creative Brain",
@@ -92,7 +56,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "League of Legends Origins",
@@ -111,7 +76,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Everybody's Everything",
@@ -130,7 +96,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Redeemed and the Dominant: Fittest on Earth",
@@ -149,7 +116,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Game Changers",
@@ -168,7 +136,8 @@
     "seasons": "",
     "tagline": "Alimenté par la vérité",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Kong Island",
@@ -187,7 +156,8 @@
     "seasons": "",
     "tagline": "Réveillez le roi",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Pablo Escobar: Countdown to Death",
@@ -206,7 +176,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Carter Effect",
@@ -225,7 +196,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Hush",
@@ -244,7 +216,8 @@
     "seasons": "",
     "tagline": "Le silence peut être mortel.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Lights Out",
@@ -263,7 +236,8 @@
     "seasons": "",
     "tagline": "Tu avais raison d'avoir peur du noir.",
     "original": "",
-    "trending": "trending"
+    "trending": "trending",
+    "quarantined": ""
   },
   {
     "title": "Moonlight",
@@ -282,7 +256,8 @@
     "seasons": "",
     "tagline": "C'est l'histoire d'une vie.",
     "original": "",
-    "trending": "trending"
+    "trending": "trending",
+    "quarantined": ""
   },
   {
     "title": "Split",
@@ -301,7 +276,8 @@
     "seasons": "",
     "tagline": "Kevin a 23 personnalités distinctes. Le 24 est sur le point d'être déchaîné.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Nice Guys",
@@ -320,7 +296,8 @@
     "seasons": "",
     "tagline": "They're not that nice",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Mr Wolff",
@@ -339,7 +316,8 @@
     "seasons": "",
     "tagline": "Calculez vos choix.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Inferno",
@@ -358,7 +336,8 @@
     "seasons": "",
     "tagline": "Le Da Vinci Code et Angels & Demons n'étaient que le début",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Sully",
@@ -377,7 +356,8 @@
     "seasons": "",
     "tagline": "L'histoire inédite derrière le miracle sur l'Hudson",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Snowden",
@@ -396,7 +376,8 @@
     "seasons": "",
     "tagline": "Une nation sous surveillance pour la liberté et la justice pour tous.",
     "original": "",
-    "trending": "trending"
+    "trending": "trending",
+    "quarantined": ""
   },
   {
     "title": "The C Word",
@@ -415,7 +396,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Hotel Transylvania 2",
@@ -434,7 +416,8 @@
     "seasons": "",
     "tagline": "Ils sont de retour pour susciter un peu de terreur",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Minimalism",
@@ -453,7 +436,8 @@
     "seasons": "",
     "tagline": "Imaginez une vie avec moins.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Pedal The World",
@@ -472,7 +456,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Fury",
@@ -491,7 +476,8 @@
     "seasons": "",
     "tagline": "La guerre ne se termine jamais tranquillement.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Purge: Anarchy",
@@ -510,7 +496,8 @@
     "seasons": "",
     "tagline": "Unis, nous purgeons",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Unbroken",
@@ -529,7 +516,8 @@
     "seasons": "",
     "tagline": "Survival. Resilience. Redemption.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Equalizer",
@@ -548,7 +536,8 @@
     "seasons": "",
     "tagline": "Que voyez-vous quand vous me regardez?",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Gotham",
@@ -567,7 +556,8 @@
     "seasons": 5,
     "tagline": "Le bon. Le mal. Le commencement.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Brooklyn 99",
@@ -586,7 +576,8 @@
     "seasons": 5,
     "tagline": "Le spectacle policier le plus important. Déjà.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Rick and Morty",
@@ -605,7 +596,8 @@
     "seasons": 4,
     "tagline": "Science makes sense, family doesn't.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Riddick",
@@ -624,7 +616,8 @@
     "seasons": "",
     "tagline": "La survie est sa vengeance",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Vikings",
@@ -643,7 +636,8 @@
     "seasons": 6,
     "tagline": "La tempête arrive",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "World War Z",
@@ -662,7 +656,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": "trending"
+    "trending": "trending",
+    "quarantined": ""
   },
   {
     "title": "Dark Shadows",
@@ -681,7 +676,8 @@
     "seasons": "",
     "tagline": "Chaque famille a ses démons",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Django Unchained",
@@ -700,7 +696,8 @@
     "seasons": "",
     "tagline": "Le «D» est silencieux. Le remboursement ne le sera pas.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Psycho-pass",
@@ -719,14 +716,15 @@
     "seasons": 2,
     "tagline": "À quel point êtes-vous coupable",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Arrow",
     "year": 2012,
     "duration": "42min ",
     "type": "serie",
-    "genre": "Action, Aventure, Crime ",
+    "genre": "Action, Aventure, Crime",
     "director": " Greg Berlanti, Marc Guggenheim, Andrew Kreisberg",
     "writer": "",
     "stars": "Stephen Amell, Katie Cassidy, David Ramsey",
@@ -738,7 +736,8 @@
     "seasons": 8,
     "tagline": "Un héros se lèvera",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Amazing Spider-Man",
@@ -757,7 +756,8 @@
     "seasons": "",
     "tagline": "L'homme araignée",
     "original": "",
-    "trending": "trending"
+    "trending": "trending",
+    "quarantined": ""
   },
   {
     "title": "American Horror Story",
@@ -776,7 +776,8 @@
     "seasons": 13,
     "tagline": "Le mercredi, nous portons du noir",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Blue Exorcist",
@@ -795,7 +796,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Transformers: Dark Side of the Moon",
@@ -814,7 +816,8 @@
     "seasons": "",
     "tagline": "Le combat pour notre liberté commence",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Very Bad Trip 2",
@@ -833,7 +836,8 @@
     "seasons": "",
     "tagline": "Bangkok les a maintenant",
     "original": "",
-    "trending": "trending"
+    "trending": "trending",
+    "quarantined": ""
   },
   {
     "title": "Suits: avocats sur mesure ",
@@ -852,7 +856,8 @@
     "seasons": 7,
     "tagline": "Deux avocats. Un degré.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Friends with Benefits",
@@ -871,7 +876,8 @@
     "seasons": "",
     "tagline": "Certains amis viennent avec une fin heureuse.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Spartacus",
@@ -890,7 +896,8 @@
     "seasons": 3,
     "tagline": "Certaines légendes sont écrites dans le sang.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Fatal",
@@ -909,7 +916,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Inception",
@@ -928,7 +936,8 @@
     "seasons": "",
     "tagline": "Le rêve est réel.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Megamind",
@@ -947,7 +956,8 @@
     "seasons": "",
     "tagline": "Mauvais. Bleu. Brillant.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Shutter Island",
@@ -966,7 +976,8 @@
     "seasons": "",
     "tagline": "Some places never let you go.",
     "original": "",
-    "trending": "trending"
+    "trending": "trending",
+    "quarantined": ""
   },
   {
     "title": "Glee",
@@ -985,7 +996,8 @@
     "seasons": 6,
     "tagline": "Grande année. Gros rêves. Grosse Pomme.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Community",
@@ -1004,7 +1016,8 @@
     "seasons": "",
     "tagline": "Maîtriser le B.S. diplôme au collège communautaire.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Very Bad Trip",
@@ -1023,7 +1036,8 @@
     "seasons": "",
     "tagline": "As-tu vu cet homme?",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Breaking Bad",
@@ -1042,7 +1056,8 @@
     "seasons": 8,
     "tagline": "Instable. Volatil. Dangereux. Et c'est juste la chimie.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Sons of Anarchy ",
@@ -1061,7 +1076,8 @@
     "seasons": 7,
     "tagline": "Laissez la liberté rouler",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Yes Man ",
@@ -1080,7 +1096,8 @@
     "seasons": "",
     "tagline": "\r\nL'ère du oui a commencé.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Hannibal Rising",
@@ -1099,14 +1116,15 @@
     "seasons": "",
     "tagline": "Comment tout a commencé",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Naruto Shippuden",
     "year": 2007,
     "duration": "24min",
     "type": "serie",
-    "genre": "Animation, Action, Aventure ",
+    "genre": "Animation, Action, Aventure, Animé",
     "director": "Masashi Kishimoto",
     "writer": "",
     "stars": "Junko Takeuchi, Maile Flanagan, Kate Higgins",
@@ -1118,7 +1136,8 @@
     "seasons": 21,
     "tagline": "La destruction du Village caché des feuilles commence.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Big Bang Theory ",
@@ -1137,14 +1156,15 @@
     "seasons": 12,
     "tagline": "Quand la beauté rencontre le cerveau.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Death Note",
     "year": 2006,
     "duration": "24min",
     "type": "serie",
-    "genre": "Animation, Crime, Drame",
+    "genre": "Animation, Crime, Drame, Animé",
     "director": "Inconnu",
     "writer": "",
     "stars": "Mamoru Miyano, Brad Swaile, Vincent Tong",
@@ -1156,7 +1176,8 @@
     "seasons": 2,
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "How I met your mother",
@@ -1175,7 +1196,8 @@
     "seasons": 9,
     "tagline": "Une histoire d'amour à l'envers.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "V for Vendetta",
@@ -1194,7 +1216,8 @@
     "seasons": "",
     "tagline": "Une vision sans compromis de l'avenir des créateurs de la trilogie «The Matrix»",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Prison Break",
@@ -1213,7 +1236,8 @@
     "seasons": 6,
     "tagline": "The Most Wanted Men in America",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Shrek",
@@ -1232,14 +1256,15 @@
     "seasons": "",
     "tagline": "The greatest fairy tale never told.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Le Voyage De Chihiro",
     "year": 2001,
     "duration": "2h 5min ",
     "type": "movie",
-    "genre": "Animation, Aventure, Famille",
+    "genre": "Animation, Aventure, Famille, Animé",
     "director": "Hayao Miyazaki",
     "writer": "Hayao Miyazaki",
     "stars": "Daveigh Chase, Suzanne Pleshette, Miyu Irino",
@@ -1251,7 +1276,8 @@
     "seasons": "",
     "tagline": "Le tunnel a conduit Chihiro dans une ville mystérieuse.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Training Day",
@@ -1270,7 +1296,8 @@
     "seasons": "",
     "tagline": "La seule chose plus dangereuse que la ligne franchie, c'est le flic qui la franchira.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Snatch",
@@ -1289,7 +1316,8 @@
     "seasons": "",
     "tagline": "Voler des pierres est dangereux.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Wild Wild West",
@@ -1308,7 +1336,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Family Guy",
@@ -1327,14 +1356,15 @@
     "seasons": 18,
     "tagline": "Discrétion parentale conseillée, voilà comment vous savez que c'est bon",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Princess Mononoke",
     "year": 1997,
     "duration": "2h 14min",
     "type": "movie",
-    "genre": "Animation, Aventure, Fantaisie",
+    "genre": "Animation, Aventure, Fantaisie, Animé",
     "director": "Hayao Miyazaki",
     "writer": "Hayao Miyazaki, Neil Gaiman",
     "stars": "Yôji Matsuda, Yuriko Ishida, Yûko Tanaka",
@@ -1346,7 +1376,8 @@
     "seasons": "",
     "tagline": "Le sort du monde repose sur le courage d'un guerrier.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "South Park",
@@ -1365,7 +1396,8 @@
     "seasons": 24,
     "tagline": "Four boys. One f**ked up town.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Forrest Gump",
@@ -1384,7 +1416,8 @@
     "seasons": "",
     "tagline": "L'histoire d'une vie.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Friends",
@@ -1403,7 +1436,8 @@
     "seasons": 10,
     "tagline": "Ce sont les amis que nous avons appris à aimer ...",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Final Space ",
@@ -1422,7 +1456,8 @@
     "seasons": 3,
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Vermin",
@@ -1441,14 +1476,15 @@
     "seasons": 1,
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Assasination Classroom",
     "year": 2015,
     "duration": "23min",
     "type": "serie",
-    "genre": "Animation, Action, Comedie",
+    "genre": "Animation, Action, Comedie, Animé",
     "director": "Jun Fukuyama",
     "writer": "Jun Fukuyama",
     "stars": "Jun Fukuyama, Mai Fuchigami, Christopher Bevins | See full cast & crew",
@@ -1460,7 +1496,8 @@
     "seasons": 8,
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The 100",
@@ -1479,7 +1516,8 @@
     "seasons": 6,
     "tagline": "La survie n'est pas qui vous êtes. C'est qui vous devenez.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Flash ",
@@ -1498,7 +1536,8 @@
     "seasons": 7,
     "tagline": "L'homme le plus rapide vivant.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Pulp Fiction",
@@ -1517,7 +1556,8 @@
     "seasons": "",
     "tagline": "Vous ne saurez pas les faits avant d'avoir vu la fiction.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Jurassic Park",
@@ -1536,7 +1576,8 @@
     "seasons": "",
     "tagline": "Une aventure de 65 millions d'années en devenir.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Reservoir Dogs",
@@ -1555,7 +1596,8 @@
     "seasons": "",
     "tagline": " Every dog has his day.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Good Fellas",
@@ -1574,7 +1616,8 @@
     "seasons": "",
     "tagline": "Murderers come with smiles.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Back to the future 2",
@@ -1593,14 +1636,15 @@
     "seasons": "",
     "tagline": "Il est temps.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "My Neighbor Totoro",
     "year": 1988,
     "duration": "1h 26min",
     "type": "movie",
-    "genre": "Animation, Family, Fantasy",
+    "genre": "Animation, Family, Fantasy, Animé",
     "director": "Hayao Miyazaki",
     "writer": "Hayao Miyazaki",
     "stars": "Hitoshi Takagi, Noriko Hidaka, Chika Sakamoto",
@@ -1612,14 +1656,15 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Castle In The Sky",
     "year": 1986,
     "duration": " 2h 5min",
     "type": "movie",
-    "genre": "Animation, Adventure, Drama ",
+    "genre": "Animation, Adventure, Drama, Animé",
     "director": "Hayao Miyazaki",
     "writer": "Hayao Miyazaki",
     "stars": "Mayumi Tanaka, James Van Der Beek, Keiko Yokozawa ",
@@ -1631,7 +1676,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Blues Brothers",
@@ -1650,7 +1696,8 @@
     "seasons": "",
     "tagline": "A briefcase full of blues.",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Yoda origins",
@@ -1669,7 +1716,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Leave Him There",
@@ -1688,7 +1736,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "L'élément Parent",
@@ -1707,7 +1756,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Boat",
@@ -1726,7 +1776,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Annecy",
@@ -1745,7 +1796,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Noisette",
@@ -1764,7 +1816,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Noelle",
@@ -1783,7 +1836,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original ",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Les 4 fantastiques",
@@ -1802,7 +1856,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "L'Odyssée de Choum",
@@ -1821,7 +1876,8 @@
     "seasons": 1,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Krypton ",
@@ -1840,7 +1896,8 @@
     "seasons": 4,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Dirigenten",
@@ -1859,7 +1916,8 @@
     "seasons": 3,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Baking Bread",
@@ -1878,7 +1936,8 @@
     "seasons": 2,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Dexter",
@@ -1897,7 +1956,8 @@
     "seasons": 6,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Medici",
@@ -1916,7 +1976,8 @@
     "seasons": 5,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Confinement",
@@ -1935,7 +1996,8 @@
     "seasons": 1,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Bonobos",
@@ -1954,7 +2016,8 @@
     "seasons": 1,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Mytho Man",
@@ -1973,7 +2036,8 @@
     "seasons": "",
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "The Symptoms",
@@ -1992,7 +2056,8 @@
     "seasons": 1,
     "tagline": "",
     "original": "original",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Trolls World Tour",
@@ -2011,7 +2076,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Souls",
@@ -2030,7 +2096,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Mulan",
@@ -2049,7 +2116,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Wonder Woman",
@@ -2068,7 +2136,8 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
   },
   {
     "title": "Monster Hunter",
@@ -2087,6 +2156,347 @@
     "seasons": "",
     "tagline": "",
     "original": "",
-    "trending": ""
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Hunter x Hunter ",
+    "year": 2011,
+    "duration": "24min",
+    "type": "serie",
+    "genre": "Animation, Action, Adventure, Animé",
+    "director": "Yoshihiro Togashi",
+    "writer": "",
+    "stars": "Issei Futamata, Megumi Han, Cristina Valenzuela",
+    "imdbID": 2098220,
+    "pitch": "Gon Freecss aspire à devenir un Hunter, un être exceptionnel capable de grandeur. Avec ses amis et son potentiel, il cherche son père qui l'a quitté quand il était plus jeune.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABZyqiicFrNf3HHeAwbejD0r3-1mmrTww9VnXISI8Cld8muExyDX5zExULZunYxfarZTO1aWIx30SLYIjKcpS8AvvE2U.webp?r=4e8",
+    "posterUrl": "",
+    "seasons": 6,
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Bleach",
+    "year": 2004,
+    "duration": "24min",
+    "type": "serie",
+    "genre": "Animation, Action, Adventure, Animé",
+    "director": "Tite Kubo",
+    "writer": "",
+    "stars": "Johnny Yong Bosch, Michelle Ruff, Stephanie Sheh ",
+    "imdbID": 434665,
+    "pitch": "Le lycéen Kurosaki Ichigo ne ressemble à aucun enfant ordinaire car il peut voir des fantômes. Après un accident avec un creux, il a obtenu un pouvoir.Ainsi commence la formation et le devoir de Kurosaki Ichigo en tant que Shinigami, Soul Reaper.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABTAusgklSULLVHauPLNeXYs_Lpt9hRcmbtACQhvSrW4IIL8HqLE8dAFg6ganUxzA1SOJJJTzq5-us1x27zqAAu2rm_U.webp?r=d89",
+    "posterUrl": "",
+    "seasons": 3,
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "No Game, No Life ",
+    "year": 2014,
+    "duration": "23min",
+    "type": "serie",
+    "genre": "Animation, Adventure, Comedy, Animé",
+    "director": "",
+    "writer": "",
+    "stars": " Yoshitsugu Matsuoka, Ai Kayano, Yôko Hikasa ",
+    "imdbID": 3431758,
+    "pitch": "Les frères et sœurs Sora et Shiro forment ensemble l'équipe de joueurs professionnels la plus redoutée au monde, The Blank. Quand ils parviennent à battre Dieu lui-même dans un jeu d'échecs, ils sont envoyés dans un monde où tous les différends sont réglés avec des jeux.\r",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABRj5g72KjHP5kr3WWp_DTWKi4QHJEWiCMkBKAzA3LinwXFZ7LCGswjL5QJhucEquBnzUtZYTF0iup3HITY48iYcVgws.webp?r=a46",
+    "posterUrl": "",
+    "seasons": 1,
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Erased ",
+    "year": 2016,
+    "duration": "30min",
+    "type": "serie",
+    "genre": "Animation, Drama, Fantasy ",
+    "director": "",
+    "writer": "",
+    "stars": "Ben Diskin, Shinnosuke Mitsushima, Michelle Ruff ",
+    "imdbID": 5249462,
+    "pitch": "Satoru Fujinuma, 29 ans, est renvoyé dans le temps à 18 ans pour éviter les événements qui ont conduit à la mort de sa mère, qui a commencé par une série d'enlèvements en 5e année.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABaXoK7X6ST2WWonw2dfqVBppJ4uCLIiK0yGTsLC0_JG9NWoVu3ij8WXJNAPQOFm-Si4kgbNUkEwxGw2cf8MhDaMu8-g.webp?r=467",
+    "posterUrl": "",
+    "seasons": 1,
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Sword Art Online ",
+    "year": 2012,
+    "duration": "24min ",
+    "type": "serie",
+    "genre": "Animation, Action, Adventure, Animé",
+    "director": "",
+    "writer": "",
+    "stars": " Yoshitsugu Matsuoka, Haruka Tomatsu, Bryce Papenbrook",
+    "imdbID": 2250192,
+    "pitch": "En 2022, des milliers de personnes sont prises au piège dans un nouveau MMORPG virtuel et le joueur de loup solitaire, Kirito, tente de s'échapper.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABZHBG6Lnm2ICImpErCMsARapGHkuv0zTmDGU2fdKGayCb9bme24yxjngXGtwhxJpfn7pVNA98ySLCHnStbCADodKEsM.webp?r=ea8",
+    "posterUrl": "",
+    "seasons": 4,
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Le Château Ambulant",
+    "year": 2004,
+    "duration": "1h 59min ",
+    "type": "movie",
+    "genre": "Animation, Adventure, Family, Animé",
+    "director": "Hayao Miyazaki",
+    "writer": "Hayao Miyazaki, Diana Wynne Jones",
+    "stars": "Chieko Baishô, Takuya Kimura, Tatsuya Gashûin ",
+    "imdbID": 347149,
+    "pitch": "Lorsqu'une jeune femme peu confiante est maudite avec un vieux corps par une sorcière méchante, sa seule chance de briser le sort réside dans un jeune sorcier complaisant mais incertain et ses compagnons dans son château à pattes et marche.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABauPyIVsJ4qBccs-fbPu_3UtfHklLNyfVKt6j6yZpvv5QzIPU87Tg2jup5gJ4txfYegvpI3P58SQEM4ckbWklED90-0.webp?r=7da",
+    "posterUrl": "",
+    "seasons": "",
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Pompoko",
+    "year": 1994,
+    "duration": "1h 59min ",
+    "type": "movie",
+    "genre": "Animation, Comedy, Drama, Animé",
+    "director": "Isao Takahata",
+    "writer": "Hayao Miyazaki, Isao Takahata",
+    "stars": "Shinchô Kokontei, Makoto Nonomura, Yuriko Ishida",
+    "imdbID": 110008,
+    "pitch": "Une communauté de chiens viverrins magiques qui changent de forme ont du mal à empêcher que leur maison forestière ne soit détruite par le développement urbain.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABT8ipHnDl5eZ0bBzwOyipklT_a3tEb-zks9PVrOwT0lipasS4m1UcDqrYBQVvxKxKrARL_0f4g1tJSWc_qIVjUJeQ50.webp?r=bad",
+    "posterUrl": "",
+    "seasons": "",
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Naruto the Last: Le film ",
+    "year": 2014,
+    "duration": "1h 52min",
+    "type": "movie",
+    "genre": "Animation, Action, Adventure, Animé",
+    "director": "Tsuneo Kobayashi",
+    "writer": " Masashi Kishimoto",
+    "stars": "Junko Takeuchi, Nana Mizuki, Jun Fukuyama",
+    "imdbID": 3717532,
+    "pitch": "La jeune sœur de Hinata Hyuga a été kidnappée, donc Naruto doit faire ce qu'il peut pour la sauver.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABQnWmWSmJyUiGrYkmNjGmlX3ZqGUWjlgf8__xCHrMwV6LWyIoDkvI9wIB04udIRUhsZXghnm1aWHXM-lzj-w_LDg948.webp?r=428",
+    "posterUrl": "",
+    "seasons": "",
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Fairy Tail, le film: Dragon Cry",
+    "year": 2017,
+    "duration": "1h 25min",
+    "type": "movie",
+    "genre": "Animation, Action, Adventure, Animé",
+    "director": "Tatsuma Minamikawa",
+    "writer": " Hiro Mashima",
+    "stars": "Makoto Furukawa, Wataru Hatano, Aya Hirano",
+    "imdbID": 6548966,
+    "pitch": "Dans le nouveau film, basé sur le manga de Hiro Mashima, Natsu Dragneel et ses amis se rendent sur l'île du Royaume de Stella, où ils révéleront de sombres secrets, combattront les nouveaux ennemis et sauveront à nouveau le monde de la destruction.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABWJxj-3GjZMzleVxUXwx87ODSr_4T87z_tKX4UMe4RblxycfKV4fZrorU-OmEH5xUHcpQHVQUsyhoaIxPk-qYcO5kTE.webp?r=cf1",
+    "posterUrl": "",
+    "seasons": "",
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "Le conte de la princesse Kaguya",
+    "year": 2013,
+    "duration": "2h 17min",
+    "type": "movie",
+    "genre": "Animation, Adventure, Drama, Animé",
+    "director": "Isao Takahata",
+    "writer": "Isao Takahata ",
+    "stars": "Chloë Grace Moretz, James Caan, Mary Steenburgen",
+    "imdbID": 2576852,
+    "pitch": "Trouvée à l'intérieur d'une tige de bambou brillante par un vieux coupeur de bambou et sa femme, une petite fille se transforme rapidement en une exquise jeune femme. La mystérieuse jeune princesse fascine tous ceux qui la rencontrent, mais finalement elle doit affronter son destin, la punition de son crime.",
+    "hoverCoverUrl": "",
+    "coverUrl": "https://occ-0-55-56.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABazz1-eyHQ4VwUCuk64ha9BLwH85koj7IE5j0XovAWQIt1_sdAkKsjhHOPNPq1FojYoUXvq9I7TQBtVWl9VHeuYKfZ4.webp?r=dc7",
+    "posterUrl": "",
+    "seasons": "",
+    "tagline": "",
+    "original": "",
+    "trending": "",
+    "quarantined": ""
+  },
+  {
+    "title": "93 Days",
+    "year": 2016,
+    "duration": "1h 58min",
+    "type": "movie",
+    "genre": "Drame",
+    "director": "Steve Gukas",
+    "writer": "Paul S. Rowlston",
+    "stars": "Seun Ajayi, Bimbo Akintola, Zara Udofia Ejoh ",
+    "imdbID": 5305246,
+    "pitch": "Lorsque Patrick Sawyer, un Libérien-Américain s'effondre à son arrivée à l'aéroport international Murtala Mohammed de Lagos, au Nigeria. il est emmené à l'hôpital Fiest Consultants, où il est admis avec des symptômes de fièvre. Contre son déni de contact avec toute victime d'Ebola au Libéria, l'équipe de First Consultants, dirigée par le médecin Stella Ameyo Adadevoh, en déduit rapidement qu'il y a plus dans son cas que le paludisme. Soudain, ils sont dans une course contre la montre pour contenir une maladie très mortelle qui se déclare et se propage dans une mégapole de plus de 20 millions d'habitants et commence ce qui pourrait être l'épidémie de maladie la plus meurtrière que le monde ait jamais connue.",
+    "hoverCoverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABbIA6QABSRJCAMs8EC-viazmNe7vjlsDh7J423-P9d7pD1TV0wI8R5skxfDBgwYl21lCdbbokBGslrrV0O3_I6UV2dBT.webp?r=a34",
+    "coverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABSFEaWE4P2Boec-SuyBzRQBXf6gMDys4ogmIF6ZEgYYY6KqveJFeK2k0LfO-1t9ZF8hDDyt9zyykj7m26xvm7Vn_9dI.webp?r=134",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BZTFlMjYxMmYtOGY3Mi00MDIzLTg4MmEtNDNmZWYyOWM3ZTA5XkEyXkFqcGdeQXVyNjQxODAwNzE@._V1_.jpg",
+    "seasons": "",
+    "tagline": "Que se passe-t-il lorsque la maladie la plus contagieuse connue arrive dans une mégapole de 20 millions d'habitants?",
+    "original": "",
+    "trending": "",
+    "quarantined": "quarantined"
+  },
+  {
+    "title": "Dernier train pour Busan",
+    "year": 2016,
+    "duration": "1h 58min ",
+    "type": "movie",
+    "genre": "Action, Horreur, Thriller ",
+    "director": "Sang-ho Yeon",
+    "writer": "Joo-Suk Park, Sang-ho Yeon",
+    "stars": "Yoo Gong, Yu-mi Jung, Dong-seok Ma ",
+    "imdbID": 5700672,
+    "pitch": "Sok-woo, un père qui n'a pas beaucoup de temps pour sa fille, Soo-ahn, monte à bord du KTX, un train rapide qui les amènera de Séoul à Busan. Mais pendant leur voyage, l'apocalypse commence et la plupart de la population de la terre devient des zombies avides de chair. Alors que le KTX tire vers Busan, le passager se bat pour ses familles et vit contre les zombies - et les uns contre les autres",
+    "hoverCoverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABeveW-dxtF9k0JWAu_Uf5VXbW8-V9-mE_HS0GlK6xSIxQdX7Nkkep3w-nz5zM5rBzJLIdvSXwdqBYvSbisV4FlLJF1CY.webp?r=713&quot",
+    "coverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABeFNnGnqmqbEbLv7qwbRIjarLchXdBn07U9RCu4qPVZ-RvSBhXy5qHuYsIZ9VAY6o0u8u_Zcb8H1JbdOD-t0RlF_nAQ.webp?r=c46",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTkwOTQ4OTg0OV5BMl5BanBnXkFtZTgwMzQyOTM0OTE@._V1_.jpg",
+    "seasons": "",
+    "tagline": "Montez dans le train pour rester en vie",
+    "original": "",
+    "trending": "",
+    "quarantined": "quarantined"
+  },
+  {
+    "title": "Contracted",
+    "year": 2013,
+    "duration": "1h 24min",
+    "type": "movie",
+    "genre": "Drame, Horreur, Thriller",
+    "director": "Eric England",
+    "writer": "Eric England",
+    "stars": "Najarra Townsend, Caroline Williams, Alice Macdonald ",
+    "imdbID": 2281159,
+    "pitch": "Pendant une période difficile de sa vie, la belle Samantha décide à contrecœur d'assister à la fête de son meilleur ami, et même si elle lutte toujours avec une dépendance antérieure, elle accepte imprudemment un verre d'un parfait inconnu. En conséquence, peu de temps après, l'infortunée Samantha considérablement en état d'ébriété, elle finira par être violée à l'arrière de la voiture du prédateur malveillant, mais à partir de ce moment, le terrible incident sera le moindre de ses problèmes. Tout de suite et de façon assez inexplicable, la pauvre Samantha commencera à remarquer des changements organiques rapides et drastiques dans son corps, et étant incapable de déterminer l'origine de la transformation dramatique, dans les 72 prochaines heures, elle embrassera son destin horrible et impitoyable ainsi que le la certitude qu'elle s'effondre. Au sens propre.",
+    "hoverCoverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABYSTb9knNFt_FFNG0RbA7DjD0fRTdjSJzEbLmROFztZPolPZYTak8Xt3oKQss-ETxXG_P84S5fXuiNVYY5nKeSaPyeJn.webp?r=8b3",
+    "coverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABb_Y18_TQKWaMnmekymZMHIjmCU-4eXZpQr8Nl-S3QtA2BfimLMOanE9h57RCg22Oz3JTFO2B65thdVbcRUtQV3DHLg.webp?r=16d",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTQwMjQyOTUwN15BMl5BanBnXkFtZTgwMDQ3MzE2MDE@._V1_SY1000_SX675_AL_.jpg",
+    "seasons": "",
+    "tagline": "Pas votre coup d'un soir habituel.",
+    "original": "",
+    "trending": "",
+    "quarantined": "quarantined"
+  },
+  {
+    "title": "Contracted 2",
+    "year": 2015,
+    "duration": "1h 18min",
+    "type": "movie",
+    "genre": "Drame, Horreur, Thriller",
+    "director": "Josh Forbes",
+    "writer": "Craig Walendziak",
+    "stars": "Matt Mercer, Marianna Palka, Morgan Peter Brown",
+    "imdbID": 4255110,
+    "pitch": "Quelques heures seulement après une malheureuse nuit, Riley, un travailleur social, se rend compte que, tout comme Samantha, lui aussi est infecté par la MST nécrotique, éprouvant des symptômes de colère inquiétants de la maladie abominable. En outre, alors que la maladie hautement contagieuse dévore sa chair faible, Riley désespéré doit essayer de localiser le patient d'origine zéro dans toute la ville de Los Angeles avec l'intention de trouver un remède, tandis que dans le même temps, un détective conduit le poursuit. Mais en attendant, le virus continue de se propager tandis que le porteur d'origine de la peste est toujours en liberté.",
+    "hoverCoverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABXlZPSI5Znxv7_qw6QXoylxloSOxGPCXnMOXjTEOxS0HRNQqVTTsJFulfQEuMwhWLWHunsGwnaCnMOruOJk6ZGw0Ou54.webp?r=a64",
+    "coverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABZZ-lWAjPD90JmDV9c9KQB6oOOYph0t_4g5Oku_ANT0RwqqHAMeW8Jbc8AIte8Rmf_id5dfTAxB1Nw7HjuKIzp0f1lM.webp?r=865",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTQ0NTA4MDgyMF5BMl5BanBnXkFtZTgwNzQ1MzY0NjE@._V1_SY1000_CR0,0,687,1000_AL_.jpg",
+    "seasons": "",
+    "tagline": "Il n'y a pas de vaccin contre la PEUR.",
+    "original": "",
+    "trending": "",
+    "quarantined": "quarantined"
+  },
+  {
+    "title": "The Thing",
+    "year": 1982,
+    "duration": "1h 49min",
+    "type": "movie",
+    "genre": "Sci-Fi, Horreur, Thriller",
+    "director": " John Carpenter",
+    "writer": "Bill Lancaster",
+    "stars": "Kurt Russell, Wilford Brimley, Keith David",
+    "imdbID": 84787,
+    "pitch": "Une station de recherche américaine, l'Antarctique, au début de l'hiver 1982. La base est soudainement bourdonnée par un hélicoptère depuis la station de recherche norvégienne voisine. Ils essaient de tuer un chien qui s'est échappé de leur base. Après la destruction de l'hélico norvégien, les membres de l'équipe américaine s'envolent vers la base norvégienne, pour les découvrir tous morts ou disparus. Ils trouvent les restes d'une étrange créature brûlée par les Norvégiens. Les Américains le prennent à leur base et en déduisent qu'il s'agit d'une forme de vie extraterrestre. Après un certain temps, il est évident que l'étranger peut prendre le relais et s'assimiler à d'autres formes de vie, y compris les humains, et peut se propager comme un virus. Cela signifie que n'importe qui à la base pourrait être habité par The Thing, et les tensions s'intensifient.",
+    "hoverCoverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABeP-nBD6Pina4rpkhtKvipzysSlpsfvRdVzCyJ0pJS4oMr4trvWM1k5xgqJ7_zKEEtysYvIWu7XpJWoh5b3W6j_G644W.webp?r=e53",
+    "coverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABdlcqeE0sN86meY1T1K0Bi-UMM-Uh9Tw1Z1XOQ5sOnu0kR-BZ3B9sin_NkhnBO5An4QMySKReQIWrs5lNkT2CKAdOBU.webp?r=b0a",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BNDcyZmFjY2YtN2I1OC00MzU3LWIzZGEtZDA5N2VlNDJjYWI3L2ltYWdlXkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY1000_CR0,0,660,1000_AL_.jpg",
+    "seasons": "",
+    "tagline": "The ultimate in alien terror.",
+    "original": "",
+    "trending": "",
+    "quarantined": "quarantined"
+  },
+  {
+    "title": "Extinction",
+    "year": 2015,
+    "duration": "1h 52min ",
+    "type": "movie",
+    "genre": "Drame, Horror, Sci-Fi",
+    "director": "Miguel Ángel Vivas",
+    "writer": "Alberto Marini, Miguel Ángel Vivas ",
+    "stars": "Matthew Fox, Jeffrey Donovan, Quinn McColgan ",
+    "imdbID": 3467412,
+    "pitch": "Neuf ans après qu'une infection transforme la plupart de l'humanité en créatures enragées, Patrick, Jack et Lu, une fillette de neuf ans, survivent dans une paix et un calme apparents dans la ville oubliée de Harmony, recouverte de neige. Nous sentons néanmoins que quelque chose de terrible s'est produit entre Patrick et Jack parce qu'une profonde haine les sépare. Lorsque les infectés réapparaîtront, Patrick et Jack devront laisser derrière eux toute rancune pour protéger celui qui compte plus pour eux qu'autre chose.",
+    "hoverCoverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABdazQ4Oid17HejSPf1x5zfYUsrQGp8GGMg5YVArf3JlUGZzPTUNEb-8eq6LnKMgTE5e2QjMGR2L8vvIQ8mTpDK_mWAn0.webp?r=acc",
+    "coverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABXlZGdiKAzaGBiC9PF96a5lk_yc7ezjid5BpRe79DT0u7gCRbur69jTFHVbQdCGU68tk2_FUwIhFYAS-Q6-_8es_BTk.jpg?r=5f1",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTYzMzIyMTQ3N15BMl5BanBnXkFtZTgwNTMzNTAwNjE@._V1_SY1000_SX675_AL_.jpg",
+    "seasons": "",
+    "tagline": "Ce sont les derniers",
+    "original": "",
+    "trending": "",
+    "quarantined": "quarantined"
+  },
+  {
+    "title": "Shaun of the dead",
+    "year": 2004,
+    "duration": "1h 39min ",
+    "type": "movie",
+    "genre": "Comedie, Horror ",
+    "director": "Edgar Wright",
+    "writer": "Simon Pegg",
+    "stars": "Simon Pegg, Nick Frost, Kate Ashfield",
+    "imdbID": 365748,
+    "pitch": "Shaun (Simon Pegg) doesn't have a very good day, so he decides to turn his life around by getting his ex to take him back, but he times it for right in the middle of what may be a zombie apocalypse. But for him, it's an opportunity to show everyone he knows how useful he is by saving them all. All he has to do is survive, and get his ex back.",
+    "hoverCoverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABepDV_Zz7IYugcTW9t9HMdTjxWP9ml_UhchL6vO7FuQLt1h9qOUmUD2oiq0oLks4SAmFD9W4enOFXY1mjaQm0pKPxwz2.webp?r=b07",
+    "coverUrl": "https://occ-0-2216-55.1.nflxso.net/dnm/api/v6/X194eJsgWBDE2aQbaNdmCXGUP-Y/AAAABcPWUB7gJ-Y6BeUgnpV574mIP1teeMA_J8sjb36MNOaeSoTHT799_Gw0FIBAFnL5weOJDlYUI8yq8yNtYkee9I07YmY.jpg?r=64b",
+    "posterUrl": "https://m.media-amazon.com/images/M/MV5BMTg5Mjk2NDMtZTk0Ny00YTQ0LWIzYWEtMWI5MGQ0Mjg1OTNkXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_SY1000_CR0,0,669,1000_AL_.jpg",
+    "seasons": "",
+    "tagline": "Achetez du lait. Sonnez chez Maman. Esquivez des zombies.",
+    "original": "",
+    "trending": "",
+    "quarantined": "quarantined"
   }
 ]
