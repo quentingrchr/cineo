@@ -1,4 +1,5 @@
 .footer {
+  margin-top: 48px;
   &__container {
     width: 100vw;
     height: 284px;
@@ -29,9 +30,8 @@
 }
 
 .social {
-  
   &__medias > p {
-    margin-bottom: 30px
+    margin-bottom: 30px;
   }
   &__logos {
     width: 120px;
