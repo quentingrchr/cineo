@@ -1,3 +1,6 @@
+$delay-transition: 300ms;
+$timing-transition: 300ms;
+
 @keyframes sliding-slider {
   0% {
     clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
@@ -58,7 +61,7 @@
   align-items: center;
   position: relative;
   margin: 50px 0px;
-  transition: transform 300ms ease 100ms;
+  transition: transform $timing-transition ease $delay-transition;
 
   & .item:hover .show-details-button {
     opacity: 1;
@@ -81,7 +84,7 @@
 
   .item {
     flex: 0 0 19.7%;
-    transition: transform 300ms ease 100ms;
+    transition: transform $timing-transition ease $delay-transition;
     margin: 0 2px;
     position: relative;
 
@@ -102,6 +105,7 @@
       width: 100%;
       position: absolute;
       z-index: 2;
+      transition: opacity 0.1s $delay-transition ease;
     }
 
     &__content {
@@ -116,7 +120,7 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: opacity 0.5s ease;
+      transition: opacity $timing-transition $delay-transition ease;
       height: 100%;
       width: 100%;
       padding: 5% 10%;
@@ -152,7 +156,7 @@
 
     &__hoverCover {
       top: 0;
-      transition: opacity 0.3s ease;
+      transition: opacity $timing-transition $delay-transition ease;
       opacity: 0;
       position: absolute;
       left: 0;

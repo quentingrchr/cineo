@@ -1,22 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 export default class SignIn extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-
       mailValue: '',
       passwordValue: '',
       isConnected: false,
-
     };
   }
 
-  handelChangeMail = e => {
+  handelChangeMail = (e) => {
     this.setState({ mailValue: e.target.value });
   };
-  handelChangePassword = e => {
+  handelChangePassword = (e) => {
     this.setState({ passwordValue: e.target.value });
   };
 
@@ -31,8 +29,8 @@ export default class SignIn extends React.Component {
     infosUsers.mail = this.state.mailValue;
     infosUsers.password = this.state.passwordValue;
 
-    fetch('http://18.191.118.60:80/signIn.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/signIn.php", {
+      method: "POST",
       body: JSON.stringify(infosUsers),
     })
       .then((response) => {
@@ -51,29 +49,29 @@ export default class SignIn extends React.Component {
     console.log(isConnected);
 
     return (
-      <div className="registerbox__container registerbox">
-        <div className="registerbox__nav">
-          <div className="registerbox__nav--signin">
+      <div className='registerbox__container registerbox'>
+        <div className='registerbox__nav'>
+          <div className='registerbox__nav--signin'>
             <p>Se connecter</p>
           </div>
           <div
-            className="registerbox__nav--signup"
+            className='registerbox__nav--signup'
             onClick={() => this.handelClick()}
           >
             <p>Créer un compte</p>
           </div>
         </div>
-        <form className='registerbox__content' onSubmit={this.handelSubmit}>
+        <form className="registerbox__content" onSubmit={this.handelSubmit}>
           <input
-            className="registerbox__input1 registerbox__input"
-            type="text"
-            placeholder="E-mail"
+            className='registerbox__input1 registerbox__input'
+            type='text'
+            placeholder='E-mail'
             onChange={this.handelChangeMail}
           ></input>
           <input
-            className="registerbox__input2 registerbox__input"
-            type="password"
-            placeholder="Mot de passe"
+            className='registerbox__input2 registerbox__input'
+            type='password'
+            placeholder='Mot de passe'
             onChange={this.handelChangePassword}
           ></input>
 
@@ -83,8 +81,8 @@ export default class SignIn extends React.Component {
             value='Connexion'
             disabled={mailValue.length === 0 || passwordValue.length === 0}
           ></input>
-          <Link to='/home'>
-            <p className='registerbox__withoutlogin'>
+          <Link to="/">
+            <p className="registerbox__withoutlogin">
               Accéder au site sans compte
             </p>
           </Link>

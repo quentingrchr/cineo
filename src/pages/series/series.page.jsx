@@ -3,7 +3,12 @@ import Header from "../../components/header/header.component";
 import Footer from "../../components/footer/footer.component";
 import Slider from "../../components/slider/slider.component";
 import Title from "../../components/title/title.component";
-import { seriesOnly } from "../../data.utils";
+import {
+  seriesOnly,
+  originalsSeriesOnly,
+  animeSeriesOnly,
+  comedySeriesOnly,
+} from "../../data.utils";
 import data from "../../data.json";
 import Top5 from "../../components/top5/top5Section.component";
 import Category from "../../components/category/category.component";
@@ -25,12 +30,7 @@ export default function seriesPage() {
         </div>
         <div className="series__section large__slider">
           <Title content="Les séries originales Cinéo" />
-          <Slider
-            large={true}
-            data={data.filter((movie) => {
-              return movie.type === "serie";
-            })}
-          />
+          <Slider large={true} data={originalsSeriesOnly(data)} />
         </div>
         <div className="series__section">
           <Title content="Nouvelles séries" />
@@ -42,23 +42,15 @@ export default function seriesPage() {
         </div>
         <div className="series__section">
           <Title content="Animés" />
-          <Slider
-            data={data.filter((movie) => {
-              return movie.type === "serie";
-            })}
-          />
+          <Slider data={animeSeriesOnly(data)} />
         </div>
         <div className="series__section">
-          <Title content="Documentaire" />
-          <Slider
-            data={data.filter((movie) => {
-              return movie.type === "serie";
-            })}
-          />
+          <Title content="Séries humouristique" />
+          <Slider data={comedySeriesOnly(data)} />
         </div>
         <div className="series__section large__slider">
           <Title content="Top 5 de la semaine" />
-          <Top5 src={seriesOnly(data, 20)} />
+          <Top5 src={seriesOnly(data, 7)} />
         </div>
       </div>
       <Footer />

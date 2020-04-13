@@ -12,7 +12,6 @@ import {
 } from "../../data.utils";
 
 import ComingSoon from "../../components/coming-soon/coming-soon.component";
-import Button from "../../components/button/button.component";
 import Header from "../../components/header/header.component";
 import Slider from "../../components/slider/slider.component";
 import Title from "../../components/title/title.component";
