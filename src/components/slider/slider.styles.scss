@@ -1,5 +1,19 @@
+@keyframes sliding-slider {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
 .slider-container {
   position: relative;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+  &.visible {
+    animation: sliding-slider 1.5s 0.5s ease forwards;
+  }
 
   .arrow-wrapper {
     display: flex;
@@ -155,6 +169,11 @@
 }
 
 .slider-large-container {
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+  &.visible {
+    animation: sliding-slider 1.5s ease forwards;
+  }
   .slider {
     .item__cover {
       height: 100%;

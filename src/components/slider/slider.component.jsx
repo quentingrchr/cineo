@@ -1,4 +1,5 @@
 import React, { Component, createRef } from "react";
+import { Waypoint } from "react-waypoint";
 
 import Item from "../item/item.component";
 
@@ -15,6 +16,7 @@ export default class Slider extends Component {
       offset: 0,
       nbViewports: Math.floor(this.props.data.length / 5),
       nbItems: this.props.data.length,
+      visible: false,
     };
     this.sliderRef = createRef();
   }
@@ -52,62 +54,68 @@ export default class Slider extends Component {
       <SliderContextProvider>
         <SliderContextConsumer>
           {({ itemRef }) => (
-            <div
-              className={`slider-container ${
-                this.props.large ? "slider-large-container" : ""
-              }`}
+            <Waypoint
+              onEnter={() => {
+                this.setState({ ...this.state, visible: true });
+              }}
             >
-              <div className="slider-wrapper">
-                <div
-                  ref={this.sliderRef}
-                  className="slider"
-                  style={{
-                    transform: `translateX(-${this.state.offset}px)`,
-                  }}
-                >
-                  {this.props.data.map((el) => {
-                    return (
-                      <Item
-                        large={this.props.large}
-                        title={el.title}
-                        key={el.imdbID}
-                        imdbID={el.imdbID}
-                        coverUrl={el.coverUrl}
-                        hoverCoverUrl={el.hoverCoverUrl}
-                        genre={el.genre}
-                        type={el.type}
-                        seasons={el.seasons}
-                        duration={el.duration}
-                        posterUrl={el.posterUrl}
-                        tagline={el.tagline}
-                      />
-                    );
-                  })}
+              <div
+                className={`slider-container ${
+                  this.props.large ? "slider-large-container" : ""
+                } ${this.state.visible ? "visible" : ""}`}
+              >
+                <div className="slider-wrapper">
+                  <div
+                    ref={this.sliderRef}
+                    className="slider"
+                    style={{
+                      transform: `translateX(-${this.state.offset}px)`,
+                    }}
+                  >
+                    {this.props.data.map((el) => {
+                      return (
+                        <Item
+                          large={this.props.large}
+                          title={el.title}
+                          key={el.imdbID}
+                          imdbID={el.imdbID}
+                          coverUrl={el.coverUrl}
+                          hoverCoverUrl={el.hoverCoverUrl}
+                          genre={el.genre}
+                          type={el.type}
+                          seasons={el.seasons}
+                          duration={el.duration}
+                          posterUrl={el.posterUrl}
+                          tagline={el.tagline}
+                        />
+                      );
+                    })}
+                  </div>
                 </div>
+
+                {this.state.position !== this.state.nbViewports && (
+                  <div
+                    onClick={() => {
+                      this.handleNext(itemRef);
+                    }}
+                    className="arrow-wrapper arrow-wrapper-next"
+                  >
+                    <NextArrow className="arrow next-arrow" />
+                  </div>
+                )}
+
+                {this.state.position !== 0 && (
+                  <div
+                    onClick={() => {
+                      this.handlePrev(itemRef);
+                    }}
+                    className="arrow-wrapper arrow-wrapper-prev"
+                  >
+                    <PrevArrow className="arrow prev-arrow" />
+                  </div>
+                )}
               </div>
-
-              {this.state.position !== this.state.nbViewports && (
-                <div
-                  onClick={() => {
-                    this.handleNext(itemRef);
-                  }}
-                  className="arrow-wrapper arrow-wrapper-next"
-                >
-                  <NextArrow className="arrow next-arrow" />
-                </div>
-              )}
-
-              {this.state.position !== 0 && (
-                <div
-                  onClick={() => {
-                    this.handlePrev(itemRef);
-                  }}
-                  className="arrow-wrapper arrow-wrapper-prev"
-                >
-                  <PrevArrow className="arrow prev-arrow" />
-                </div>
-              )}
-            </div>
+            </Waypoint>
           )}
         </SliderContextConsumer>
       </SliderContextProvider>
