@@ -14,25 +14,27 @@ import Footer from './pages/footer/footer.page';
 import PresPage from './pages/prespage/prespage.page';
 
 import './styles.scss';
+import { SessionContextProvider } from './context/session.context';
 
 function App() {
   return (
-    <Router onUpdate={() => window.scrollTo(0, 0)}>
-      <ScrollToTop />
-
-      <Switch>
-        <Route exact path='/dev-quentin' component={DevQuentin} />
-        <Route exact path='/' component={HomePage} />
-        <Route exact path='/pres' component={PresPage} />
-        <Route exact path='/sign-in-up' component={SignInUpPage} />
-        <Route exact path='/movies' component={MoviesPage} />
-        <Route exact path='/series' component={SeriesPage} />
-        <Route exact path='/my-list' component={MyListPage} />
-        <Route exact path='/profil' component={ProfilPage} />
-        <Route exact path='/player' component={PlayerPage} />
-        <Route exact path='/footer' component={Footer} />
-      </Switch>
-    </Router>
+    <SessionContextProvider>
+      <Router onUpdate={() => window.scrollTo(0, 0)}>
+        <ScrollToTop />
+        <Switch>
+          <Route exact path='/dev-quentin' component={DevQuentin} />
+          <Route exact path='/' component={HomePage} />
+          <Route exact path='/pres' component={PresPage} />
+          <Route exact path='/sign-in-up' component={SignInUpPage} />
+          <Route exact path='/movies' component={MoviesPage} />
+          <Route exact path='/series' component={SeriesPage} />
+          <Route exact path='/my-list' component={MyListPage} />
+          <Route exact path='/profil' component={ProfilPage} />
+          <Route exact path='/player' component={PlayerPage} />
+          <Route exact path='/footer' component={Footer} />
+        </Switch>
+      </Router>
+    </SessionContextProvider>
   );
 }
 
