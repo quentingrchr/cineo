@@ -56,7 +56,9 @@ export const searchByTitle = (array, string, nb = 8) => {
       var xSub = x.title.substring(0, 3).toLowerCase();
       return x.title.toLowerCase().includes(string) || checkTitle(xSub, string);
     }
+    return;
   });
+
   return filteredArr;
 };
 

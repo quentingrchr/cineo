@@ -29,7 +29,7 @@ const Item = ({
               src={large ? posterUrl : coverUrl}
               placeholder="tiny-image.jpg"
             >
-              {(src) => <img src={src} alt="an image" />}
+              {(src) => <img src={src} alt="cover movie" />}
             </ProgressiveImage>
           </div>
 
@@ -39,7 +39,7 @@ const Item = ({
                 src={hoverCoverUrl}
                 placeholder="tiny-image.jpg"
               >
-                {(src) => <img src={src} alt="an image" />}
+                {(src) => <img src={src} alt="cover movie" />}
               </ProgressiveImage>
             </div>
           )}

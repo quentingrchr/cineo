@@ -30,7 +30,7 @@ export default function Profil() {
                 <p>DADOUDOUDOUDOU</p>
                 <p>Abonné depuis le 28/10/2016</p>
                 <div className="profil__stat">
-                  <a href="#">Voir mes stats</a>
+                  <div>Voir mes stats</div>
                   <Arrow className="profil__arrow" />
                 </div>
               </div>
@@ -72,7 +72,7 @@ export default function Profil() {
             </div>
             <div className="third__info">
               <p>Détail du forfait : ULTRA PREMIUM HD</p>
-              <a href="#">Changer de forfait</a>
+              <div>Changer de forfait</div>
             </div>
             <div className="third__info">
               <p>
@@ -96,7 +96,7 @@ export default function Profil() {
                 1456
               </p>
 
-              <a href="#">Modifier ma carte</a>
+              <div>Modifier ma carte</div>
             </div>
             <div className="third__info">
               <p>Prochaine facturation : 26 avril 2020</p>
@@ -111,11 +111,9 @@ export default function Profil() {
               </div>
             </div>
             <div className="fourth__links">
-              <a href="#">
-                Gérer les appareils autorisés pour le téléchargement
-              </a>
-              <a href="#">Activer un appareil</a>
-              <a href="#">Se déconnecter de tous les appareils</a>
+              <div>Gérer les appareils autorisés pour le téléchargement</div>
+              <div>Activer un appareil</div>
+              <div>Se déconnecter de tous les appareils</div>
             </div>
             <button className="fourth__button">Résilier l'abonnement</button>
           </div>
