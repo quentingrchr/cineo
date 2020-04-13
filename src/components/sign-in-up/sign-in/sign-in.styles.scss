@@ -99,3 +99,13 @@ a {
 .submit {
   margin-bottom: 6px;
 }
+
+.wrongLogin {
+  position: absolute;
+  color: red;
+  top: 58%;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 0.9rem;
+  font-weight: 400;
+}
