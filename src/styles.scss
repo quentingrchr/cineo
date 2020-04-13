@@ -10,12 +10,15 @@
 @import "./components/footer/footer.styles.scss";
 @import "./components/title/title.style.scss";
 @import "./components/top5/top5.styles.scss";
+@import "./components/offers/offers.style.scss";
 @import "./pages/series/series.styles.scss";
 @import "./pages/movies/movies.styles.scss";
 @import "./pages/player/player-page.styles.scss";
 @import "./pages/home/home.styles.scss";
 @import "./pages/my-list/my-list.styles.scss";
-
+@import "./components/headerpres/headerpres.styles.scss";
+@import "./pages/prespage/prespage.styles.scss";
+@import "./components/coming-soon/coming-soon.styles.scss";
 body {
   overflow-x: hidden;
 }

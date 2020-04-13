@@ -1,0 +1,45 @@
+@keyframes sliding-coming-soon {
+  0% {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  99% {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+
+  100% {
+    clip-path: none;
+  }
+}
+
+.coming-soon {
+  margin-top: 50px;
+  width: 100%;
+  display: flex;
+  color: $color-neutral-light;
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+
+  &.visible {
+    animation: sliding-coming-soon 1.5s ease forwards;
+  }
+
+  &__item {
+    margin: 0 2px;
+
+    h2 {
+      display: flex;
+      justify-content: center;
+      font-style: normal;
+      font-weight: 600;
+      font-size: 23px;
+      margin-bottom: 20px;
+
+      em {
+        color: $color-primary;
+      }
+    }
+
+    img {
+      width: 100%;
+    }
+  }
+}
