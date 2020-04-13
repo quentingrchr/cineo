@@ -15,8 +15,6 @@ import PresPage from "./pages/prespage/prespage.page";
 
 import "./styles.scss";
 
-
-
 function App() {
   return (
     <Router onUpdate={() => window.scrollTo(0, 0)}>
@@ -24,7 +22,7 @@ function App() {
 
       <Switch>
         <Route exact path="/dev-quentin" component={DevQuentin} />
-        <Route exact path="/home" component={HomePage} />
+        <Route exact path="/" component={HomePage} />
         <Route exact path="/pres" component={PresPage} />
         <Route exact path="/sign-in-up" component={SignInUpPage} />
         <Route exact path="/movies" component={MoviesPage} />

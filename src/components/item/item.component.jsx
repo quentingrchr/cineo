@@ -3,6 +3,8 @@ import React from "react";
 import { SliderContextConsumer } from "../slider/slider.context";
 import { Link } from "react-router-dom";
 
+import ProgressiveImage from "react-progressive-image";
+
 const Item = ({
   title,
   coverUrl,
@@ -14,6 +16,7 @@ const Item = ({
   seasons,
   large,
   posterUrl,
+  tagline,
 }) => (
   <SliderContextConsumer>
     {({ itemRef }) => (
@@ -21,19 +24,33 @@ const Item = ({
         <Link to={`/player?id=${imdbID}`}>
           {!large && <div className="item__gradient-overlay"></div>}
 
-          <img
-            className="item__cover"
-            src={large ? posterUrl : coverUrl}
-            alt=""
-          />
+          <div className="item__cover">
+            <ProgressiveImage
+              src={large ? posterUrl : coverUrl}
+              placeholder="tiny-image.jpg"
+            >
+              {(src) => <img src={src} alt="an image" />}
+            </ProgressiveImage>
+          </div>
+
           {!large && (
-            <img className="item__hoverCover" src={hoverCoverUrl} alt="" />
+            <div className="item__hoverCover">
+              <ProgressiveImage
+                src={hoverCoverUrl}
+                placeholder="tiny-image.jpg"
+              >
+                {(src) => <img src={src} alt="an image" />}
+              </ProgressiveImage>
+            </div>
           )}
           {!large && (
             <div className="item__content">
               <h1>{title}</h1>
+              <p className="tagline">{tagline}</p>
               <p className="genre">{genre}</p>
-              <p>{seasons ? `${seasons} saisons` : duration}</p>
+              <p className="seasons">
+                {seasons ? `${seasons} saisons` : duration}
+              </p>
             </div>
           )}
         </Link>

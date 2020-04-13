@@ -23,6 +23,7 @@ export default class Controler extends React.Component {
           controlerRef,
           isContolerVisible,
           videoContainerRef,
+          git,
         }) => (
           <div
             className={`player__controler controler ${

@@ -1,5 +1,5 @@
-import React from "react";
-import { Waypoint } from "react-waypoint";
+import React from 'react';
+import { Waypoint } from 'react-waypoint';
 
 export default class Number extends React.Component {
   constructor(props) {
@@ -20,13 +20,11 @@ export default class Number extends React.Component {
       >
         <div>
           <div
-            className={
-              this.state.visible ? "topFive__number appear" : "topFive__number"
-            }
+            className={`topFive__number ${this.state.visible ? ' appear' : ''}`}
           >
             {this.props.children}
           </div>
-          {/* <img src={props.src}></img> */}
+          <img src={this.props.src} className='topFive__img'></img>
         </div>
       </Waypoint>
     );

@@ -36,3 +36,23 @@ export const trendingNow = (array, nb = 8) => {
   let res = array.filter((el) => el.trending === "trending");
   return res.slice(0, nb);
 };
+
+export const searchByName = (array, string, nb = 8) => {
+  if (string.length < 3) return [];
+  var checkTitle = (name, string) => {
+    var pattern = string
+      .split("")
+      .map((x) => {
+        return `(?=.*${x})`;
+      })
+      .join("");
+    var regex = new RegExp(`${pattern}`, "g");
+    return name.match(regex);
+  };
+
+  var filteredArr = array.filter((x) => {
+    var xSub = x.title.substring(0, 3).toLowerCase();
+    return x.title.toLowerCase().includes(string) || checkTitle(xSub, string);
+  });
+  return filteredArr;
+};
