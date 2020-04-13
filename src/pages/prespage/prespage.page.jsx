@@ -5,6 +5,7 @@ import Photo1 from '../../assets/img/pres_photo1.png';
 import Photo2 from '../../assets/img/pres_photo2.png';
 import Photo3 from '../../assets/img/pres_photo3.png';
 import Photo4 from '../../assets/img/pres_spiderman.png';
+import Offers from "../../components/offers/offers.component";
 
 export default function PresPage() {
   return (
@@ -72,6 +73,9 @@ export default function PresPage() {
           <div>
             <img src={Photo4}/>
           </div>
+        </section>
+        <section>
+          <Offers />
         </section>
       </div>
       <Footer />
