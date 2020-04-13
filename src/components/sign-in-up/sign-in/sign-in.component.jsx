@@ -23,6 +23,7 @@ export default class SignIn extends React.Component {
     this.props.click();
   };
 
+
   render() {
     const { mailValue, passwordValue } = this.state;
 
