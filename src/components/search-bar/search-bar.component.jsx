@@ -42,7 +42,9 @@ export default class SearchBar extends Component {
   }
 
   handleBlur() {
-    this.setState({ ...this.state, isFocused: false });
+    setTimeout(() => {
+      this.setState({ ...this.state, isFocused: false, search: "" });
+    }, 100);
   }
 
   render() {
