@@ -16,12 +16,12 @@ export default class Slider extends Component {
       offset: 0,
       nbViewports: Math.floor(this.props.data.length / 5),
       nbItems: this.props.data.length,
-      visible: false,
+      visible: false
     };
     this.sliderRef = createRef();
   }
 
-  handlePrev = (element) => {
+  handlePrev = element => {
     if (this.state.position <= 0) return;
     let itemWidth = element.current.offsetWidth;
     this.setState({ ...this.state, position: this.state.position-- });
@@ -30,11 +30,11 @@ export default class Slider extends Component {
       offset:
         this.state.position * 5 >= 5
           ? this.state.offset - (itemWidth + 2) * 5
-          : 0,
+          : 0
     });
   };
 
-  handleNext = (element) => {
+  handleNext = element => {
     if (this.state.position >= this.state.nbViewports) return;
     this.setState({ ...this.state, position: this.state.position++ }, () => {});
     let itemWidth = element.current.offsetWidth;
@@ -45,7 +45,7 @@ export default class Slider extends Component {
         (itemWidth + 2) *
           (this.state.nbItems - this.state.position * 5 >= 5
             ? 5
-            : this.state.nbItems - this.state.position * 5),
+            : this.state.nbItems - this.state.position * 5)
     });
   };
 
@@ -69,10 +69,10 @@ export default class Slider extends Component {
                     ref={this.sliderRef}
                     className="slider"
                     style={{
-                      transform: `translateX(-${this.state.offset}px)`,
+                      transform: `translateX(-${this.state.offset}px)`
                     }}
                   >
-                    {this.props.data.map((el) => {
+                    {this.props.data.map(el => {
                       return (
                         <Item
                           large={this.props.large}
@@ -93,7 +93,7 @@ export default class Slider extends Component {
                   </div>
                 </div>
 
-                {this.state.position !== this.state.nbViewports && (
+                {this.state.position !== this.state.nbViewports - 1 && (
                   <div
                     onClick={() => {
                       this.handleNext(itemRef);
