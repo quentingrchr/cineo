@@ -93,7 +93,7 @@ export default class Slider extends Component {
                   </div>
                 </div>
 
-                {this.state.position !== this.state.nbViewports - 1 && (
+                {this.state.position !== this.state.nbViewports && (
                   <div
                     onClick={() => {
                       this.handleNext(itemRef);
