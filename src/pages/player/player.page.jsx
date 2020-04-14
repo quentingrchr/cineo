@@ -86,7 +86,7 @@ export default class playerPage extends Component {
                         className='player-page__video'
                         ref={videoContainerRef}
                       >
-                        {user !== null && <Player source={Video} />}
+                        <Player source={Video} />
                       </div>
                       <div className='player-page__description description'>
                         <div class='description__title'>
