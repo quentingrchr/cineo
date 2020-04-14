@@ -1,3 +1,14 @@
+@keyframes records-appears {
+  from {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 .record {
   &__page {
     display: flex;
@@ -32,6 +43,10 @@
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
 
+  .img-container {
+    opacity: 0;
+  }
+
   & div {
     cursor: pointer;
     width: 200px;
@@ -61,6 +76,7 @@
   grid-gap: 20px;
 
   & div {
+    opacity: 0;
     cursor: pointer;
     width: 200px;
     transition: transform 0.2s linear;
@@ -102,12 +118,32 @@
   border: 1px solid $color-neutral-light;
   padding: 7px 20px;
   &::after {
-    content: '';
+    content: "";
     margin-left: 80px;
     width: 10px;
     height: 10px;
     border-bottom: 1px solid $color-neutral-light;
     border-right: 1px solid $color-neutral-light;
     transform: rotate(45deg) translateY(-10%);
+  }
+}
+
+.records {
+  a {
+    @for $i from 1 through 40 {
+      &:nth-child(#{$i}) .img-container {
+        animation: records-appears 0.5s #{$i * 0.2}s ease forwards;
+      }
+    }
+  }
+}
+
+.resume {
+  a {
+    @for $i from 1 through 40 {
+      &:nth-child(#{$i}) .img-container {
+        animation: records-appears 0.5s #{$i * 0.1}s ease forwards;
+      }
+    }
   }
 }

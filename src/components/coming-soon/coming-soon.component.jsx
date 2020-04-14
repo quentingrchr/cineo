@@ -1,5 +1,6 @@
 import { Waypoint } from "react-waypoint";
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 
 export default class ComingSoon extends Component {
   constructor(props) {
@@ -25,7 +26,9 @@ export default class ComingSoon extends Component {
                 <h2>
                   J -<em>{countdown}</em>
                 </h2>
+
                 <img src={movie.posterUrl} alt="poster movie" />
+                <Link className="coming-soon__btn">Voir le trailer</Link>
               </div>
             );
           })}

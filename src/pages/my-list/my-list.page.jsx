@@ -20,7 +20,7 @@ export default class MyListPage extends React.Component {
               {animationOnly(data, 5).map((el) => {
                 return (
                   <Link to={`/player?id=${el.imdbID}`}>
-                    <div>
+                    <div className="img-container">
                       <img src={el.coverUrl} alt="movie cover"></img>
                       <div className="progression"></div>
                     </div>
@@ -41,7 +41,7 @@ export default class MyListPage extends React.Component {
               {moviesOnly(data, 15).map((el) => {
                 return (
                   <Link to={`/player?id=${el.imdbID}`}>
-                    <div>
+                    <div className="img-container">
                       <img src={el.coverUrl} alt="movie cover"></img>
                     </div>
                   </Link>

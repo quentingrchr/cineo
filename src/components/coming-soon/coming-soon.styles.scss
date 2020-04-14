@@ -17,9 +17,23 @@
   display: flex;
   color: $color-neutral-light;
   clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  position: relative;
 
   &.visible {
     animation: sliding-coming-soon 1.5s ease forwards;
+  }
+
+  &__btn {
+    visibility: hidden;
+    opacity: 0;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    background-color: $color-primary;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    top: -200px;
+    padding: 10px 15px;
   }
 
   &__item {
@@ -40,6 +54,13 @@
 
     img {
       width: 100%;
+    }
+
+    &:hover {
+      .coming-soon__btn {
+        visibility: visible;
+        opacity: 1;
+      }
     }
   }
 }
