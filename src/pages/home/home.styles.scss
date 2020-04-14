@@ -103,9 +103,6 @@
   }
 
   .first-category {
-    h1 {
-    }
-
     margin: 0 5%;
     z-index: 3;
     position: absolute;
@@ -117,4 +114,24 @@
 
 .home-section {
   margin: 0% 5%;
+}
+
+.category {
+  margin-bottom: 8%;
+}
+
+.cta__see__more {
+  display: flex;
+  justify-content: flex-end;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-neutral-light;
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    &::after {
+      content: '→';
+      margin-left: 3px;
+    }
+  }
 }
