@@ -9,6 +9,15 @@
   }
 }
 
+@keyframes arrow-moving {
+  from {
+    transform: translateX(0px);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
 @keyframes sliding-background {
   from {
     clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%);
@@ -126,12 +135,20 @@
   font-size: 14px;
   font-weight: 400;
   color: $color-neutral-light;
+  &::after {
+    content: "→";
+    margin-left: 3px;
+    opacity: 0;
+  }
   &:hover {
     text-decoration: underline;
     cursor: pointer;
+
     &::after {
-      content: '→';
+      content: "→";
       margin-left: 3px;
+      opacity: 1;
+      animation: arrow-moving 0.2s infinite alternate;
     }
   }
 }
