@@ -1,3 +1,6 @@
+$breakpoint-medium: 600px;
+$breakpoint-large: 970px;
+
 .register {
   position: relative;
   width: 100vw;
@@ -13,9 +16,20 @@
     display: flex;
     margin-bottom: 30px;
     color: $color-neutral-light;
+    @media (max-width: $breakpoint-medium) {
+      font-size: 40px;
+      padding-bottom: 30px;
+      }
+      @media (max-width: $breakpoint-large) {
+        font-size: 40px;
+        padding-bottom: 30px;
+        }
     & > span {
       color: $color-primary;
     }
+    @media (max-width: $breakpoint-medium) {
+      font-size: 30px;
+      }
   }
 }
 

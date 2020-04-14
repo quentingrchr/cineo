@@ -1,3 +1,5 @@
+$breakpoint-medium: 969px;
+
 .signup {
   &__nav {
     width: 936px;
@@ -8,6 +10,10 @@
     border-radius: 10px 10px 0px 0px;
     background-color: $color-neutral-light;
     font-weight: 600;
+    @media (max-width: $breakpoint-medium) {
+      width: 410px;
+      height: 50px;
+      }
     &--signin {
       width: 468px;
       height: 51px;
@@ -37,14 +43,18 @@
   &__content {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     align-items: center;
     width: 936px;
-    height: 490px;
     background-color: $color-background-register;
     font-size: 18px;
     font-weight: 300;
     color: $color-neutral-dark;
     border-radius: 10px;
+    @media (max-width: $breakpoint-medium) {
+      width: 410px;
+      height: 520px;
+      }
   }
   &__form {
     position: relative;
@@ -58,9 +68,14 @@
       height: 300px;
       display: flex;
       justify-content: flex-start;
-      padding-top: 60px;
+      padding-top: 20px;
       text-align: right;
       margin-bottom: 50px;
+      @media (max-width: $breakpoint-medium) {
+        padding-top: 30px;
+        height: auto;
+        margin-bottom: 0px;
+        }
     }
   }
 }
@@ -69,15 +84,30 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @media (max-width: $breakpoint-medium) {
+      flex-direction: column;
+      justify-content: center;
+      }
   }
   &__component {
     position: relative;
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    margin-bottom: 30px;
+    @media (max-width: $breakpoint-medium) {
+      margin-bottom: 20px;
+      align-items: center;
+      }
     & > p {
       width: 40%;
       margin-right: 20px;
+      @media (max-width: $breakpoint-medium) {
+        width: 120px;
+        height: 15px;
+        font-size: 14px;
+        justify-content: center;
+        }
     }
     & > input::placeholder {
       font-family: poppins;
@@ -95,8 +125,11 @@
 }
 .form__left {
   margin-right: 40px;
+  @media (max-width: $breakpoint-medium) {
+    margin: 0;
+    }
 }
-.submit {
+.submit__sign-up {
   font-family: poppins;
   padding: 10px 30px 10px 30px;
   font-weight: 600;
@@ -104,6 +137,7 @@
   color: $color-neutral-light;
   background-color: $color-neutral;
   border: none;
+  margin-bottom: 30px;
   &:hover {
     background-color: $color-primary;
     border: none;
@@ -116,14 +150,24 @@
       background-color: $color-neutral;
     }
   }
+  @media (max-width: $breakpoint-medium) {
+    margin: 0;
+    font-size: 14px;
+    margin-bottom: 40px;
+    }
 }
 
 .warning {
   color: red;
   position: absolute;
-  top: 40px;
-  left: 180px;
+  top: 35px;
+  left: 215px;
   font-size: 0.9rem;
+  @media (max-width: $breakpoint-medium) {
+    font-size: 0.7rem;
+    top: 30px;
+    left: 140px;
+    }
 }
 
 .mailError {
