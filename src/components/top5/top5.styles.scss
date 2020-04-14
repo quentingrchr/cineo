@@ -1,7 +1,13 @@
 .topFive {
   display: flex;
-  justify-content: space-between;
+  flex-wrap: wrap;
+  justify-content: space-around;
   width: 100%;
+
+  @include large {
+    display: flex;
+    justify-content: space-between;
+  }
 
   &__number {
     display: flex;

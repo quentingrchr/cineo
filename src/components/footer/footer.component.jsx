@@ -13,12 +13,12 @@ export default function Footer() {
         <p>Données personnelles</p>
       </div>
       <div className="footer__section2 footer__component">
-        <p>Cinéo Industie</p>
+        <p>Cinéo Industrie</p>
         <p>2020</p>
         <p>Projet étudiants</p>
       </div>
       <div className="footer__section3 footer__component">
-        <p>Help</p>
+        <p>FAQ</p>
         <div className="social__medias">
           <p>Restez connectés :</p>
           <div className="social__logos">
