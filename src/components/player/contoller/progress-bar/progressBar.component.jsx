@@ -42,7 +42,7 @@ export default class ProgressBar extends React.Component {
 
   progressBarEvolution = () => {
     let video = this.state.video;
-    if (video.current !== null) {
+    if (video.current) {
       this.progressBarRef.current.value =
         (video.current.currentTime * 100) / video.current.duration;
       this.timeIndicationRef.current.innerHTML = this.setTime(

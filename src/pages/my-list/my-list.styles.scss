@@ -38,17 +38,29 @@
   }
 }
 
+.img-container {
+  opacity: 0;
+}
+
 .resume {
   margin-top: 30px;
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
 
-  .img-container {
-    opacity: 0;
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(5, 1fr);
   }
 
-  & div {
+  @media (max-width: 1100px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  & a div {
     cursor: pointer;
     width: 200px;
     margin-bottom: 20px;
@@ -76,18 +88,65 @@
   grid-template-columns: repeat(6, 1fr);
   grid-gap: 20px;
 
-  & div {
-    opacity: 0;
-    cursor: pointer;
-    width: 200px;
-    transition: transform 0.2s linear;
+  @media (max-width: 1300px) {
+    grid-template-columns: repeat(5, 1fr);
+  }
 
-    & img {
-      width: 100%;
+  @media (max-width: 1150px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 950px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  & div {
+    position: relative;
+    width: 200px;
+
+    &:hover .delete__record {
+      visibility: visible;
+    }
+    & .delete__record {
+      visibility: hidden;
+      position: absolute;
+      width: 25px;
+      height: 25px;
+      top: -5%;
+      right: -5%;
+      border-radius: 50px;
+      background-color: $color-neutral-light;
+      cursor: pointer;
+      transition: visibility 0.3 linear;
+
+      &::before {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 70%;
+        height: 5px;
+        background-color: $color-primary;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) rotate(45deg);
+        border-radius: 5px;
+      }
+      &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 70%;
+        height: 5px;
+        background-color: $color-primary;
+        top: 50%;
+        left: 50%;
+        transform: translateY(-50%) translateX(-50%) rotate(-45deg);
+        border-radius: 5px;
+      }
     }
 
-    &:hover {
-      transform: scale(1.5);
+    & a img {
+      width: 100%;
     }
   }
 }
@@ -116,6 +175,7 @@
   align-items: center;
   font-weight: 300;
   letter-spacing: 0.5px;
+  cursor: pointer;
 
   border: 1px solid $color-neutral-light;
   padding: 7px 20px;
@@ -131,9 +191,9 @@
 }
 
 .records {
-  a {
+  div {
     @for $i from 1 through 40 {
-      &:nth-child(#{$i}) .img-container {
+      &:nth-child(#{$i}) {
         animation: records-appears 0.5s #{$i * 0.2}s ease forwards;
       }
     }

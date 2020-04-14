@@ -12,7 +12,7 @@ export default class MyListPage extends React.Component {
   render() {
     return (
       <SessionContextConsumer>
-        {({ movieList }) => (
+        {({ movieList, deleteMovie }) => (
           <div className='record__page'>
             <Header />
             <div className='record__container'>
@@ -46,11 +46,15 @@ export default class MyListPage extends React.Component {
                       .filter((el) => movieList.includes(el.imdbID.toString()))
                       .map((el) => {
                         return (
-                          <Link to={`/player?id=${el.imdbID}`}>
-                            <div className='img-container'>
+                          <div className='img-container'>
+                            <Link to={`/player?id=${el.imdbID}`}>
                               <img src={el.coverUrl} alt='movie cover'></img>
-                            </div>
-                          </Link>
+                            </Link>
+                            <div
+                              className='delete__record'
+                              onClick={() => deleteMovie(el.imdbID)}
+                            ></div>
+                          </div>
                         );
                       })}
                   </div>

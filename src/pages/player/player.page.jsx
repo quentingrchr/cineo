@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 import { moviesOnly, seriesOnly } from '../../data.utils';
 
@@ -66,86 +66,92 @@ export default class playerPage extends Component {
 
     return (
       <SessionContextConsumer>
-        {({ user, addMovie }) => (
-          <PlayerContextProvider>
-            <PlayerContextConsumer>
-              {({ videoContainerRef, play }) => (
-                <div className='player-page' onClick={() => this.globalClick()}>
-                  <Header />
-                  <div className='player-page__content'>
-                    <Link to=''>
-                      <div className='player-page__back-to-home'>
-                        <svg viewBox='0 0 21 16'>
-                          <path d='M0.292893 7.29289C-0.097631 7.68342 -0.0976311 8.31658 0.292893 8.7071L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65685 0.928931L0.292893 7.29289ZM21 7L1 7L1 9L21 9L21 7Z' />
-                        </svg>
-                        <p>Retour à l'acceuil</p>
-                      </div>
-                    </Link>
-                    <div className='player-page__video-description'>
-                      <div
-                        className='player-page__video'
-                        ref={videoContainerRef}
-                      >
-                        <Player source={Video} />
-                      </div>
-                      <div className='player-page__description description'>
-                        <div class='description__title'>
-                          <h1>
-                            {data.filter((el) => el.imdbID === id)[0].title}
-                          </h1>
-                          <p>
-                            {`${data.filter((el) => el.imdbID === id)[0].year} -
+        {({ user, addMovie }) => {
+          if (!user) return <Redirect to='/sign-in-up'></Redirect>;
+          return (
+            <PlayerContextProvider>
+              <PlayerContextConsumer>
+                {({ videoContainerRef, play }) => (
+                  <div
+                    className='player-page'
+                    onClick={() => this.globalClick()}
+                  >
+                    <Header />
+                    <div className='player-page__content'>
+                      <Link to=''>
+                        <div className='player-page__back-to-home'>
+                          <svg viewBox='0 0 21 16'>
+                            <path d='M0.292893 7.29289C-0.097631 7.68342 -0.0976311 8.31658 0.292893 8.7071L6.65685 15.0711C7.04738 15.4616 7.68054 15.4616 8.07107 15.0711C8.46159 14.6805 8.46159 14.0474 8.07107 13.6569L2.41421 8L8.07107 2.34314C8.46159 1.95262 8.46159 1.31946 8.07107 0.928931C7.68054 0.538407 7.04738 0.538407 6.65685 0.928931L0.292893 7.29289ZM21 7L1 7L1 9L21 9L21 7Z' />
+                          </svg>
+                          <p>Retour à l'acceuil</p>
+                        </div>
+                      </Link>
+                      <div className='player-page__video-description'>
+                        <div
+                          className='player-page__video'
+                          ref={videoContainerRef}
+                        >
+                          <Player source={Video} />
+                        </div>
+                        <div className='player-page__description description'>
+                          <div class='description__title'>
+                            <h1>
+                              {data.filter((el) => el.imdbID === id)[0].title}
+                            </h1>
+                            <p>
+                              {`${
+                                data.filter((el) => el.imdbID === id)[0].year
+                              } -
                           ${data.filter((el) => el.imdbID === id)[0].genre} -
                           ${data.filter((el) => el.imdbID === id)[0].duration}`}
-                          </p>
-                        </div>
-                        <div className='descriptions__buttons button'>
-                          <Button
-                            content={
-                              <div className='button__play-content'>
-                                Regarder
-                              </div>
-                            }
-                            clickFunction={() => play()}
-                          />
-                          {!isMovie && (
+                            </p>
+                          </div>
+                          <div className='descriptions__buttons button'>
                             <Button
                               content={
-                                <div
-                                  className={`button__season-content ${
-                                    isSeasonsListVisible ? 'is-clicked' : ''
-                                  }`}
-                                  ref={this.seasonButtonRef}
-                                >
-                                  Saison 1
+                                <div className='button__play-content'>
+                                  Regarder
                                 </div>
                               }
-                              clickFunction={() => this.handelClick()}
+                              clickFunction={() => play()}
                             />
-                          )}
-                          {!isMovie && isSeasonsListVisible && (
-                            <ul className='seasons-list'>
-                              <li onClick={(e) => this.seasonsItemClick(e)}>
-                                Saison 1
-                              </li>
-                              <li onClick={(e) => this.seasonsItemClick(e)}>
-                                Saison 2
-                              </li>
-                              <li onClick={(e) => this.seasonsItemClick(e)}>
-                                Saison 3
-                              </li>
-                              <li onClick={(e) => this.seasonsItemClick(e)}>
-                                Saison 4
-                              </li>
-                              <li onClick={(e) => this.seasonsItemClick(e)}>
-                                Saison 5
-                              </li>
-                              <li onClick={(e) => this.seasonsItemClick(e)}>
-                                Saison 6
-                              </li>
-                            </ul>
-                          )}
-                          {user !== null && (
+                            {!isMovie && (
+                              <Button
+                                content={
+                                  <div
+                                    className={`button__season-content ${
+                                      isSeasonsListVisible ? 'is-clicked' : ''
+                                    }`}
+                                    ref={this.seasonButtonRef}
+                                  >
+                                    Saison 1
+                                  </div>
+                                }
+                                clickFunction={() => this.handelClick()}
+                              />
+                            )}
+                            {!isMovie && isSeasonsListVisible && (
+                              <ul className='seasons-list'>
+                                <li onClick={(e) => this.seasonsItemClick(e)}>
+                                  Saison 1
+                                </li>
+                                <li onClick={(e) => this.seasonsItemClick(e)}>
+                                  Saison 2
+                                </li>
+                                <li onClick={(e) => this.seasonsItemClick(e)}>
+                                  Saison 3
+                                </li>
+                                <li onClick={(e) => this.seasonsItemClick(e)}>
+                                  Saison 4
+                                </li>
+                                <li onClick={(e) => this.seasonsItemClick(e)}>
+                                  Saison 5
+                                </li>
+                                <li onClick={(e) => this.seasonsItemClick(e)}>
+                                  Saison 6
+                                </li>
+                              </ul>
+                            )}
                             <div
                               className='button__download'
                               onClick={() => addMovie(id)}
@@ -180,49 +186,51 @@ export default class playerPage extends Component {
                                 />
                               </svg>
                             </div>
-                          )}
+                          </div>
+                          <p className='description__synopsis'>
+                            <span>Synopsis</span>
+                            {data.filter((el) => el.imdbID === id)[0].pitch}
+                          </p>
+                          <p className='description__actors'>
+                            <span>Acteurs</span>
+                            {data.filter((el) => el.imdbID === id)[0].stars}
+                          </p>
                         </div>
-                        <p className='description__synopsis'>
-                          <span>Synopsis</span>
-                          {data.filter((el) => el.imdbID === id)[0].pitch}
-                        </p>
-                        <p className='description__actors'>
-                          <span>Acteurs</span>
-                          {data.filter((el) => el.imdbID === id)[0].stars}
-                        </p>
                       </div>
                     </div>
-                  </div>
-                  {!isMovie && (
-                    <div className='player-page__series-episodes'>
-                      <div>Episode 1</div>
-                      <div>Episode 2</div>
-                      <div>Episode 3</div>
-                      <div>Episode 4</div>
-                      <div>Episode 5</div>
-                      <div>Episode 6</div>
-                      <div>Episode 7</div>
+                    {!isMovie && (
+                      <div className='player-page__series-episodes'>
+                        <div>Episode 1</div>
+                        <div>Episode 2</div>
+                        <div>Episode 3</div>
+                        <div>Episode 4</div>
+                        <div>Episode 5</div>
+                        <div>Episode 6</div>
+                        <div>Episode 7</div>
+                      </div>
+                    )}
+                    <div className='player-page__slider'>
+                      <Title
+                        content={`Les ${
+                          isMovie ? 'films' : 'série'
+                        } similaires`}
+                      />
+                      <Slider
+                        data={
+                          data.filter((el) => el.imdbID === this.state.id)[0]
+                            .type === 'movie'
+                            ? moviesOnly(data, 15)
+                            : seriesOnly(data, 15)
+                        }
+                      />
                     </div>
-                  )}
-                  <div className='player-page__slider'>
-                    <Title
-                      content={`Les ${isMovie ? 'films' : 'série'} similaires`}
-                    />
-                    <Slider
-                      data={
-                        data.filter((el) => el.imdbID === this.state.id)[0]
-                          .type === 'movie'
-                          ? moviesOnly(data, 15)
-                          : seriesOnly(data, 15)
-                      }
-                    />
+                    <Footer />
                   </div>
-                  <Footer />
-                </div>
-              )}
-            </PlayerContextConsumer>
-          </PlayerContextProvider>
-        )}
+                )}
+              </PlayerContextConsumer>
+            </PlayerContextProvider>
+          );
+        }}
       </SessionContextConsumer>
     );
   }
