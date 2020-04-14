@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 
+import { moviesOnly, seriesOnly } from "../../data.utils";
+
 import Player from "../../components/player/player.component";
 import Header from "../../components/header/header.component";
 import Button from "../../components/button/button.component";
@@ -12,7 +14,7 @@ import Video from "../../assets/video/sharknado-6-shark-vs-t-rex-trailer-new-201
 import data from "../../data.json";
 import {
   PlayerContextProvider,
-  PlayerContextConsumer
+  PlayerContextConsumer,
 } from "../../components/player/player.context";
 import { createRef } from "react";
 
@@ -22,13 +24,13 @@ export default class playerPage extends Component {
     this.state = {
       id: parseInt(this.props.location.search.substr(4)),
       isMovie: true,
-      isSeasonsListVisible: false
+      isSeasonsListVisible: false,
     };
     this.seasonButtonRef = createRef();
   }
 
   componentWillMount = () => {
-    if (data.filter(el => el.imdbID === this.state.id)[0].type === "movie") {
+    if (data.filter((el) => el.imdbID === this.state.id)[0].type === "movie") {
       this.setState({ isMovie: true });
     } else {
       this.setState({ isMovie: false });
@@ -47,7 +49,7 @@ export default class playerPage extends Component {
       : this.setState({ isSeasonsListVisible: true });
   };
 
-  seasonsItemClick = e => {
+  seasonsItemClick = (e) => {
     this.seasonButtonRef.current.innerHTML = e.target.innerHTML;
     this.setState({ isSeasonsListVisible: false });
   };
@@ -82,11 +84,11 @@ export default class playerPage extends Component {
                   </div>
                   <div className="player-page__description description">
                     <div class="description__title">
-                      <h1>{data.filter(el => el.imdbID === id)[0].title}</h1>
+                      <h1>{data.filter((el) => el.imdbID === id)[0].title}</h1>
                       <p>
-                        {`${data.filter(el => el.imdbID === id)[0].year} -
-                          ${data.filter(el => el.imdbID === id)[0].genre} -
-                          ${data.filter(el => el.imdbID === id)[0].duration}`}
+                        {`${data.filter((el) => el.imdbID === id)[0].year} -
+                          ${data.filter((el) => el.imdbID === id)[0].genre} -
+                          ${data.filter((el) => el.imdbID === id)[0].duration}`}
                       </p>
                     </div>
                     <div className="descriptions__buttons button">
@@ -113,22 +115,22 @@ export default class playerPage extends Component {
                       )}
                       {!isMovie && isSeasonsListVisible && (
                         <ul className="seasons-list">
-                          <li onClick={e => this.seasonsItemClick(e)}>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
                             Saison 1
                           </li>
-                          <li onClick={e => this.seasonsItemClick(e)}>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
                             Saison 2
                           </li>
-                          <li onClick={e => this.seasonsItemClick(e)}>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
                             Saison 3
                           </li>
-                          <li onClick={e => this.seasonsItemClick(e)}>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
                             Saison 4
                           </li>
-                          <li onClick={e => this.seasonsItemClick(e)}>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
                             Saison 5
                           </li>
-                          <li onClick={e => this.seasonsItemClick(e)}>
+                          <li onClick={(e) => this.seasonsItemClick(e)}>
                             Saison 6
                           </li>
                         </ul>
@@ -167,11 +169,11 @@ export default class playerPage extends Component {
                     </div>
                     <p className="description__synopsis">
                       <span>Synopsis</span>
-                      {data.filter(el => el.imdbID === id)[0].pitch}
+                      {data.filter((el) => el.imdbID === id)[0].pitch}
                     </p>
                     <p className="description__actors">
                       <span>Acteurs</span>
-                      {data.filter(el => el.imdbID === id)[0].stars}
+                      {data.filter((el) => el.imdbID === id)[0].stars}
                     </p>
                   </div>
                 </div>
@@ -192,12 +194,12 @@ export default class playerPage extends Component {
                   content={`Les ${isMovie ? "films" : "série"} similaires`}
                 />
                 <Slider
-                  data={data.filter(movie => {
-                    return (
-                      movie.type ===
-                      data.filter(el => el.imdbID === this.state.id)[0].type
-                    );
-                  })}
+                  data={
+                    data.filter((el) => el.imdbID === this.state.id)[0].type ===
+                    "movie"
+                      ? moviesOnly(data, 15)
+                      : seriesOnly(data, 15)
+                  }
                 />
               </div>
               <Footer />
