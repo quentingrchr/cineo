@@ -61,7 +61,6 @@ export class PlayerContextProvider extends Component {
       mouseMove: this.mouseMove,
       videoCurrentTime: this.videoCurrentTime,
     };
-
     return (
       <PlayerContext.Provider value={value}>
         {this.props.children}

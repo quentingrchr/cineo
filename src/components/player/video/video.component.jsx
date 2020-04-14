@@ -1,5 +1,6 @@
 import React from 'react';
 import { PlayerContextConsumer } from '../player.context';
+import picture from './../../../assets/pictures/cinema-1.jpg';
 
 export default class Video extends React.Component {
   constructor(props) {
@@ -14,13 +15,13 @@ export default class Video extends React.Component {
 
     return (
       <PlayerContextConsumer>
-        {({ videoRef, videoCurrentTime }) => (
+        {({ videoRef, videoCurrentTime, videoIsStarted }) => (
           <video
             ref={videoRef}
             src={videoSrc}
             className='player__video'
             onTimeUpdate={() => videoCurrentTime()}
-            poster='../../../assets/pictures/cinema-1.jpg'
+            poster={picture}
           ></video>
         )}
       </PlayerContextConsumer>

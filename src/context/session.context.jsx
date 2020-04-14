@@ -14,8 +14,6 @@ export class SessionContextProvider extends Component {
   }
 
   componentDidMount() {
-    console.log(JSON.parse(localStorage.getItem('user')));
-    console.log(JSON.parse(localStorage.getItem('moviesList')));
     if (localStorage.getItem('user')) {
       this.setState({ user: JSON.parse(localStorage.getItem('user')) });
     }
@@ -69,7 +67,6 @@ export class SessionContextProvider extends Component {
                 });
                 this.setState({ movieList: movieList });
                 localStorage.setItem('moviesList', JSON.stringify(movieList));
-                console.log(JSON.parse(localStorage.getItem('moviesList')));
               }
             });
         } else {
@@ -109,7 +106,6 @@ export class SessionContextProvider extends Component {
             signUpDate: data.user[0].date_inscription,
           };
           localStorage.setItem('user', JSON.stringify(userLoged));
-          console.log(JSON.parse(localStorage.getItem('user')));
         }
       });
   };
@@ -164,6 +160,29 @@ export class SessionContextProvider extends Component {
       });
   };
 
+  deleteMovie = (id_movie) => {
+    let data = {};
+    data.movieId = id_movie.toString();
+    data.userId = this.state.user.id;
+
+    fetch('http://18.191.118.60:80/deleteMovie.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        let movieList = [];
+        data.forEach((movie) => {
+          movieList.push(movie.id_movie);
+        });
+        this.setState({ movieList: movieList });
+        localStorage.setItem('moviesList', JSON.stringify(movieList));
+      });
+  };
+
   render() {
     const value = {
       ...this.state,
@@ -173,6 +192,7 @@ export class SessionContextProvider extends Component {
       deleteUser: this.deleteUser,
       logOut: this.logOut,
       addMovie: this.addMovie,
+      deleteMovie: this.deleteMovie,
     };
 
     return (

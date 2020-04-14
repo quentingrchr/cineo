@@ -19,7 +19,6 @@ export default class Controler extends React.Component {
       <PlayerContextConsumer>
         {({
           videoRef,
-          currentTime,
           controlerRef,
           isContolerVisible,
           videoContainerRef,
