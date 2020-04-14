@@ -9,6 +9,7 @@ export class SessionContextProvider extends Component {
       user: null,
       mailAlreadyExist: false,
       wrongLogin: false,
+      movieList: null,
     };
   }
 
@@ -26,7 +27,6 @@ export class SessionContextProvider extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         if (data.success) {
           this.setState({
             user: {
@@ -37,8 +37,26 @@ export class SessionContextProvider extends Component {
               mail: data.infos[0].mail,
               signUpDate: data.infos[0].date_inscription,
             },
-            movieList: [],
           });
+
+          let userId = {};
+          userId.id = data.infos[0].id;
+          fetch('http://18.191.118.60:80/getMoviesList.php', {
+            method: 'POST',
+            body: JSON.stringify(userId),
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              if (data.length > 0) {
+                let movieList = [];
+                data.forEach((movie) => {
+                  movieList.push(movie.id_movie);
+                });
+                this.setState({ movieList: movieList });
+              }
+            });
         } else {
           this.setState({ wrongLogin: true });
         }
@@ -64,8 +82,6 @@ export class SessionContextProvider extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-
         if (data.message) {
           this.setState({ mailAlreadyExist: true });
         } else {
@@ -106,7 +122,7 @@ export class SessionContextProvider extends Component {
   };
 
   logOut = () => {
-    this.setState({ user: null });
+    this.setState({ user: null, movieList: null });
   };
 
   addMovie = (filmId) => {
@@ -140,7 +156,6 @@ export class SessionContextProvider extends Component {
       logOut: this.logOut,
       addMovie: this.addMovie,
     };
-    console.log(value.movieList);
 
     return (
       <SessionContext.Provider value={value}>

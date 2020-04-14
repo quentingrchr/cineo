@@ -40,19 +40,21 @@ export default class MyListPage extends React.Component {
                     <div className='input'>Catégories</div>
                   </div>
                 </div>
-                <div className='records'>
-                  {data
-                    .filter((el) => movieList.includes(el.imdbID.toString()))
-                    .map((el) => {
-                      return (
-                        <Link to={`/player?id=${el.imdbID}`}>
-                          <div className='img-container'>
-                            <img src={el.coverUrl} alt='movie cover'></img>
-                          </div>
-                        </Link>
-                      );
-                    })}
-                </div>
+                {movieList !== null && (
+                  <div className='records'>
+                    {data
+                      .filter((el) => movieList.includes(el.imdbID.toString()))
+                      .map((el) => {
+                        return (
+                          <Link to={`/player?id=${el.imdbID}`}>
+                            <div className='img-container'>
+                              <img src={el.coverUrl} alt='movie cover'></img>
+                            </div>
+                          </Link>
+                        );
+                      })}
+                  </div>
+                )}
               </div>
             </div>
             <Footer />
