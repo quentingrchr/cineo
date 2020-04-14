@@ -11,35 +11,38 @@ export default class SignUp extends React.Component {
       confirmPasswordValue: '',
       lastnameValue: '',
       firstnameValue: '',
+      pseudoValue: '',
       isMailvalid: true,
       isPasswordvalid: true,
     };
   }
-  handelClick = () => this.props.click();
+  handleClick = () => this.props.click();
 
-  handelChangeMail = (e) => {
+  handleChangeMail = (e) => {
     this.setState({ mailValue: e.target.value });
   };
 
-  handelChangeConfirmMail = (e) => {
+  handleChangeConfirmMail = (e) => {
     this.setState({ confirmMailValue: e.target.value });
   };
 
-  handelChangePassword = (e) => {
+  handleChangePassword = (e) => {
     this.setState({ passwordValue: e.target.value });
   };
 
-  handelChangeConfirmPassword = (e) => {
+  handleChangeConfirmPassword = (e) => {
     this.setState({ confirmPasswordValue: e.target.value });
   };
 
-  handelChangeLastname = (e) => {
+  handleChangeLastname = (e) => {
     this.setState({ lastnameValue: e.target.value });
   };
 
-  handelChangeFirstname = (e) => {
+  handleChangeFirstname = (e) => {
     this.setState({ firstnameValue: e.target.value });
   };
+
+  handleChangePseudo = (e) => this.setState({ pseudoValue: e.target.value });
 
   checkMail = () => {
     this.state.mailValue === this.state.confirmMailValue
@@ -61,6 +64,7 @@ export default class SignUp extends React.Component {
       confirmPasswordValue,
       lastnameValue,
       firstnameValue,
+      pseudoValue,
       isMailvalid,
       isPasswordvalid,
     } = this.state;
@@ -72,7 +76,7 @@ export default class SignUp extends React.Component {
             <div className='signup__nav'>
               <div
                 className='signup__nav--signin'
-                onClick={() => this.handelClick()}
+                onClick={() => this.handleClick()}
               >
                 <p>Se connecter</p>
               </div>
@@ -88,6 +92,7 @@ export default class SignUp extends React.Component {
                   firstnameValue,
                   mailValue,
                   passwordValue,
+                  pseudoValue,
                   e
                 )
               }
@@ -98,39 +103,44 @@ export default class SignUp extends React.Component {
                     <p>Nom</p>
                     <input
                       type='text'
-                      placeholder=''
                       value={lastnameValue}
-                      onChange={this.handelChangeLastname}
+                      onChange={this.handleChangeLastname}
                     ></input>
                   </div>
                   <div className='form__left__firstname form__component'>
                     <p>Prénom</p>
                     <input
                       type='text'
-                      placeholder=''
                       value={firstnameValue}
-                      onChange={this.handelChangeFirstname}
+                      onChange={this.handleChangeFirstname}
                     ></input>
                   </div>
+                  <div className='form__left__pseudo form__component'>
+                    <p>Pseudo</p>
+                    <input
+                      type='text'
+                      onChange={this.handleChangePseudo}
+                    ></input>
+                  </div>
+                </div>
+                <div className='form__part form__right'>
                   <div className='form__right__email form__component'>
                     <p>Email</p>
                     <input
                       type='text'
                       placeholder='exemple@abc.com'
                       value={mailValue}
-                      onChange={this.handelChangeMail}
+                      onChange={this.handleChangeMail}
                       onFocus={changeWarningStates}
                     ></input>
                   </div>
-                </div>
-                <div className='form__part form__right'>
                   <div className='form__right__emailconf form__component'>
                     <p>Confirmer votre e-mail</p>
                     <input
                       type='text'
                       placeholder='exemple@abc.com'
                       value={confirmMailValue}
-                      onChange={this.handelChangeConfirmMail}
+                      onChange={this.handleChangeConfirmMail}
                       onBlur={this.checkMail}
                     ></input>
                     {!isMailvalid && <div class='warning'>Mail invalide</div>}
@@ -140,7 +150,7 @@ export default class SignUp extends React.Component {
                     <input
                       type='password'
                       value={passwordValue}
-                      onChange={this.handelChangePassword}
+                      onChange={this.handleChangePassword}
                     ></input>
                   </div>
                   <div className='form__right__passwordconf form__component'>
@@ -148,7 +158,7 @@ export default class SignUp extends React.Component {
                     <input
                       type='password'
                       value={confirmPasswordValue}
-                      onChange={this.handelChangeConfirmPassword}
+                      onChange={this.handleChangeConfirmPassword}
                       onBlur={this.checkPassword}
                     ></input>
                     {!isPasswordvalid && (
@@ -168,12 +178,12 @@ export default class SignUp extends React.Component {
                   firstnameValue.length === 0
                 }
               ></input>
+              {mailAlreadyExist && (
+                <span className='mailError'>
+                  Cette adresse mail est déjà ratachée à un compte
+                </span>
+              )}
             </form>
-            {mailAlreadyExist && (
-              <div className='mailError'>
-                Cette adresse mail est déjà ratachée à un compte
-              </div>
-            )}
           </div>
         )}
       </SessionContextConsumer>

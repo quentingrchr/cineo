@@ -191,3 +191,37 @@
     }
   }
 }
+
+.alert {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & div {
+    width: 550px;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $color-neutral-dark;
+  }
+
+  & p {
+    width: 80%;
+    font-size: 0.8rem;
+    color: red;
+    text-align: center;
+    line-height: 1.2rem;
+  }
+}
+
+.fourth__button {
+  z-index: 2;
+}

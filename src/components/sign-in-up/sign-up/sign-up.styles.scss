@@ -47,6 +47,7 @@
     border-radius: 10px;
   }
   &__form {
+    position: relative;
     width: 90%;
     display: flex;
     flex-direction: column;
@@ -75,7 +76,7 @@
     justify-content: flex-start;
     align-items: center;
     & > p {
-      width: 150px;
+      width: 40%;
       margin-right: 20px;
     }
     & > input::placeholder {
@@ -90,10 +91,11 @@
     flex-direction: column;
     justify-content: space-between;
     height: 30vh;
-    width: 60%;
   }
 }
-
+.form__left {
+  margin-right: 40px;
+}
 .submit {
   font-family: poppins;
   padding: 10px 30px 10px 30px;
@@ -126,7 +128,9 @@
 
 .mailError {
   position: absolute;
-  top: 71%;
+  top: 79%;
   color: red;
   font-size: 0.9rem;
+  left: 50%;
+  transform: translateX(-50%);
 }

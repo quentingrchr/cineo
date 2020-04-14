@@ -23,7 +23,6 @@ export default class SignIn extends React.Component {
     this.props.click();
   };
 
-
   render() {
     const { mailValue, passwordValue } = this.state;
 
@@ -66,7 +65,7 @@ export default class SignIn extends React.Component {
                 value='Connexion'
                 disabled={mailValue.length === 0 || passwordValue.length === 0}
               ></input>
-              <Link to='/home'>
+              <Link to='/'>
                 <p className='registerbox__withoutlogin'>
                   Accéder au site sans compte
                 </p>

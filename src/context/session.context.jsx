@@ -27,11 +27,12 @@ export class SessionContextProvider extends Component {
       })
       .then((data) => {
         console.log(data);
-        if (data.succes) {
+        if (data.success) {
           this.setState({
             user: {
               name: data.infos[0].name,
               lastName: data.infos[0].last_name,
+              pseudo: data.infos[0].pseudo,
               mail: data.infos[0].mail,
               signUpDate: data.infos[0].date_inscription,
             },
@@ -39,23 +40,23 @@ export class SessionContextProvider extends Component {
         } else {
           this.setState({ wrongLogin: true });
         }
-        console.log(this.state.user);
       });
   };
 
-  signUp = (name, firstName, mail, password, e) => {
+  signUp = (name, firstName, mail, password, pseudo, e) => {
     e.preventDefault();
 
-    let datas = {};
+    let data = {};
 
-    datas.name = name;
-    datas.firstName = firstName;
-    datas.mail = mail;
-    datas.password = password;
+    data.name = name;
+    data.firstName = firstName;
+    data.mail = mail;
+    data.password = password;
+    data.pseudo = pseudo;
 
     fetch('http://18.191.118.60:80/signUp.php', {
       method: 'POST',
-      body: JSON.stringify(datas),
+      body: JSON.stringify(data),
     })
       .then((response) => {
         return response.json();
@@ -63,6 +64,16 @@ export class SessionContextProvider extends Component {
       .then((data) => {
         if (data.message) {
           this.setState({ mailAlreadyExist: true });
+        } else {
+          this.setState({
+            user: {
+              name: data.user[0].name,
+              lastName: data.user[0].last_name,
+              pseudo: data.user[0].pseudo,
+              mail: data.user[0].mail,
+              signUpDate: data.user[0].date_inscription,
+            },
+          });
         }
       });
   };
@@ -71,14 +82,38 @@ export class SessionContextProvider extends Component {
     this.setState({ mailAlreadyExist: false, wrongLogin: false });
   };
 
+  deleteUser = () => {
+    let data = {};
+    data.mail = this.state.user.mail;
+
+    console.log(data);
+
+    fetch('http://18.191.118.60:80/deleteUser.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        this.setState({ user: null });
+      });
+  };
+
+  logOut = () => {
+    this.setState({ user: null });
+  };
+
   render() {
     const value = {
       ...this.state,
       signIn: this.signIn,
       signUp: this.signUp,
       changeWarningStates: this.changeWarningStates,
+      deleteUser: this.deleteUser,
+      logOut: this.logOut,
     };
-    console.log(value.wrongLogin);
 
     return (
       <SessionContext.Provider value={value}>
