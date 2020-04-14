@@ -18,7 +18,7 @@ export const moviesOnly = (array, nb = 8) => {
 };
 
 export const seriesOnly = (array, nb = 8) => {
-  let res = array.filter((el) => el.type === "serie");
+  let res = array.filter((el) => el.type === "serie" && el.original === "");
   return res.slice(0, nb);
 };
 
@@ -28,12 +28,16 @@ export const originalsOnly = (array, nb = 8) => {
 };
 
 export const animationOnly = (array, nb = 8) => {
-  let res = array.filter((el) => el.genre.includes("Animation"));
+  let res = array.filter(
+    (el) => el.genre.includes("Animation") && el.original === ""
+  );
   return res.slice(0, nb);
 };
 
 export const trendingNow = (array, nb = 8) => {
-  let res = array.filter((el) => el.trending === "trending");
+  let res = array.filter(
+    (el) => el.trending === "trending" && el.original === ""
+  );
   return res.slice(0, nb);
 };
 
@@ -63,7 +67,7 @@ export const searchByTitle = (array, string, nb = 8) => {
 };
 
 export const comingSoon = (array, string, nb = 8) => {
-  let res = array.filter((el) => el.type === "soon");
+  let res = array.filter((el) => el.type === "soon" && el.original === "");
   return res.slice(0, nb);
 };
 
@@ -83,20 +87,29 @@ export const originalsMoviesOnly = (array, nb = 8) => {
 
 export const comedySeriesOnly = (array, nb = 8) => {
   let res = array.filter((el) => {
-    return el.genre.indexOf("Comedie") !== -1 && el.type === "serie";
+    return (
+      el.genre.indexOf("Comedie") !== -1 &&
+      el.type === "serie" &&
+      el.original === ""
+    );
   });
   console.log(res);
   return res.slice(0, nb);
 };
 
 export const quarantined = (array, nb = 8) => {
-  let res = array.filter((el) => el.quarantined === "quarantined");
+  let res = array.filter(
+    (el) => el.quarantined === "quarantined" && el.original === ""
+  );
   return res.slice(0, nb);
 };
 
 export const animeSeriesOnly = (array, nb = 8) => {
   let res = array.filter(
-    (el) => el.genre.indexOf("Animé") !== -1 && el.type === "serie"
+    (el) =>
+      el.genre.indexOf("Animé") !== -1 &&
+      el.type === "serie" &&
+      el.original === ""
   );
 
   return res.slice(0, nb);
