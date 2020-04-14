@@ -175,7 +175,7 @@ export default class SignUp extends React.Component {
                 </div>
               </div>
               <input
-                className='submit'
+                className='submit__sign-up'
                 type='submit'
                 disabled={
                   (!isMailvalid && !isPasswordvalid) ||

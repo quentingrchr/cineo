@@ -62,7 +62,7 @@ export default class SignIn extends React.Component {
               ></input>
 
               <input
-                className='submit'
+                className='submit__sign-in'
                 type='submit'
                 value='Connexion'
                 disabled={mailValue.length === 0 || passwordValue.length === 0}
