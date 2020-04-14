@@ -26,9 +26,10 @@
   justify-content: space-between;
   align-items: center;
   margin-right: 12px;
+  width: 550px;
   & li {
     cursor: pointer;
-    margin-left: 8px;
+    margin-left: 12px;
 
     &:hover {
       text-decoration: underline;
@@ -45,6 +46,7 @@
         width: 0%;
         height: 2px;
         background-color: $color-primary;
+        margin-left: 2px;
       }
 
       &.active::after {
@@ -67,6 +69,7 @@
   align-items: center;
   justify-content: space-between;
   margin-right: 8px;
+  width: 400px;
 }
 
 .search {
@@ -172,6 +175,7 @@
     height: 28px;
   }
 }
+// FIXES
 
 .acount__phone {
   display: none;
@@ -189,6 +193,18 @@
   }
 
   .header {
-    font-size: 10px;
+    font-size: 12px;
+  }
+  .tools {
+    width: 150px;
+  }
+  .nav {
+    width: 450px;
+    & li:first-child {
+      font-size: 16px;
+    }
+  }
+  .Mes {
+    display: none;
   }
 }

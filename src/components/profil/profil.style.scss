@@ -248,3 +248,14 @@
     }
   }
 }
+
+@media screen and (max-width: 900px) {
+  .profil {
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    &__right {
+      margin-top: 48px;
+    }
+  }
+}

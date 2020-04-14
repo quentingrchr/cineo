@@ -10,12 +10,12 @@ export default function Header() {
       {({ user, logOut }) => (
         <header className="header">
           <ul className="header__nav nav">
-            <li>
+            <li id="logo">
               <Link to="/">
                 Ciné<span>o</span>
               </Link>
             </li>
-            <li>
+            <li className="nav__links">
               <Link
                 className={location.pathname === "/" ? "active" : ""}
                 to="/"
@@ -23,7 +23,7 @@ export default function Header() {
                 Accueil
               </Link>
             </li>
-            <li>
+            <li className="nav__links">
               <Link
                 className={location.pathname === "/series" ? "active" : ""}
                 to="/series"
@@ -31,7 +31,7 @@ export default function Header() {
                 Séries
               </Link>
             </li>
-            <li>
+            <li className="nav__links">
               <Link
                 className={location.pathname === "/movies" ? "active" : ""}
                 to="/movies"
@@ -39,13 +39,13 @@ export default function Header() {
                 Films
               </Link>
             </li>
-            <li>
+            <li className="nav__links">
               {user !== null && (
                 <Link
                   className={location.pathname === "/my-list" ? "active" : ""}
                   to="/my-list"
                 >
-                  Mes enregistrement
+                  <span className="Mes">Mes</span> Enregistrement
                 </Link>
               )}
             </li>
