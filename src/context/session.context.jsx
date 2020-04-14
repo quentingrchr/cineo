@@ -1,4 +1,4 @@
-import React, { createContext, Component, createRef } from 'react';
+import React, { createContext, Component } from 'react';
 
 const SessionContext = createContext({});
 
@@ -11,6 +11,19 @@ export class SessionContextProvider extends Component {
       wrongLogin: false,
       movieList: null,
     };
+  }
+
+  componentDidMount() {
+    console.log(JSON.parse(localStorage.getItem('user')));
+    console.log(JSON.parse(localStorage.getItem('moviesList')));
+    if (localStorage.getItem('user')) {
+      this.setState({ user: JSON.parse(localStorage.getItem('user')) });
+    }
+    if (localStorage.getItem('moviesList')) {
+      this.setState({
+        movieList: JSON.parse(localStorage.getItem('moviesList')),
+      });
+    }
   }
 
   signIn = (mail, password, e) => {
@@ -28,16 +41,16 @@ export class SessionContextProvider extends Component {
       })
       .then((data) => {
         if (data.success) {
-          this.setState({
-            user: {
-              id: data.infos[0].id,
-              name: data.infos[0].name,
-              lastName: data.infos[0].last_name,
-              pseudo: data.infos[0].pseudo,
-              mail: data.infos[0].mail,
-              signUpDate: data.infos[0].date_inscription,
-            },
-          });
+          let userloged = {
+            id: data.infos[0].id,
+            name: data.infos[0].name,
+            lastName: data.infos[0].last_name,
+            pseudo: data.infos[0].pseudo,
+            mail: data.infos[0].mail,
+            signUpDate: data.infos[0].date_inscription,
+          };
+          this.setState({ user: userloged });
+          localStorage.setItem('user', JSON.stringify(userloged));
 
           let userId = {};
           userId.id = data.infos[0].id;
@@ -55,6 +68,8 @@ export class SessionContextProvider extends Component {
                   movieList.push(movie.id_movie);
                 });
                 this.setState({ movieList: movieList });
+                localStorage.setItem('moviesList', JSON.stringify(movieList));
+                console.log(JSON.parse(localStorage.getItem('moviesList')));
               }
             });
         } else {
@@ -85,16 +100,16 @@ export class SessionContextProvider extends Component {
         if (data.message) {
           this.setState({ mailAlreadyExist: true });
         } else {
-          this.setState({
-            user: {
-              id: data.user[0].id,
-              name: data.user[0].name,
-              lastName: data.user[0].last_name,
-              pseudo: data.user[0].pseudo,
-              mail: data.user[0].mail,
-              signUpDate: data.user[0].date_inscription,
-            },
-          });
+          let userLoged = {
+            id: data.user[0].id,
+            name: data.user[0].name,
+            lastName: data.user[0].last_name,
+            pseudo: data.user[0].pseudo,
+            mail: data.user[0].mail,
+            signUpDate: data.user[0].date_inscription,
+          };
+          localStorage.setItem('user', JSON.stringify(userLoged));
+          console.log(JSON.parse(localStorage.getItem('user')));
         }
       });
   };
@@ -115,14 +130,16 @@ export class SessionContextProvider extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
-
         this.setState({ user: null });
+        localStorage.removeItem('user');
+        localStorage.removeItem('moviesList');
       });
   };
 
   logOut = () => {
     this.setState({ user: null, movieList: null });
+    localStorage.removeItem('user');
+    localStorage.removeItem('moviesList');
   };
 
   addMovie = (filmId) => {
@@ -143,6 +160,7 @@ export class SessionContextProvider extends Component {
           movieList.push(movie.id_movie);
         });
         this.setState({ movieList: movieList });
+        localStorage.setItem('moviesList', JSON.stringify(movieList));
       });
   };
 

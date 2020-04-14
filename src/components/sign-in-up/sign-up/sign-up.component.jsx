@@ -105,6 +105,7 @@ export default class SignUp extends React.Component {
                       type='text'
                       value={lastnameValue}
                       onChange={this.handleChangeLastname}
+                      required
                     ></input>
                   </div>
                   <div className='form__left__firstname form__component'>
@@ -113,6 +114,7 @@ export default class SignUp extends React.Component {
                       type='text'
                       value={firstnameValue}
                       onChange={this.handleChangeFirstname}
+                      required
                     ></input>
                   </div>
                   <div className='form__left__pseudo form__component'>
@@ -120,6 +122,7 @@ export default class SignUp extends React.Component {
                     <input
                       type='text'
                       onChange={this.handleChangePseudo}
+                      required
                     ></input>
                   </div>
                 </div>
@@ -127,11 +130,12 @@ export default class SignUp extends React.Component {
                   <div className='form__right__email form__component'>
                     <p>Email</p>
                     <input
-                      type='text'
+                      type='email'
                       placeholder='exemple@abc.com'
                       value={mailValue}
                       onChange={this.handleChangeMail}
                       onFocus={changeWarningStates}
+                      required
                     ></input>
                   </div>
                   <div className='form__right__emailconf form__component'>
@@ -142,6 +146,7 @@ export default class SignUp extends React.Component {
                       value={confirmMailValue}
                       onChange={this.handleChangeConfirmMail}
                       onBlur={this.checkMail}
+                      required
                     ></input>
                     {!isMailvalid && <div class='warning'>Mail invalide</div>}
                   </div>
@@ -151,6 +156,7 @@ export default class SignUp extends React.Component {
                       type='password'
                       value={passwordValue}
                       onChange={this.handleChangePassword}
+                      required
                     ></input>
                   </div>
                   <div className='form__right__passwordconf form__component'>
@@ -160,6 +166,7 @@ export default class SignUp extends React.Component {
                       value={confirmPasswordValue}
                       onChange={this.handleChangeConfirmPassword}
                       onBlur={this.checkPassword}
+                      required
                     ></input>
                     {!isPasswordvalid && (
                       <div className='warning'>Mot de passe invalide</div>
