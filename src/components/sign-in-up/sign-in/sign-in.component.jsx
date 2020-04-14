@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import { SessionContextConsumer } from '../../../context/session.context';
 
 export default class SignIn extends React.Component {
@@ -24,7 +24,7 @@ export default class SignIn extends React.Component {
   };
 
   render() {
-    const { mailValue, passwordValue } = this.state;
+    const { mailValue, passwordValue, isConnected } = this.state;
 
     return (
       <SessionContextConsumer>

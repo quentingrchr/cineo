@@ -5,6 +5,7 @@ import { ReactComponent as Arrow } from '../../assets/svg/arrow.svg';
 import { ReactComponent as GreyDot } from '../../assets/svg/greydot.svg';
 import { ReactComponent as Visa } from '../../assets/svg/visa.svg';
 import { SessionContextConsumer } from '../../context/session.context';
+import { Link } from 'react-router-dom';
 
 export default class Profil extends React.Component {
   constructor(props) {
@@ -150,12 +151,14 @@ export default class Profil extends React.Component {
                         Vous êtes sur le point se supprimer votre compte et
                         toutes les données qui y sont enregistrées
                       </p>
-                      <button
-                        className='fourth__button'
-                        onClick={() => deleteUser()}
-                      >
-                        Résilier l'abonnement
-                      </button>
+                      <Link to='/'>
+                        <button
+                          className='fourth__button'
+                          onClick={() => deleteUser()}
+                        >
+                          Résilier l'abonnement
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 )}
