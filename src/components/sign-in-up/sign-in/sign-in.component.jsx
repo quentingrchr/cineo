@@ -47,16 +47,18 @@ export default class SignIn extends React.Component {
             >
               <input
                 className='registerbox__input1 registerbox__input'
-                type='text'
+                type='email'
                 placeholder='E-mail'
                 onChange={this.handelChangeMail}
                 onFocus={changeWarningStates}
+                required
               ></input>
               <input
                 className='registerbox__input2 registerbox__input'
                 type='password'
                 placeholder='Mot de passe'
                 onChange={this.handelChangePassword}
+                required
               ></input>
 
               <input
