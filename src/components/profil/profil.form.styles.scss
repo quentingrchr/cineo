@@ -1,0 +1,67 @@
+//Form to change infos
+.form__changes {
+  padding: 40px;
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  &__cta {
+    font-family: poppins;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: white;
+    border-radius: 5px;
+    color: $color-neutral-dark;
+    width: 100px;
+    height: 30px;
+    &:hover {
+      background-color:$color-primary;
+      color: $color-neutral-light;
+    }
+  }
+}
+
+.form__changes__container {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $color-neutral-light;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px rgba(0,0,0,1);
+  width: 300px;
+  height: 280px;
+  top: 15%;
+  left: 38%;
+}
+
+
+.form__changes__part {
+  display: flex;
+  align-items: center;
+  & > p {
+    width: 60px;
+    margin-right: 10px;
+  }
+  & > input {
+    width: 200px;
+    &::placeholder {
+      font-family: poppins;
+      font-size: 14px;
+    }
+  }
+}
+
+.close__button {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 10px;
+  right: 15px;
+  fill: $color-neutral-dark;
+  &:hover {
+    cursor: pointer;
+  }
+}
