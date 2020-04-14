@@ -55,13 +55,22 @@
     transform: translateY(-70px);
     animation: falling-logo 0.5s 1.5s forwards ease-out;
     z-index: 3;
+    @media screen and (max-width: 770px) {
+      transform: translateY(-90px);
+    }
+    @media screen and (max-width: 700px) {
+      transform: translateY(-100px);
+    }
+    @media screen and (max-width: 550px) {
+      display: none;
+    }
 
     .btn {
       cursor: pointer;
       margin-top: 20px;
       border-radius: 4px;
       font-size: 20px;
-      font-weight: 700;
+      font-weight: 600;
       background-color: transparent;
       border: 2px solid $color-neutral-light;
       color: $color-neutral-light;
@@ -71,6 +80,12 @@
       justify-content: center;
       align-items: center;
       transition: color 0.2s ease, background-color 0.2s ease;
+
+      @media screen and (max-width: 700px) {
+        width: 150px;
+        height: 30px;
+        font-size: 12px;
+      }
 
       &:hover {
         background-color: $color-neutral-light;
