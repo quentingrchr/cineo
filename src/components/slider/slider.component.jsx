@@ -14,7 +14,7 @@ export default class Slider extends Component {
     this.state = {
       position: 0,
       offset: 0,
-      nbViewports: Math.floor(this.props.data.length / 5),
+      nbViewports: Math.ceil(this.props.data.length / 5),
       nbItems: this.props.data.length,
       visible: false,
     };
@@ -93,7 +93,7 @@ export default class Slider extends Component {
                   </div>
                 </div>
 
-                {this.state.position !== this.state.nbViewports && (
+                {this.state.position + 1 !== this.state.nbViewports && (
                   <div
                     onClick={() => {
                       this.handleNext(itemRef);

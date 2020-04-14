@@ -9,6 +9,7 @@ export class SessionContextProvider extends Component {
       user: null,
       mailAlreadyExist: false,
       wrongLogin: false,
+      movieList: null,
     };
   }
 
@@ -26,10 +27,10 @@ export class SessionContextProvider extends Component {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
         if (data.success) {
           this.setState({
             user: {
+              id: data.infos[0].id,
               name: data.infos[0].name,
               lastName: data.infos[0].last_name,
               pseudo: data.infos[0].pseudo,
@@ -37,6 +38,25 @@ export class SessionContextProvider extends Component {
               signUpDate: data.infos[0].date_inscription,
             },
           });
+
+          let userId = {};
+          userId.id = data.infos[0].id;
+          fetch('http://18.191.118.60:80/getMoviesList.php', {
+            method: 'POST',
+            body: JSON.stringify(userId),
+          })
+            .then((response) => {
+              return response.json();
+            })
+            .then((data) => {
+              if (data.length > 0) {
+                let movieList = [];
+                data.forEach((movie) => {
+                  movieList.push(movie.id_movie);
+                });
+                this.setState({ movieList: movieList });
+              }
+            });
         } else {
           this.setState({ wrongLogin: true });
         }
@@ -67,6 +87,7 @@ export class SessionContextProvider extends Component {
         } else {
           this.setState({
             user: {
+              id: data.user[0].id,
               name: data.user[0].name,
               lastName: data.user[0].last_name,
               pseudo: data.user[0].pseudo,
@@ -86,8 +107,6 @@ export class SessionContextProvider extends Component {
     let data = {};
     data.mail = this.state.user.mail;
 
-    console.log(data);
-
     fetch('http://18.191.118.60:80/deleteUser.php', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -97,12 +116,34 @@ export class SessionContextProvider extends Component {
       })
       .then((data) => {
         console.log(data);
+
         this.setState({ user: null });
       });
   };
 
   logOut = () => {
-    this.setState({ user: null });
+    this.setState({ user: null, movieList: null });
+  };
+
+  addMovie = (filmId) => {
+    let data = {};
+    data.idUser = this.state.user.id;
+    data.idFilm = filmId.toString();
+
+    fetch('http://18.191.118.60:80/addFilm.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let movieList = [];
+        data.forEach((movie) => {
+          movieList.push(movie.id_movie);
+        });
+        this.setState({ movieList: movieList });
+      });
   };
 
   render() {
@@ -113,6 +154,7 @@ export class SessionContextProvider extends Component {
       changeWarningStates: this.changeWarningStates,
       deleteUser: this.deleteUser,
       logOut: this.logOut,
+      addMovie: this.addMovie,
     };
 
     return (

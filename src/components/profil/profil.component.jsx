@@ -1,10 +1,11 @@
-import React from 'react';
-import { ReactComponent as Dot } from '../../assets/svg/bluedot.svg';
-import { ReactComponent as Edit } from '../../assets/svg/edit.svg';
-import { ReactComponent as Arrow } from '../../assets/svg/arrow.svg';
-import { ReactComponent as GreyDot } from '../../assets/svg/greydot.svg';
-import { ReactComponent as Visa } from '../../assets/svg/visa.svg';
-import { SessionContextConsumer } from '../../context/session.context';
+import React from "react";
+import { ReactComponent as Dot } from "../../assets/svg/bluedot.svg";
+import { ReactComponent as Edit } from "../../assets/svg/edit.svg";
+import { ReactComponent as Arrow } from "../../assets/svg/arrow.svg";
+import { ReactComponent as GreyDot } from "../../assets/svg/greydot.svg";
+import { ReactComponent as Visa } from "../../assets/svg/visa.svg";
+import { SessionContextConsumer } from "../../context/session.context";
+import { Link } from "react-router-dom";
 
 export default class Profil extends React.Component {
   constructor(props) {
@@ -21,12 +22,12 @@ export default class Profil extends React.Component {
 
   hideAlert = () => {
     this.setState({ alertVisible: false });
-    console.log('click1');
+    console.log("click1");
   };
 
   showAlert = () => {
     this.setState({ alertVisible: true });
-    console.log('click');
+    console.log("click");
   };
 
   handelClick = () => {
@@ -98,12 +99,12 @@ export default class Profil extends React.Component {
                     </div>
                     <Edit className='edit' onClick={() => this.handelClick()} />
                   </div>
-                  <div className='profil__information'>
-                    <div className='profil__information--left'>
+                  <div className="profil__information">
+                    <div className="profil__information--left">
                       <img
-                        className='profil__img'
-                        src='https://occ-0-4164-768.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABUTMshYC3Z2g_SQr_f7tJHLaQZOkuKg63U8DlRTxu3cb78sui7ZRKVSXppNQzfQIvCmomBCHvEaIXVsyypFNVoHLcC_s.webp?r=534&quot'
-                        alt='deux personnes à la plage'
+                        className="profil__img"
+                        src="https://occ-0-4164-768.1.nflxso.net/dnm/api/v6/E8vDc_W8CLv7-yMQu8KMEC7Rrr8/AAAABUTMshYC3Z2g_SQr_f7tJHLaQZOkuKg63U8DlRTxu3cb78sui7ZRKVSXppNQzfQIvCmomBCHvEaIXVsyypFNVoHLcC_s.webp?r=534&quot"
+                        alt="deux personnes à la plage"
                       />
                     </div>
                     <div className='profil__information--right'>
@@ -112,29 +113,29 @@ export default class Profil extends React.Component {
                         <p>{user.pseudo}</p>
                       </div>
                       <p>{`Abonné depuis le ${user.signUpDate}`}</p>
-                      <div className='profil__stat'>
+                      <div className="profil__stat">
                         <div>Voir mes stats</div>
-                        <Arrow className='profil__arrow' />
+                        <Arrow className="profil__arrow" />
                       </div>
                     </div>
                   </div>
                 </div>
 
-                <div className='second'>
-                  <div className='second__title title'>
-                    <div className='second__title title--name'>
+                <div className="second">
+                  <div className="second__title title">
+                    <div className="second__title title--name">
                       <Dot />
                       <h1>Coordonées</h1>
                     </div>
                     <Edit className='edit' onClick={() => this.handelClick()} />
                   </div>
-                  <div className='second__information'>
-                    <div className='second__info '>
+                  <div className="second__information">
+                    <div className="second__info ">
                       <p>Nom</p>
                       <p>Prénom</p>
                       <p>Email</p>
                     </div>
-                    <div className='second__answer '>
+                    <div className="second__answer ">
                       <p>{user.lastName}</p>
                       <p>{user.name}</p>
                       <p>{user.mail}</p>
@@ -142,10 +143,10 @@ export default class Profil extends React.Component {
                   </div>
                 </div>
               </div>
-              <div className='profil__right'>
-                <div className='third'>
-                  <div className='third__title title '>
-                    <div className='third__title title--name'>
+              <div className="profil__right">
+                <div className="third">
+                  <div className="third__title title ">
+                    <div className="third__title title--name">
                       <Dot />
                       <h1>Abonnement & Facturation</h1>
                     </div>
@@ -154,7 +155,7 @@ export default class Profil extends React.Component {
                     <p>Détail du forfait : ULTRA PREMIUM HD</p>
                     <div  className='settings__button'>Changer de forfait</div>
                   </div>
-                  <div className='third__info'>
+                  <div className="third__info">
                     <p>
                       <Visa />
                       <span></span>
@@ -175,17 +176,16 @@ export default class Profil extends React.Component {
                       <span></span>
                       1456
                     </p>
-
                     <div className='settings__button'>Modifier ma carte</div>
                   </div>
-                  <div className='third__info'>
+                  <div className="third__info">
                     <p>Prochaine facturation : 26 avril 2020</p>
                   </div>
                 </div>
 
-                <div className='fourth'>
-                  <div className='fourth__title title'>
-                    <div className='title--name'>
+                <div className="fourth">
+                  <div className="fourth__title title">
+                    <div className="title--name">
                       <Dot />
                       <h1>Paramètres</h1>
                     </div>
@@ -198,25 +198,27 @@ export default class Profil extends React.Component {
                     <div className='settings__button mar'>Se déconnecter de tous les appareils</div>
                   </div>
                   <button
-                    className='fourth__button'
+                    className="fourth__button"
                     onClick={() => this.showAlert()}
                   >
                     Résilier l'abonnement
                   </button>
                 </div>
                 {alertVisible && (
-                  <div className='alert' onClick={() => this.hideAlert()}>
+                  <div className="alert" onClick={() => this.hideAlert()}>
                     <div>
                       <p>
                         Vous êtes sur le point se supprimer votre compte et
                         toutes les données qui y sont enregistrées
                       </p>
-                      <button
-                        className='fourth__button'
-                        onClick={() => deleteUser()}
-                      >
-                        Résilier l'abonnement
-                      </button>
+                      <Link to="/">
+                        <button
+                          className="fourth__button"
+                          onClick={() => deleteUser()}
+                        >
+                          Résilier l'abonnement
+                        </button>
+                      </Link>
                     </div>
                   </div>
                 )}
