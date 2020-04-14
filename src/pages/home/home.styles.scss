@@ -152,3 +152,11 @@
     }
   }
 }
+
+@media screen and (max-width: 640px) {
+  .cta__see__more {
+    div {
+      font-size: 10px;
+    }
+  }
+}
