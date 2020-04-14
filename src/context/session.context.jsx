@@ -30,12 +30,14 @@ export class SessionContextProvider extends Component {
         if (data.success) {
           this.setState({
             user: {
+              id: data.infos[0].id,
               name: data.infos[0].name,
               lastName: data.infos[0].last_name,
               pseudo: data.infos[0].pseudo,
               mail: data.infos[0].mail,
               signUpDate: data.infos[0].date_inscription,
             },
+            movieList: [],
           });
         } else {
           this.setState({ wrongLogin: true });
@@ -62,11 +64,14 @@ export class SessionContextProvider extends Component {
         return response.json();
       })
       .then((data) => {
+        console.log(data);
+
         if (data.message) {
           this.setState({ mailAlreadyExist: true });
         } else {
           this.setState({
             user: {
+              id: data.user[0].id,
               name: data.user[0].name,
               lastName: data.user[0].last_name,
               pseudo: data.user[0].pseudo,
@@ -86,8 +91,6 @@ export class SessionContextProvider extends Component {
     let data = {};
     data.mail = this.state.user.mail;
 
-    console.log(data);
-
     fetch('http://18.191.118.60:80/deleteUser.php', {
       method: 'POST',
       body: JSON.stringify(data),
@@ -97,12 +100,34 @@ export class SessionContextProvider extends Component {
       })
       .then((data) => {
         console.log(data);
+
         this.setState({ user: null });
       });
   };
 
   logOut = () => {
     this.setState({ user: null });
+  };
+
+  addMovie = (filmId) => {
+    let data = {};
+    data.idUser = this.state.user.id;
+    data.idFilm = filmId.toString();
+
+    fetch('http://18.191.118.60:80/addFilm.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let movieList = [];
+        data.forEach((movie) => {
+          movieList.push(movie.id_movie);
+        });
+        this.setState({ movieList: movieList });
+      });
   };
 
   render() {
@@ -113,7 +138,9 @@ export class SessionContextProvider extends Component {
       changeWarningStates: this.changeWarningStates,
       deleteUser: this.deleteUser,
       logOut: this.logOut,
+      addMovie: this.addMovie,
     };
+    console.log(value.movieList);
 
     return (
       <SessionContext.Provider value={value}>
