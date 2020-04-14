@@ -31,3 +31,9 @@
     margin-right: 10px;
   }
 }
+
+@media screen and (max-width: 640px) {
+  .title-component {
+    font-size: 14px;
+  }
+}
