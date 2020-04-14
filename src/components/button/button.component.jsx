@@ -7,9 +7,3 @@ export function Button(props) {
     </button>
   );
 }
-
-export default class genreSelection extends Component {
-  render() {
-    return <div></div>;
-  }
-}
