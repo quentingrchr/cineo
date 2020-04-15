@@ -150,8 +150,12 @@
   font-size: 14px;
   font-weight: 400;
   color: $color-neutral-light;
+
+  & svg {
+    width: 0;
+  }
   &::after {
-    content: "→";
+    content: '→';
     margin-left: 3px;
     opacity: 0;
   }
@@ -160,7 +164,7 @@
     cursor: pointer;
 
     &::after {
-      content: "→";
+      content: '→';
       margin-left: 3px;
       opacity: 1;
       animation: arrow-moving 0.2s infinite alternate;

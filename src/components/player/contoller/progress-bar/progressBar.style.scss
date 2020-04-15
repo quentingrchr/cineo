@@ -18,12 +18,9 @@
   }
 
   &[value] {
-    /* Reset the default appearance */
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-
-    /* Get rid of default border in Firefox. */
     border: none;
 
     &::-webkit-progress-bar {

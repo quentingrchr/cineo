@@ -22,7 +22,6 @@ function App() {
       <Router onUpdate={() => window.scrollTo(0, 0)}>
         <ScrollToTop />
         <Switch>
-          <Route exact path='/dev-quentin' component={DevQuentin} />
           <Route exact path='/' component={HomePage} />
           <Route exact path='/pres' component={PresPage} />
           <Route exact path='/sign-in-up' component={SignInUpPage} />
