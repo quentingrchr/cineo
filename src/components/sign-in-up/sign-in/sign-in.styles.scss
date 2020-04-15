@@ -11,7 +11,7 @@ $breakpoint-medium: 600px;
   @media (max-width: $breakpoint-medium) {
     width: 280px;
     height: 280px;
-    }
+  }
   &__nav {
     width: 428px;
     height: 51px;
@@ -23,7 +23,7 @@ $breakpoint-medium: 600px;
     @media (max-width: $breakpoint-medium) {
       width: 280px;
       height: 60px;
-      }
+    }
     &--signin {
       width: 214px;
       height: 51px;
@@ -36,7 +36,7 @@ $breakpoint-medium: 600px;
       color: $color-neutral-light;
       @media (max-width: $breakpoint-medium) {
         font-size: 14px;
-        }
+      }
     }
     &--signup {
       width: 214px;
@@ -52,7 +52,7 @@ $breakpoint-medium: 600px;
     }
     @media (max-width: $breakpoint-medium) {
       font-size: 14px;
-      }
+    }
   }
   &__content {
     width: 428px;
@@ -65,7 +65,7 @@ $breakpoint-medium: 600px;
       width: 270px;
       justify-content: center;
       padding-top: 10px;
-      }
+    }
   }
   &__input {
     margin-bottom: 40px;
@@ -75,42 +75,16 @@ $breakpoint-medium: 600px;
       height: 20px;
       margin-bottom: 30px;
       font-size: 14px;
-      }
+    }
     &::placeholder {
       opacity: 0.5;
       font-family: poppins;
       font-size: 16px;
       font-weight: 300;
     }
-    // border-radius: 5px;
-
-    // Style placeholder
-    /* &::placeholder {
-            align-items: center;
-            font-family: poppins;
-            font-size: 16px;
-        } */
-  }
-  &__cta {
-    width: 161px;
-    height: 42px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $color-neutral;
-    color: $color-neutral-light;
-    margin-bottom: 10px;
-    border-radius: 5px;
-    cursor: pointer;
-    @media (max-width: $breakpoint-medium) {
-      width: 100px;
-      }
-    &:hover {
-      background-color: $color-primary;
-      color: white;
-    }
   }
   &__withoutlogin {
+    color: $color-neutral-dark;
     font-size: 14px;
     font-weight: 300;
     text-decoration: underline;
@@ -118,9 +92,10 @@ $breakpoint-medium: 600px;
     @media (max-width: $breakpoint-medium) {
       font-size: 12px;
       color: $color-neutral-dark;
-      }
+    }
   }
 }
+
 .registerbox__withoutlogin:hover {
   text-decoration: none;
 }
@@ -134,6 +109,16 @@ $breakpoint-medium: 600px;
   color: $color-neutral-light;
   background-color: $color-neutral;
   border: none;
+
+  &:disabled {
+    opacity: 0.5;
+
+    &:hover {
+      cursor: default;
+      background-color: $color-neutral;
+    }
+  }
+
   &:hover {
     background-color: $color-primary;
     border: none;
@@ -151,7 +136,7 @@ $breakpoint-medium: 600px;
     justify-content: center;
     align-items: center;
     padding: 0;
-    }
+  }
 }
 
 .wrongLogin {

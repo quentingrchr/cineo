@@ -109,7 +109,7 @@ export default class Profil extends React.Component {
                       <div className='profil__information--right'>
                         <div className='profil__pseudo'>
                           <p>Pseudo</p>
-                          <p>{user.pseudo}</p>
+                          <p class='pseudo'>{user.pseudo}</p>
                           {!pseudoFormVisible && (
                             <Edit
                               className='edit'
@@ -122,12 +122,17 @@ export default class Profil extends React.Component {
                                 type='text'
                                 onChange={this.handleChangeNewPseudo}
                               ></input>
-                              <p
-                                className='valid'
-                                onClick={() => changePseudo(new__pseudo)}
-                              >
-                                valider
-                              </p>
+                              {new__pseudo.length > 2 && (
+                                <p
+                                  className='valid'
+                                  onClick={() => {
+                                    changePseudo(new__pseudo);
+                                    this.closeClick('pseudo');
+                                  }}
+                                >
+                                  valider
+                                </p>
+                              )}
                               <p
                                 className='cancel'
                                 onClick={() => this.closeClick('pseudo')}
@@ -154,9 +159,9 @@ export default class Profil extends React.Component {
                       </div>
                     </div>
                     <div className='second__information'>
-                      <div class='name'>
+                      <div className='name'>
                         <p>Nom</p>
-                        <p>{user.lastName}</p>
+                        <p className='information__user'>{user.lastName}</p>
                         {!nameFormVisible && (
                           <Edit
                             className='edit'
@@ -169,12 +174,17 @@ export default class Profil extends React.Component {
                               type='text'
                               onChange={this.handleChangeNewLastname}
                             ></input>
-                            <p
-                              className='valid'
-                              onClick={() => changeLastName(new__lastname)}
-                            >
-                              valider
-                            </p>
+                            {new__lastname.length > 2 && (
+                              <p
+                                className='valid'
+                                onClick={() => {
+                                  changeLastName(new__lastname);
+                                  this.closeClick('name');
+                                }}
+                              >
+                                valider
+                              </p>
+                            )}
                             <p
                               className='cancel'
                               onClick={() => this.closeClick('name')}
@@ -184,9 +194,9 @@ export default class Profil extends React.Component {
                           </form>
                         )}
                       </div>
-                      <div class='first-name'>
+                      <div className='first-name'>
                         <p>Prénom</p>
-                        <p>{user.name}</p>
+                        <p className='information__user'>{user.name}</p>
                         {!firstnameFormVisible && (
                           <Edit
                             className='edit'
@@ -199,12 +209,17 @@ export default class Profil extends React.Component {
                               type='text'
                               onChange={this.handleChangeNewFirstname}
                             ></input>
-                            <p
-                              className='valid'
-                              onClick={() => changeFirstName(new__firstname)}
-                            >
-                              valider
-                            </p>
+                            {new__firstname.length > 2 && (
+                              <p
+                                className='valid'
+                                onClick={() => {
+                                  changeFirstName(new__firstname);
+                                  this.closeClick('firstname');
+                                }}
+                              >
+                                valider
+                              </p>
+                            )}
                             <p
                               className='cancel'
                               onClick={() => this.closeClick('firstname')}
@@ -214,9 +229,9 @@ export default class Profil extends React.Component {
                           </form>
                         )}
                       </div>
-                      <div class='mail'>
+                      <div className='mail'>
                         <p>Email</p>
-                        <p>{user.mail}</p>
+                        <p className='information__user'>{user.mail}</p>
                         {!mailFormVisible && (
                           <Edit
                             className='edit'
@@ -229,12 +244,17 @@ export default class Profil extends React.Component {
                               type='text'
                               onChange={this.handleChangeNewMail}
                             ></input>
-                            <p
-                              className='valid'
-                              onClick={() => changeMail(new__mail)}
-                            >
-                              valider
-                            </p>
+                            {new__mail.length > 2 && (
+                              <p
+                                className='valid'
+                                onClick={() => {
+                                  changeMail(new__mail);
+                                  this.closeClick('mail');
+                                }}
+                              >
+                                valider
+                              </p>
+                            )}
                             <p
                               className='cancel'
                               onClick={() => this.closeClick('mail')}
