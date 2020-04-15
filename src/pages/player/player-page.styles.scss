@@ -201,6 +201,8 @@
 
 .description__synopsis {
   line-height: 1.5rem;
+  max-height: 100px;
+  overflow: scroll;
 
   & span {
     text-decoration: underline;
