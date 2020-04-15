@@ -12,11 +12,14 @@ export default class Profil extends React.Component {
     super(props);
     this.state = {
       alertVisible: false,
-      formChangesOpen: false,
       new__pseudo: '',
       new__lastname: '',
       new__firstname: '',
       new__mail: '',
+      pseudoFormVisible: false,
+      nameFormVisible: false,
+      firstnameFormVisible: false,
+      mailFormVisible: false,
     };
   }
 
@@ -30,95 +33,62 @@ export default class Profil extends React.Component {
     console.log('click');
   };
 
-  handelClick = () => {
-    this.state.formChangesOpen
-      ? this.setState({ formChangesOpen: false })
-      : this.setState({ formChangesOpen: true });
+  handelClick = (elt) => {
+    if (elt === 'pseudo') this.setState({ pseudoFormVisible: true });
+    else if (elt === 'name') this.setState({ nameFormVisible: true });
+    else if (elt === 'firstname') this.setState({ firstnameFormVisible: true });
+    else if (elt === 'mail') this.setState({ mailFormVisible: true });
   };
 
   handleChangeNewMail = (e) => {
-    this.setState({ new__mailValue: e.target.value });
+    this.setState({ new__mail: e.target.value });
   };
 
   handleChangeNewLastname = (e) => {
-    this.setState({ new__lastnameValue: e.target.value });
+    this.setState({ new__lastname: e.target.value });
   };
 
   handleChangeNewFirstname = (e) => {
-    this.setState({ new__firstnameValue: e.target.value });
+    this.setState({ new__firstname: e.target.value });
   };
 
   handleChangeNewPseudo = (e) => {
-    this.setState({ new__pseudoValue: e.target.value });
+    this.setState({ new__pseudo: e.target.value });
+  };
+
+  closeClick = (elt) => {
+    if (elt === 'pseudo') this.setState({ pseudoFormVisible: false });
+    else if (elt === 'name') this.setState({ nameFormVisible: false });
+    else if (elt === 'firstname')
+      this.setState({ firstnameFormVisible: false });
+    else if (elt === 'mail') this.setState({ mailFormVisible: false });
   };
 
   render() {
-    const { alertVisible, formChangesOpen } = this.state;
+    const {
+      alertVisible,
+      pseudoFormVisible,
+      nameFormVisible,
+      firstnameFormVisible,
+      mailFormVisible,
+      new__pseudo,
+      new__lastname,
+      new__firstname,
+      new__mail,
+    } = this.state;
     return (
       <SessionContextConsumer>
-        {({ user, deleteUser }) => {
+        {({
+          user,
+          deleteUser,
+          changePseudo,
+          changeLastName,
+          changeFirstName,
+          changeMail,
+        }) => {
           if (!user) return null;
           return (
             <div>
-              {formChangesOpen && (
-                <div className='form__changes__container'>
-                  <form>
-                    <div className='form__changes'>
-                      <div
-                        className='close__button'
-                        onClick={() => this.handelClick()}
-                      >
-                        <svg viewBox='0 0 329.26933 329'>
-                          <path d='m194.800781 164.769531 128.210938-128.214843c8.34375-8.339844 8.34375-21.824219 0-30.164063-8.339844-8.339844-21.824219-8.339844-30.164063 0l-128.214844 128.214844-128.210937-128.214844c-8.34375-8.339844-21.824219-8.339844-30.164063 0-8.34375 8.339844-8.34375 21.824219 0 30.164063l128.210938 128.214843-128.210938 128.214844c-8.34375 8.339844-8.34375 21.824219 0 30.164063 4.15625 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921875-2.089844 15.082031-6.25l128.210937-128.214844 128.214844 128.214844c4.160156 4.160156 9.621094 6.25 15.082032 6.25 5.460937 0 10.921874-2.089844 15.082031-6.25 8.34375-8.339844 8.34375-21.824219 0-30.164063zm0 0' />
-                        </svg>
-                      </div>
-                      <div className='form__changes__part'>
-                        <p>Pseudo</p>
-                        <input
-                          type='text'
-                          placeholder='Nouveau pseudo'
-                          value={this.new__pseudo}
-                          onChange={this.handleChangeNewPseudo}
-                        ></input>
-                      </div>
-                      <div className='form__changes__part'>
-                        <p>Nom</p>
-                        <input
-                          type='text'
-                          placeholder='Nouveau nom'
-                          value={this.new__lastname}
-                          onChange={this.handleChangeNewLastname}
-                        ></input>
-                      </div>
-                      <div className='form__changes__part'>
-                        <p>Prénom</p>
-                        <input
-                          type='text'
-                          placeholder='Nouveau prénom'
-                          value={this.new__firstname}
-                          onChange={this.handleChangeNewFirstname}
-                        ></input>
-                      </div>
-                      <div className='form__changes__part'>
-                        <p>E-mail</p>
-                        <input
-                          type='text'
-                          placeholder='example@abc.com'
-                          value={this.new__mail}
-                          onChange={this.handleChangeNewMail}
-                        ></input>
-                      </div>
-                      <div>
-                        <input
-                          className='form__changes__cta'
-                          type='submit'
-                          value='Valider'
-                        ></input>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              )}
               <div className='profil'>
                 <div className='profil__left'>
                   <div className='profil__first'>
@@ -127,10 +97,6 @@ export default class Profil extends React.Component {
                         <Dot />
                         <h1>Mon profil</h1>
                       </div>
-                      <Edit
-                        className='edit'
-                        onClick={() => this.handelClick()}
-                      />
                     </div>
                     <div className='profil__information'>
                       <div className='profil__information--left'>
@@ -144,6 +110,32 @@ export default class Profil extends React.Component {
                         <div className='profil__pseudo'>
                           <p>Pseudo</p>
                           <p>{user.pseudo}</p>
+                          {!pseudoFormVisible && (
+                            <Edit
+                              className='edit'
+                              onClick={(e) => this.handelClick('pseudo')}
+                            />
+                          )}
+                          {pseudoFormVisible && (
+                            <form className='change-form'>
+                              <input
+                                type='text'
+                                onChange={this.handleChangeNewPseudo}
+                              ></input>
+                              <p
+                                className='valid'
+                                onClick={() => changePseudo(new__pseudo)}
+                              >
+                                valider
+                              </p>
+                              <p
+                                className='cancel'
+                                onClick={() => this.closeClick('pseudo')}
+                              >
+                                annuler
+                              </p>
+                            </form>
+                          )}
                         </div>
                         <p>{`Abonné depuis le ${user.signUpDate}`}</p>
                         <div className='profil__stat'>
@@ -160,21 +152,97 @@ export default class Profil extends React.Component {
                         <Dot />
                         <h1>Coordonées</h1>
                       </div>
-                      <Edit
-                        className='edit'
-                        onClick={() => this.handelClick()}
-                      />
                     </div>
                     <div className='second__information'>
-                      <div className='second__info '>
+                      <div class='name'>
                         <p>Nom</p>
-                        <p>Prénom</p>
-                        <p>Email</p>
-                      </div>
-                      <div className='second__answer '>
                         <p>{user.lastName}</p>
+                        {!nameFormVisible && (
+                          <Edit
+                            className='edit'
+                            onClick={(e) => this.handelClick('name')}
+                          />
+                        )}
+                        {nameFormVisible && (
+                          <form className='change-form'>
+                            <input
+                              type='text'
+                              onChange={this.handleChangeNewLastname}
+                            ></input>
+                            <p
+                              className='valid'
+                              onClick={() => changeLastName(new__lastname)}
+                            >
+                              valider
+                            </p>
+                            <p
+                              className='cancel'
+                              onClick={() => this.closeClick('name')}
+                            >
+                              annuler
+                            </p>
+                          </form>
+                        )}
+                      </div>
+                      <div class='first-name'>
+                        <p>Prénom</p>
                         <p>{user.name}</p>
+                        {!firstnameFormVisible && (
+                          <Edit
+                            className='edit'
+                            onClick={(e) => this.handelClick('firstname')}
+                          />
+                        )}
+                        {firstnameFormVisible && (
+                          <form className='change-form'>
+                            <input
+                              type='text'
+                              onChange={this.handleChangeNewFirstname}
+                            ></input>
+                            <p
+                              className='valid'
+                              onClick={() => changeFirstName(new__firstname)}
+                            >
+                              valider
+                            </p>
+                            <p
+                              className='cancel'
+                              onClick={() => this.closeClick('firstname')}
+                            >
+                              annuler
+                            </p>
+                          </form>
+                        )}
+                      </div>
+                      <div class='mail'>
+                        <p>Email</p>
                         <p>{user.mail}</p>
+                        {!mailFormVisible && (
+                          <Edit
+                            className='edit'
+                            onClick={(e) => this.handelClick('mail')}
+                          />
+                        )}
+                        {mailFormVisible && (
+                          <form className='change-form'>
+                            <input
+                              type='text'
+                              onChange={this.handleChangeNewMail}
+                            ></input>
+                            <p
+                              className='valid'
+                              onClick={() => changeMail(new__mail)}
+                            >
+                              valider
+                            </p>
+                            <p
+                              className='cancel'
+                              onClick={() => this.closeClick('mail')}
+                            >
+                              annuler
+                            </p>
+                          </form>
+                        )}
                       </div>
                     </div>
                   </div>
