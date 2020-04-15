@@ -40,9 +40,36 @@
   }
 
   &__pseudo {
+    position: relative;
     display: flex;
-    & > p:first-child {
+    align-items: center;
+    & p:first-child {
       margin-right: 20px;
+    }
+
+    & p:nth-child(2) {
+      margin-right: 130px;
+    }
+
+    & .change-form {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      left: 80px;
+
+      & input {
+        width: 80px;
+        margin-right: 20px;
+      }
+
+      & p:hover {
+        color: $color-primary;
+        cursor: pointer;
+      }
+
+      & .valid {
+        margin-right: 20px;
+      }
     }
   }
 
@@ -78,28 +105,47 @@
 
 // SECOND
 .second {
+  margin-top: 30px;
+}
+
+.second__information {
   display: flex;
   flex-direction: column;
-  margin-top: 64px;
-  &__information {
-    display: flex;
-    height: 160px;
-  }
-  &__info {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  &__answer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: flex-start;
 
-    margin-left: 30px;
-  }
-  .name {
+  & div {
+    display: flex;
+    align-items: center;
     margin-top: 32px;
+
+    & p:first-child {
+      width: 110px;
+      font-size: 1.1rem;
+    }
+
+    & p:nth-child(2) {
+      width: 320px;
+    }
+
+    & .change-form {
+      position: absolute;
+      display: flex;
+      align-items: center;
+      left: 150px;
+
+      & p:hover {
+        color: $color-primary;
+        cursor: pointer;
+      }
+
+      & input {
+        width: 200px;
+        margin-right: 20px;
+      }
+
+      & .valid {
+        width: 80px;
+      }
+    }
   }
 }
 

@@ -105,6 +105,7 @@ export class SessionContextProvider extends Component {
             mail: data.user[0].mail,
             signUpDate: data.user[0].date_inscription,
           };
+          this.setState({ user: userLoged });
           localStorage.setItem('user', JSON.stringify(userLoged));
         }
       });
@@ -183,6 +184,111 @@ export class SessionContextProvider extends Component {
       });
   };
 
+  changePseudo = (pseudo) => {
+    let data = {};
+    data.id = this.state.user.id;
+    data.value = pseudo;
+
+    fetch('http://18.191.118.60:80/changePseudo.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let userLoged = {
+          id: data[0].id,
+          name: data[0].name,
+          lastName: data[0].last_name,
+          pseudo: data[0].pseudo,
+          mail: data[0].mail,
+          signUpDate: data[0].date_inscription,
+        };
+        this.setState({ user: userLoged });
+        localStorage.setItem('user', JSON.stringify(userLoged));
+      });
+  };
+
+  changeLastName = (lastName) => {
+    let data = {};
+    data.id = this.state.user.id;
+    data.value = lastName;
+
+    fetch('http://18.191.118.60:80/changeLastName.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+        let userLoged = {
+          id: data[0].id,
+          name: data[0].name,
+          lastName: data[0].last_name,
+          pseudo: data[0].pseudo,
+          mail: data[0].mail,
+          signUpDate: data[0].date_inscription,
+        };
+        this.setState({ user: userLoged });
+        localStorage.setItem('user', JSON.stringify(userLoged));
+      });
+  };
+
+  changeFirstName = (firstName) => {
+    let data = {};
+    data.id = this.state.user.id;
+    data.value = firstName;
+
+    fetch('http://18.191.118.60:80/changeFirstName.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let userLoged = {
+          id: data[0].id,
+          name: data[0].name,
+          lastName: data[0].last_name,
+          pseudo: data[0].pseudo,
+          mail: data[0].mail,
+          signUpDate: data[0].date_inscription,
+        };
+        this.setState({ user: userLoged });
+        localStorage.setItem('user', JSON.stringify(userLoged));
+      });
+  };
+
+  changeMail = (mail) => {
+    let data = {};
+    data.id = this.state.user.id;
+    data.value = mail;
+
+    fetch('http://18.191.118.60:80/changeMail.php', {
+      method: 'POST',
+      body: JSON.stringify(data),
+    })
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        let userLoged = {
+          id: data[0].id,
+          name: data[0].name,
+          lastName: data[0].last_name,
+          pseudo: data[0].pseudo,
+          mail: data[0].mail,
+          signUpDate: data[0].date_inscription,
+        };
+        this.setState({ user: userLoged });
+        localStorage.setItem('user', JSON.stringify(userLoged));
+      });
+  };
+
   render() {
     const value = {
       ...this.state,
@@ -193,6 +299,10 @@ export class SessionContextProvider extends Component {
       logOut: this.logOut,
       addMovie: this.addMovie,
       deleteMovie: this.deleteMovie,
+      changePseudo: this.changePseudo,
+      changeLastName: this.changeLastName,
+      changeFirstName: this.changeFirstName,
+      changeMail: this.changeMail,
     };
 
     return (
