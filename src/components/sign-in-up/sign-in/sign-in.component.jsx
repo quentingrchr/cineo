@@ -8,7 +8,6 @@ export default class SignIn extends React.Component {
     this.state = {
       mailValue: '',
       passwordValue: '',
-      isConnected: false,
     };
   }
 
@@ -24,7 +23,7 @@ export default class SignIn extends React.Component {
   };
 
   render() {
-    const { mailValue, passwordValue, isConnected } = this.state;
+    const { mailValue, passwordValue } = this.state;
 
     return (
       <SessionContextConsumer>

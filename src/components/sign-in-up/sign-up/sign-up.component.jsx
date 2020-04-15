@@ -12,7 +12,8 @@ export default class SignUp extends React.Component {
       lastnameValue: '',
       firstnameValue: '',
       pseudoValue: '',
-      isMailvalid: true,
+      isMailValid: true,
+      isMailConfirmationValid: true,
       isPasswordvalid: true,
     };
   }
@@ -45,9 +46,15 @@ export default class SignUp extends React.Component {
   handleChangePseudo = (e) => this.setState({ pseudoValue: e.target.value });
 
   checkMail = () => {
+    /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/i.test(this.state.mailValue)
+      ? this.setState({ isMailValid: true })
+      : this.setState({ isMailValid: false });
+  };
+
+  checkMailConfirmation = () => {
     this.state.mailValue === this.state.confirmMailValue
-      ? this.setState({ isMailvalid: true })
-      : this.setState({ isMailvalid: false });
+      ? this.setState({ isMailConfirmationValid: true })
+      : this.setState({ isMailConfirmationValid: false });
   };
 
   checkPassword = () => {
@@ -65,9 +72,20 @@ export default class SignUp extends React.Component {
       lastnameValue,
       firstnameValue,
       pseudoValue,
-      isMailvalid,
+      isMailValid,
+      isMailConfirmationValid,
       isPasswordvalid,
     } = this.state;
+
+    /* console.log(
+      !isMailConfirmationValid &&
+        !isPasswordvalid &&
+        mailValue.length === 0 &&
+        passwordValue.length === 0 &&
+        lastnameValue.length === 0 &&
+        
+    ); */
+    console.log(!isMailConfirmationValid);
 
     return (
       <SessionContextConsumer>
@@ -135,8 +153,12 @@ export default class SignUp extends React.Component {
                       value={mailValue}
                       onChange={this.handleChangeMail}
                       onFocus={changeWarningStates}
+                      onBlur={this.checkMail}
                       required
                     ></input>
+                    {!isMailValid && (
+                      <div class='warning'>Adresse mail incorrecte</div>
+                    )}
                   </div>
                   <div className='form__right__emailconf form__component'>
                     <p>Confirmer votre e-mail</p>
@@ -145,10 +167,12 @@ export default class SignUp extends React.Component {
                       placeholder='exemple@abc.com'
                       value={confirmMailValue}
                       onChange={this.handleChangeConfirmMail}
-                      onBlur={this.checkMail}
+                      onBlur={this.checkMailConfirmation}
                       required
                     ></input>
-                    {!isMailvalid && <div class='warning'>Mail invalide</div>}
+                    {!isMailConfirmationValid && (
+                      <div className='warning'>Adresses mail différentes</div>
+                    )}
                   </div>
                   <div className='form__right__password form__component'>
                     <p>Mot de passe</p>
@@ -178,9 +202,14 @@ export default class SignUp extends React.Component {
                 className='submit__sign-up'
                 type='submit'
                 disabled={
-                  (!isMailvalid && !isPasswordvalid) ||
-                  mailValue.length === 0 ||
+                  !isMailConfirmationValid ||
+                  !isPasswordvalid ||
+                  !isMailValid ||
+                  confirmMailValue.length === 0 ||
+                  confirmPasswordValue.length === 0 ||
                   passwordValue.length === 0 ||
+                  pseudoValue.length === 0 ||
+                  mailValue.length === 0 ||
                   lastnameValue.length === 0 ||
                   firstnameValue.length === 0
                 }
