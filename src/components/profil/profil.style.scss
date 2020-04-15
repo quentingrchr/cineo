@@ -48,7 +48,7 @@
     }
 
     & p:nth-child(2) {
-      margin-right: 130px;
+      width: 170px;
     }
 
     & .change-form {
@@ -130,7 +130,7 @@
       position: absolute;
       display: flex;
       align-items: center;
-      left: 150px;
+      left: 160px;
 
       & p:hover {
         color: $color-primary;
