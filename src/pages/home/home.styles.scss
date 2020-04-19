@@ -45,6 +45,7 @@
   width: 100%;
   position: relative;
   overflow: hidden;
+  margin-bottom: 8%;
 
   .hero-logo {
     display: flex;
@@ -155,7 +156,7 @@
     width: 0;
   }
   &::after {
-    content: '→';
+    content: "→";
     margin-left: 3px;
     opacity: 0;
   }
@@ -164,7 +165,7 @@
     cursor: pointer;
 
     &::after {
-      content: '→';
+      content: "→";
       margin-left: 3px;
       opacity: 1;
       animation: arrow-moving 0.2s infinite alternate;

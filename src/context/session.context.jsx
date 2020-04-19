@@ -1,4 +1,4 @@
-import React, { createContext, Component } from 'react';
+import React, { createContext, Component } from "react";
 
 const SessionContext = createContext({});
 
@@ -6,20 +6,34 @@ export class SessionContextProvider extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      user: null,
+      user: "quentin",
       mailAlreadyExist: false,
       wrongLogin: false,
-      movieList: null,
+      movieList: [
+        "3731562",
+        "5022702",
+        "4786282",
+        "4975722",
+        "3062096",
+        "2861424",
+        "816711",
+        "1844624",
+        "1375666",
+        "1439629",
+        "877057",
+        "245429",
+        "208092",
+      ],
     };
   }
 
   componentDidMount() {
-    if (localStorage.getItem('user')) {
-      this.setState({ user: JSON.parse(localStorage.getItem('user')) });
+    if (localStorage.getItem("user")) {
+      this.setState({ user: JSON.parse(localStorage.getItem("user")) });
     }
-    if (localStorage.getItem('moviesList')) {
+    if (localStorage.getItem("moviesList")) {
       this.setState({
-        movieList: JSON.parse(localStorage.getItem('moviesList')),
+        movieList: JSON.parse(localStorage.getItem("moviesList")),
       });
     }
   }
@@ -30,8 +44,8 @@ export class SessionContextProvider extends Component {
     infosUsers.mail = mail;
     infosUsers.password = password;
 
-    fetch('http://18.191.118.60:80/signIn.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/signIn.php", {
+      method: "POST",
       body: JSON.stringify(infosUsers),
     })
       .then((response) => {
@@ -48,12 +62,12 @@ export class SessionContextProvider extends Component {
             signUpDate: data.infos[0].date_inscription,
           };
           this.setState({ user: userloged });
-          localStorage.setItem('user', JSON.stringify(userloged));
+          localStorage.setItem("user", JSON.stringify(userloged));
 
           let userId = {};
           userId.id = data.infos[0].id;
-          fetch('http://18.191.118.60:80/getMoviesList.php', {
-            method: 'POST',
+          fetch("http://18.191.118.60:80/getMoviesList.php", {
+            method: "POST",
             body: JSON.stringify(userId),
           })
             .then((response) => {
@@ -66,7 +80,7 @@ export class SessionContextProvider extends Component {
                   movieList.push(movie.id_movie);
                 });
                 this.setState({ movieList: movieList });
-                localStorage.setItem('moviesList', JSON.stringify(movieList));
+                localStorage.setItem("moviesList", JSON.stringify(movieList));
               }
             });
         } else {
@@ -86,8 +100,8 @@ export class SessionContextProvider extends Component {
     data.password = password;
     data.pseudo = pseudo;
 
-    fetch('http://18.191.118.60:80/signUp.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/signUp.php", {
+      method: "POST",
       body: JSON.stringify(data),
     })
       .then((response) => {
@@ -106,7 +120,7 @@ export class SessionContextProvider extends Component {
             signUpDate: data.user[0].date_inscription,
           };
           this.setState({ user: userLoged });
-          localStorage.setItem('user', JSON.stringify(userLoged));
+          localStorage.setItem("user", JSON.stringify(userLoged));
         }
       });
   };
@@ -119,8 +133,8 @@ export class SessionContextProvider extends Component {
     let data = {};
     data.mail = this.state.user.mail;
 
-    fetch('http://18.191.118.60:80/deleteUser.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/deleteUser.php", {
+      method: "POST",
       body: JSON.stringify(data),
     })
       .then((response) => {
@@ -128,60 +142,39 @@ export class SessionContextProvider extends Component {
       })
       .then((data) => {
         this.setState({ user: null });
-        localStorage.removeItem('user');
-        localStorage.removeItem('moviesList');
+        localStorage.removeItem("user");
+        localStorage.removeItem("moviesList");
       });
   };
 
   logOut = () => {
     this.setState({ user: null, movieList: null });
-    localStorage.removeItem('user');
-    localStorage.removeItem('moviesList');
+    localStorage.removeItem("user");
+    localStorage.removeItem("moviesList");
   };
 
-  addMovie = (filmId) => {
-    let data = {};
-    data.idUser = this.state.user.id;
-    data.idFilm = filmId.toString();
-
-    fetch('http://18.191.118.60:80/addFilm.php', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        let movieList = [];
-        data.forEach((movie) => {
-          movieList.push(movie.id_movie);
-        });
-        this.setState({ movieList: movieList });
-        localStorage.setItem('moviesList', JSON.stringify(movieList));
+  addMovie = (id_movie) => {
+    const movieAlreadyExist = this.state.movieList.some(
+      (id) => id === id_movie.toString()
+    );
+    if (!movieAlreadyExist) {
+      this.setState({
+        ...this.state,
+        movieList: [...this.state.movieList, id_movie.toString()],
       });
+    }
   };
 
   deleteMovie = (id_movie) => {
-    let data = {};
-    data.movieId = id_movie.toString();
-    data.userId = this.state.user.id;
-
-    fetch('http://18.191.118.60:80/deleteMovie.php', {
-      method: 'POST',
-      body: JSON.stringify(data),
-    })
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        console.log(data);
-        let movieList = [];
-        data.forEach((movie) => {
-          movieList.push(movie.id_movie);
-        });
-        this.setState({ movieList: movieList });
-        localStorage.setItem('moviesList', JSON.stringify(movieList));
-      });
+    this.setState(
+      {
+        ...this.state,
+        movieList: this.state.movieList.filter((id) => id !== id_movie),
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   changePseudo = (pseudo) => {
@@ -189,8 +182,8 @@ export class SessionContextProvider extends Component {
     data.id = this.state.user.id;
     data.value = pseudo;
 
-    fetch('http://18.191.118.60:80/changePseudo.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/changePseudo.php", {
+      method: "POST",
       body: JSON.stringify(data),
     })
       .then((response) => {
@@ -206,7 +199,7 @@ export class SessionContextProvider extends Component {
           signUpDate: data[0].date_inscription,
         };
         this.setState({ user: userLoged });
-        localStorage.setItem('user', JSON.stringify(userLoged));
+        localStorage.setItem("user", JSON.stringify(userLoged));
       });
   };
 
@@ -215,8 +208,8 @@ export class SessionContextProvider extends Component {
     data.id = this.state.user.id;
     data.value = lastName;
 
-    fetch('http://18.191.118.60:80/changeLastName.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/changeLastName.php", {
+      method: "POST",
       body: JSON.stringify(data),
     })
       .then((response) => {
@@ -233,7 +226,7 @@ export class SessionContextProvider extends Component {
           signUpDate: data[0].date_inscription,
         };
         this.setState({ user: userLoged });
-        localStorage.setItem('user', JSON.stringify(userLoged));
+        localStorage.setItem("user", JSON.stringify(userLoged));
       });
   };
 
@@ -242,8 +235,8 @@ export class SessionContextProvider extends Component {
     data.id = this.state.user.id;
     data.value = firstName;
 
-    fetch('http://18.191.118.60:80/changeFirstName.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/changeFirstName.php", {
+      method: "POST",
       body: JSON.stringify(data),
     })
       .then((response) => {
@@ -259,7 +252,7 @@ export class SessionContextProvider extends Component {
           signUpDate: data[0].date_inscription,
         };
         this.setState({ user: userLoged });
-        localStorage.setItem('user', JSON.stringify(userLoged));
+        localStorage.setItem("user", JSON.stringify(userLoged));
       });
   };
 
@@ -268,8 +261,8 @@ export class SessionContextProvider extends Component {
     data.id = this.state.user.id;
     data.value = mail;
 
-    fetch('http://18.191.118.60:80/changeMail.php', {
-      method: 'POST',
+    fetch("http://18.191.118.60:80/changeMail.php", {
+      method: "POST",
       body: JSON.stringify(data),
     })
       .then((response) => {
@@ -285,7 +278,7 @@ export class SessionContextProvider extends Component {
           signUpDate: data[0].date_inscription,
         };
         this.setState({ user: userLoged });
-        localStorage.setItem('user', JSON.stringify(userLoged));
+        localStorage.setItem("user", JSON.stringify(userLoged));
       });
   };
 
