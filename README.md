@@ -2,8 +2,8 @@
 
 Front-end of a Netflix-like website using React.
 Cineo is a streaming plateform to watch movies and TV shows.
-[Go to website](https://cineo.netlify.app/)
 [![homepage](readme-assets/homepage.gif)](https://cineo.netlify.app/)
+[Go to website](https://cineo.netlify.app/)
 
 ## How to install
 
