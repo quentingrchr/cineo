@@ -1,11 +1,11 @@
-# CINEO
+# 🎥 CINEO
 
 Front-end of a Netflix-like website using React.
 Cineo is a streaming plateform to watch movies and TV shows.
 [![homepage](readme-assets/homepage.gif)](https://cineo.netlify.app/)
 [Go to website](https://cineo.netlify.app/)
 
-## How to install
+## ⬇️ How to install
 
 Clone the repository
 In the project directory,
@@ -25,7 +25,7 @@ npm start
 to run the app in the development mode.
 Open http://localhost:3000 to view it in the browser
 
-## Groupe Members
+##  👥 Groupe Members
 
 - [Thomas](https://github.com/)
 - [Reda](https://github.com/)
