@@ -14,7 +14,8 @@
     "react-scripts": "3.4.1",
     "react-swipe": "^6.0.4",
     "react-waypoint": "^9.0.2",
-    "swipe-js-iso": "^2.1.5"
+    "swipe-js-iso": "^2.1.5",
+    "watchman": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
