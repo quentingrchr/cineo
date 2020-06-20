@@ -30,6 +30,12 @@ npm start
 
 to run the app in the development mode.
 Open http://localhost:3000 to view it in the browser
+<<<<<<< HEAD
+=======
+
+
+
+>>>>>>> 341da34824a4fa4a3ed2127f071ec9b82e222015
 
 ## ⬇️ How to install
 
