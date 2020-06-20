@@ -1,6 +1,6 @@
 import React from "react";
 
-import { animationOnly, moviesOnly } from "../../data.utils";
+import { animationOnly } from "../../data.utils";
 import { Link } from "react-router-dom";
 import Header from "../../components/header/header.component";
 import Footer from "../../components/footer/footer.component";

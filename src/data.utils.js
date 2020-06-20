@@ -55,12 +55,12 @@ export const searchByTitle = (array, string, nb = 8) => {
     return name.match(regex);
   };
 
-  var filteredArr = array.filter((x) => {
+  const filteredArr = array.filter((x) => {
     if (x.type !== "soon") {
       var xSub = x.title.substring(0, 3).toLowerCase();
       return x.title.toLowerCase().includes(string) || checkTitle(xSub, string);
     }
-    return;
+    return x;
   });
 
   return filteredArr;

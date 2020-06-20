@@ -1,5 +1,5 @@
-import React, { Component, createRef } from 'react';
-import arrowImage from '../../assets/img/arrow.png';
+import React, { Component, createRef } from "react";
+import arrowImage from "../../assets/img/arrow.png";
 
 export default class genreSelection extends Component {
   constructor(props) {
@@ -28,22 +28,22 @@ export default class genreSelection extends Component {
   };
 
   render() {
-    const { isOpen, categoryButtonRef } = this.state;
+    const { isOpen } = this.state;
 
     return (
-      <div className='category__container'>
-        <div className='category__title'>Catégories</div>
+      <div className="category__container">
+        <div className="category__title">Catégories</div>
 
         <button
-          className='category__button'
+          className="category__button"
           onClick={() => this.handelClick()}
           ref={this.categoryButtonRef}
         >
-          <div className='category__button__text'>Genres</div>
+          <div className="category__button__text">Genres</div>
           <arrowImage />
         </button>
         {isOpen && (
-          <ul className='category__list'>
+          <ul className="category__list">
             <li onClick={(e) => this.categoryItemClick(e)}>{this.props.li1}</li>
             <li onClick={(e) => this.categoryItemClick(e)}>{this.props.li2}</li>
             <li onClick={(e) => this.categoryItemClick(e)}>{this.props.li3}</li>
