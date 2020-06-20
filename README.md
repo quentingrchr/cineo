@@ -29,11 +29,9 @@ npm start
 
 to run the app in the development mode.
 Open http://localhost:3000 to view it in the browser
-=======
-[![homepage](readme-assets/homepage.gif)](https://cineo.netlify.app/)
-[Go to website](https://cineo.netlify.app/)
 
-> > > > > > > ea731fa45c1588012f929c05fa62d3a2bfdadf19
+
+
 
 ## ⬇️ How to install
 
