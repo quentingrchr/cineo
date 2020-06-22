@@ -25,7 +25,7 @@ export default class Slider extends Component {
     if (this.state.position <= 0) return;
     let itemWidth = element.current.offsetWidth;
     this.setState((prevState) => {
-      return { ...prevState, position: prevState.position-- };
+      return { ...prevState, position: prevState.position - 1 };
     });
     this.setState((prevState) => {
       return {
@@ -43,18 +43,20 @@ export default class Slider extends Component {
     this.setState((prevState) => {
       return {
         ...prevState,
-        position: prevState.position++,
+        position: prevState.position + 1,
       };
     });
     let itemWidth = element.current.offsetWidth;
-    this.setState({
-      ...this.state,
-      offset:
-        this.state.offset +
-        (itemWidth + 2) *
-          (this.state.nbItems - this.state.position * 5 >= 5
-            ? 5
-            : this.state.nbItems - this.state.position * 5),
+    this.setState((prevState) => {
+      return {
+        ...prevState,
+        offset:
+          prevState.offset +
+          (itemWidth + 2) *
+            (prevState.nbItems - prevState.position * 5 >= 5
+              ? 5
+              : prevState.nbItems - prevState.position * 5),
+      };
     });
   };
 
